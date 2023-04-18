@@ -1,16 +1,16 @@
-package com.cheq.receiptify.adapter
+package com.cheq.receiptify.adapter.pos
 
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.data.Item
-import com.cheq.receiptify.databinding.LayoutPurchasedItemsBinding
+import com.cheq.receiptify.databinding.LayoutPPurchasedItemsBinding
 
-class DishListAdapterCustomer(private val dishes: List<Item>) : RecyclerView.Adapter<DishListAdapterCustomer.ViewHolder>() {
+class PDishListAdapterCustomer(private val dishes: List<Item>) : RecyclerView.Adapter<PDishListAdapterCustomer.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding : LayoutPurchasedItemsBinding = LayoutPurchasedItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding : LayoutPPurchasedItemsBinding = LayoutPPurchasedItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
@@ -33,6 +33,6 @@ class DishListAdapterCustomer(private val dishes: List<Item>) : RecyclerView.Ada
         return dishes.size
     }
 
-    class ViewHolder(var binding: LayoutPurchasedItemsBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(var binding: LayoutPPurchasedItemsBinding) : RecyclerView.ViewHolder(binding.root)
 
 }

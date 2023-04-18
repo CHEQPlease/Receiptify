@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     android:layout_height="wrap_content"
-    android:theme="@style/ReceiptifyTheme"
+    android:theme="@style/ReceiptifyThemeHandheld"
     tools:ignore="InOrMmUsage">
 
     <!-- Brand Name -->

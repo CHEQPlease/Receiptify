@@ -1,16 +1,16 @@
-package com.cheq.receiptify.adapter
+package com.cheq.receiptify.adapter.handheld
 
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.data.Breakdown
-import com.cheq.receiptify.databinding.LayoutMetaInfoBinding
+import com.cheq.receiptify.databinding.LayoutHMetaInfoBinding
 
-class BreakdownListAdapter(private val breakdowns: List<Breakdown>) : RecyclerView.Adapter<BreakdownListAdapter.ViewHolder>() {
+class HBreakdownListAdapter(private val breakdowns: List<Breakdown>) : RecyclerView.Adapter<HBreakdownListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding : LayoutMetaInfoBinding = LayoutMetaInfoBinding.inflate(
+        val binding : LayoutHMetaInfoBinding = LayoutHMetaInfoBinding.inflate(
             LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
@@ -31,6 +31,6 @@ class BreakdownListAdapter(private val breakdowns: List<Breakdown>) : RecyclerVi
         return breakdowns.size
     }
 
-    class ViewHolder(var binding: LayoutMetaInfoBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(var binding: LayoutHMetaInfoBinding) : RecyclerView.ViewHolder(binding.root)
 
 }

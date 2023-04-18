@@ -1,12 +1,12 @@
 package com.cheq.receiptify.utils
 
-open class SingletonHolder<out T, in A>(private val constructor: (A) -> T) {
+open class SingletonHolder<out T>(private val constructor: () -> T) {
 
     @Volatile
     private var instance: T? = null
 
-    fun getInstance(arg: A): T =
+    fun getInstance(): T =
         instance ?: synchronized(this) {
-            instance ?: constructor(arg).also { instance = it }
+            instance ?: constructor().also { instance = it }
         }
 }

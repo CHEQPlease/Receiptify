@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_customer_receipt_pos"
-    android:layout_width="48mm"
+    android:layout_width="75mm"
     android:background="@android:color/white"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     android:layout_height="wrap_content"
-    android:theme="@style/ReceiptifyTheme"
+    android:theme="@style/ReceiptifyThemePOS"
     tools:ignore="InOrMmUsage">
 
 
@@ -24,7 +24,7 @@
             tools:text="CHEQ Inc."
             android:layout_marginTop="2mm"
             android:layout_marginBottom="1mm"
-            android:textSize="4mm"
+            android:textSize="4.2mm"
             android:textStyle="bold"
             />
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         tools:text="ORDER #: 7"
         android:layout_gravity="center"
-        android:textSize="3mm"
+        android:textSize="3.5mm"
         android:textStyle="bold"
         />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         tools:text="TOTAL ITEMS - 7"
         android:layout_gravity="center"
-        android:textSize="3mm"
+        android:textSize="3.5mm"
         android:textStyle="bold"
         />
 
@@ -60,7 +60,7 @@
         android:id="@+id/tv_placed_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="2.5mm"
+        android:textSize="2.8mm"
         android:textStyle="bold"
         android:layout_marginTop="1mm"
         android:layout_gravity="center"
@@ -79,40 +79,7 @@
 
 
     <!-- Item table header -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ITEM"
-            android:textSize="2.5mm"
-            android:textStyle="bold"
-            android:layout_weight="5"
-            />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="QTY"
-            android:textSize="2.5mm"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PRICE"
-            android:gravity="end"
-            android:textStyle="bold"
-            android:textSize="2.5mm"
-            android:layout_weight="1"
-            />
-
-    </LinearLayout>
+    <include layout="@layout/layout_p_item_table_header" />
 
     <!-- Item List View -->
 
@@ -122,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1mm"
         tools:itemCount="3"
-        tools:listitem="@layout/layout_purchased_items"
+        tools:listitem="@layout/layout_p_purchased_items"
         />
 
     <!-- Divider -->
@@ -142,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1mm"
         tools:itemCount="3"
-        tools:listitem="@layout/layout_meta_info"
+        tools:listitem="@layout/layout_p_meta_info"
         />
 
 
@@ -165,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="CUSTOMER COPY"
-        android:textSize="2.5mm"
+        android:textSize="3mm"
         android:textStyle="bold"
         />
 
@@ -179,6 +146,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="POWERED BY"
+            android:textSize="2.5mm"
             />
 
         <TextView

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     android:layout_height="wrap_content"
-    android:theme="@style/ReceiptifyTheme"
+    android:theme="@style/ReceiptifyThemeHandheld"
     tools:ignore="InOrMmUsage">
 
     <!-- Brand Name -->
@@ -129,6 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="POWERED BY"
+            android:textSize="2.5mm"
             />
 
         <TextView

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:theme="@style/ReceiptifyTheme"
+    android:theme="@style/ReceiptifyThemePOS"
     >
 
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         tools:text="SUBTOTAL"
         android:textStyle="bold"
-        android:textSize="3mm"
+        android:textSize="3.2mm"
         />
 
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         tools:text="$4.00"
         android:textStyle="bold"
-        android:textSize="3mm"
+        android:textSize="3.2mm"
         android:gravity="end"
         />
 

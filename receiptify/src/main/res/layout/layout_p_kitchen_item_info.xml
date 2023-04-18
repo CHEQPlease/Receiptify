@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:theme="@style/ReceiptifyTheme"
+    android:theme="@style/ReceiptifyThemePOS"
     xmlns:tools="http://schemas.android.com/tools"
     >
 
@@ -37,7 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Soup"
-            android:textSize="4mm"
+            android:textStyle="bold"
+            android:textSize="4.5mm"
             />
 
         <TextView
@@ -45,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="-- Side 1"
-            android:textSize="3.5mm"
+            android:textSize="3.8mm"
             />
 
 

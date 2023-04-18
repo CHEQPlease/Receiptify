@@ -9,13 +9,9 @@ import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
 
-    private  lateinit var receiptify: Receiptify
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        receiptify = Receiptify.getInstance(applicationContext)
 
         val jsonString = """
            
@@ -31,8 +27,8 @@ class MainActivity : AppCompatActivity() {
            	"items": [{
            			"itemName": "Salmon Fry",
            			"description": "  -- Olive\n  -- Deep Fried Salmon\n  -- ADD Addition 1\n  -- no Nuts\n  -- no Olive Oil\n  -- Substitution 1 SUB\n  -- allergy 1 ALLERGY\n",
-           			"quantity": "1",
-           			"price": "${'$'}10.0",
+           			"quantity": "231",
+           			"price": "${'$'}10000.0",
            			"strikethrough": false
            		},
            		{
@@ -104,13 +100,11 @@ class MainActivity : AppCompatActivity() {
            			"important": true
            		}
            	]
-           }
-                                                          
+           }                             
             
         """.trimIndent()
-
-        val receiptDTO = Gson().fromJson(jsonString, ReceiptDTO::class.java)
-        val receiptBitmap = receiptify.buildReceipt(receiptDTO)
+        Receiptify.init(this)
+        val receiptBitmap = Receiptify.buildReceipt(jsonString)
         val  receiptView = findViewById<ImageView>(R.id.iv_receipt)
         receiptView.setImageBitmap(receiptBitmap)
     }

@@ -1,16 +1,16 @@
-package com.cheq.receiptify.adapter
+package com.cheq.receiptify.adapter.pos
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.data.Item
-import com.cheq.receiptify.databinding.LayoutKitchenItemInfoBinding
+import com.cheq.receiptify.databinding.LayoutPKitchenItemInfoBinding
 import com.cheq.receiptify.showStrikeThrough
 
-class KitchenDishListAdapter(private val dishes: List<Item>) : RecyclerView.Adapter<KitchenDishListAdapter.ViewHolder>() {
+class PKitchenDishListAdapter(private val dishes: List<Item>) : RecyclerView.Adapter<PKitchenDishListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding : LayoutKitchenItemInfoBinding = LayoutKitchenItemInfoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding : LayoutPKitchenItemInfoBinding = LayoutPKitchenItemInfoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
@@ -34,6 +34,6 @@ class KitchenDishListAdapter(private val dishes: List<Item>) : RecyclerView.Adap
         return dishes.size
     }
 
-    class ViewHolder(var binding: LayoutKitchenItemInfoBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(var binding: LayoutPKitchenItemInfoBinding) : RecyclerView.ViewHolder(binding.root)
 
 }
