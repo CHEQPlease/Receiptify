@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Self Order"
-                    android:textSize="3mm"
+                    android:textSize="3.5mm"
                     android:textStyle="bold"
                     />
 
@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Total Items : 1"
-                    android:textSize="3mm"
+                    android:textSize="3.5mm"
                     android:textStyle="bold"
                     />
 
@@ -66,7 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Order #K20"
-                    android:textSize="3mm"
+                    android:textSize="3.5mm"
                     android:textStyle="bold"
                     />
 
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             tools:text="CHEQ Inc."
             android:padding="2mm"
-            android:textSize="4.5mm"
+            android:textSize="4.8mm"
             android:textStyle="bold"
             />
 
@@ -99,7 +99,7 @@
         android:id="@+id/tv_placed_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="2.8mm"
+        android:textSize="3mm"
         android:textStyle="bold"
         android:layout_gravity="center"
         tools:text="Placed at 01/11/2023 1:00 AM PST"
@@ -187,7 +187,7 @@
         android:text="CHEQ Inc."
         android:textStyle="bold"
         android:gravity="center"
-        android:textSize="2mm"
+        android:textSize="2.5mm"
         android:layout_marginTop="0.5mm"
         android:layout_marginBottom="0.5mm"
         />

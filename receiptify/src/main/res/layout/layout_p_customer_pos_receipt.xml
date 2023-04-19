@@ -24,7 +24,7 @@
             tools:text="CHEQ Inc."
             android:layout_marginTop="2mm"
             android:layout_marginBottom="1mm"
-            android:textSize="4.2mm"
+            android:textSize="5mm"
             android:textStyle="bold"
             />
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         tools:text="ORDER #: 7"
         android:layout_gravity="center"
-        android:textSize="3.5mm"
+        android:textSize="3.8mm"
         android:textStyle="bold"
         />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         tools:text="TOTAL ITEMS - 7"
         android:layout_gravity="center"
-        android:textSize="3.5mm"
+        android:textSize="3.8mm"
         android:textStyle="bold"
         />
 
@@ -60,7 +60,7 @@
         android:id="@+id/tv_placed_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="2.8mm"
+        android:textSize="3mm"
         android:textStyle="bold"
         android:layout_marginTop="1mm"
         android:layout_gravity="center"

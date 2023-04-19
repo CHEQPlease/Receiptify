@@ -3,9 +3,7 @@ package com.cheq.receiptify
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import com.cheq.receiptify.data.ReceiptDTO
 import com.cheq.receiptify.sampleapp.R
-import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
 
