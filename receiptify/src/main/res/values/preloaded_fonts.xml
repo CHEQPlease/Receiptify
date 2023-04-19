@@ -2,6 +2,5 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/exo_2</item>
-        <item>@font/exo_thin</item>
     </array>
 </resources>
