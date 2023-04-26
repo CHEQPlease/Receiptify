@@ -22,8 +22,11 @@ class PBreakdownListAdapter(private val breakdowns: List<Breakdown>) : RecyclerV
         holder.binding.tvBreakdownKeyValue.text = breakdown.value
 
         if(breakdown.important){
-            holder.binding.tvBreakdownKeyName.setTextSize(TypedValue.COMPLEX_UNIT_MM,3.0f)
-            holder.binding.tvBreakdownKeyValue.setTextSize(TypedValue.COMPLEX_UNIT_MM,3.0f)
+            val existingSize = holder.binding.tvBreakdownKeyName.textSize
+            val typeface = holder.binding.tvBreakdownKeyName.typeface
+            holder.binding.tvBreakdownKeyName.setTypeface(typeface,android.graphics.Typeface.BOLD)
+            holder.binding.tvBreakdownKeyName.setTextSize(TypedValue.COMPLEX_UNIT_PX,existingSize + 8f)
+            holder.binding.tvBreakdownKeyValue.setTextSize(TypedValue.COMPLEX_UNIT_PX,existingSize + 8f)
         }
     }
 
