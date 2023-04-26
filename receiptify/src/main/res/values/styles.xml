@@ -10,7 +10,7 @@
 
     <style name="ReceiptifyThemePOS">
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:fontFamily">@font/exo_2</item>
+        <item name="android:fontFamily">@font/exo</item>
     </style>
 
 </resources>
