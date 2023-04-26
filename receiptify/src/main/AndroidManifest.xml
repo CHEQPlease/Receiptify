@@ -6,10 +6,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/ReceiptifyTheme" >
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        android:theme="@style/ReceiptifyThemeHandheld" >
     </application>
 
 </manifest>
