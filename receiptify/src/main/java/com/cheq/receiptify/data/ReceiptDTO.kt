@@ -16,7 +16,9 @@ data class ReceiptDTO(
     @SerializedName("orderSubtitle")
     val orderSubtitle: String?,
     @SerializedName("receiptType")
-    val receiptType: String?,
+    val receiptType: String = "",
+    @SerializedName("deviceType")
+    val deviceType: String = "",
     @SerializedName("tableNo")
     val tableNo: String?,
     @SerializedName("timeOfOrder")
@@ -48,6 +50,8 @@ data class Item(
 )
 
 enum class ReceiptType {
-    CUSTOMER_P, MERCHANT_P, KITCHEN_P, KIOSK_P,
-    CUSTOMER_H, MERCHANT_H, KITCHEN_H, KIOSK_H,
+    CUSTOMER, MERCHANT, KITCHEN, KIOSK
+}
+enum class DeviceType {
+    POS, HANDHELD
 }
