@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity() {
            	"totalItems": "2",
            	"orderNo": "K10",
            	"tableNo": "234",
-           	"receiptType": "kiosk_P",
+           	"receiptType": "customer",
+            "deviceType": "pos",
            	"timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
            	"items": [{
            			"itemName": "Salmon Fry",
