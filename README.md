@@ -116,12 +116,12 @@ implementation 'com.github.CHEQPlease:Receiptify:1.0.0'
 **Note** :
 
 **Supported values for "receiptType" :**
-*Customer
-Merchant
-Kitchen
-Kiosk*
+Customer,
+Merchant,
+Kitchen,
+Kiosk
 
 **Supported values for "deviceType":**
-*POS
-Handheld*
+POS,
+Handheld
  
