@@ -24,7 +24,15 @@ data class ReceiptDTO(
     @SerializedName("timeOfOrder")
     val timeOfOrder: String?,
     @SerializedName("totalItems")
-    val totalItems: String?
+    val totalItems: String?,
+    @SerializedName("serverName")
+    val serverName: String?,
+    @SerializedName("serverId")
+    val serverId: String?,
+    @SerializedName("tipInfoBreakdown")
+    val tipsInfoBreakdown: List<TipsInfoBreakdown> = listOf(),
+    @SerializedName("tipPerRevenueCenter")
+    val tipPerRevenueCenter: List<TipsPerRevenueCenter> = listOf()
 )
 
 data class Breakdown(
@@ -49,8 +57,24 @@ data class Item(
     val strikethrough: Boolean = false
 )
 
+data class TipsInfoBreakdown(
+    @SerializedName("key")
+    val key: String?,
+    @SerializedName("value")
+    val value: String?
+)
+
+data class TipsPerRevenueCenter(
+    @SerializedName("name")
+    val name: String?,
+    @SerializedName("tip")
+    val tip: String?,
+    @SerializedName("revenueCenterList")
+    val revenueCenterList: List<String> = listOf()
+)
+
 enum class ReceiptType {
-    CUSTOMER, MERCHANT, KITCHEN, KIOSK
+    CUSTOMER, MERCHANT, KITCHEN, KIOSK, SERVER_TIP
 }
 enum class DeviceType {
     POS, HANDHELD
