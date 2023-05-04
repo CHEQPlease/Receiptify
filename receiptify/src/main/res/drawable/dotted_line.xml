@@ -4,8 +4,14 @@
 
     <stroke
         android:color="#000000"
+<<<<<<< Updated upstream
         android:dashWidth="10px"
         android:dashGap="10px"
         android:width="0.8mm"
+=======
+        android:dashWidth="1mm"
+        android:dashGap="0.2mm"
+        android:width="0.2mm"
+>>>>>>> Stashed changes
         />
 </shape>
