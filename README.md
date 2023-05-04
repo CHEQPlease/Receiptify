@@ -58,58 +58,47 @@ implementation 'com.github.CHEQPlease:Receiptify:1.0.0'
        "breakdown":[
           {
              "key":"Payment Type",
-             "value":"Card",
-             "important":null
+             "value":"Card"
           },
           {
              "key":"Card Type",
-             "value":"mc",
-             "important":null
+             "value":"mc"
           },
           {
              "key":"Card #:",
-             "value":"541333 **** 9999",
-             "important":null
+             "value":"541333 **** 9999"
           },
           {
              "key":"Card Entry",
-             "value":"CONTACTLESS",
-             "important":null
+             "value":"CONTACTLESS"
           },
           {
              "key":"",
-             "value":"",
-             "important":null
+             "value":""
           },
           {
              "key":"Sub Total",
-             "value":"${'$'}21.01",
-             "important":null
+             "value":"${'$'}21.01"
           },
           {
              "key":"Area Tax",
-             "value":"${'$'}1.00",
-             "important":null
+             "value":"${'$'}1.00"
           },
           {
              "key":"VAT",
-             "value":"${'$'}2.10",
-             "important":null
+             "value":"${'$'}2.10"
           },
           {
              "key":"Customer Fee",
-             "value":"${'$'}0.63",
-             "important":null
+             "value":"${'$'}0.63"
           },
           {
              "key":"Service Fee",
-             "value":"${'$'}0.91",
-             "important":null
+             "value":"${'$'}0.91"
           },
           {
              "key":"Tax",
-             "value":"${'$'}0.01",
-             "important":null
+             "value":"${'$'}0.01"
           },
           {
              "key":"GRAND TOTAL",
@@ -127,12 +116,12 @@ implementation 'com.github.CHEQPlease:Receiptify:1.0.0'
 **Note** :
 
 **Supported values for "receiptType" :**
-*Customer
-Merchant
-Kitchen
-Kiosk*
+Customer,
+Merchant,
+Kitchen,
+Kiosk
 
 **Supported values for "deviceType":**
-*POS
-Handheld*
+POS,
+Handheld
  
