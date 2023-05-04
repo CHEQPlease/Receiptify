@@ -11,10 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.adapter.handheld.HBreakdownListAdapter
 import com.cheq.receiptify.adapter.handheld.HDishListAdapterCustomer
 import com.cheq.receiptify.adapter.handheld.HKitchenDishListAdapter
-import com.cheq.receiptify.adapter.pos.PBreakdownListAdapter
-import com.cheq.receiptify.adapter.pos.PDishListAdapterCustomer
-import com.cheq.receiptify.adapter.pos.PKitchenDishListAdapter
-import com.cheq.receiptify.adapter.pos.PTipsInfoBreakdownListAdapter
+import com.cheq.receiptify.adapter.pos.*
 import com.cheq.receiptify.data.DeviceType
 import com.cheq.receiptify.data.ReceiptDTO
 import com.cheq.receiptify.data.ReceiptType
@@ -290,8 +287,12 @@ object Receiptify  {
 
         binding.tvServerName.text = receiptDTO.serverName
         binding.tvServerId.text = receiptDTO.serverId
+        binding.tvReceiptTitle.text = "Tips Statement"
         binding.rvTipsInfoBreakdown.adapter = PTipsInfoBreakdownListAdapter(receiptDTO.tipsInfoBreakdown)
         binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        binding.rvTipsRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.tipPerRevenueCenter)
+        binding.rvTipsRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)

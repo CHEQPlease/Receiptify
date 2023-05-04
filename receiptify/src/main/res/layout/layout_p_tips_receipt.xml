@@ -36,10 +36,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="4mm"/>
-
             <TextView
                 android:id="@+id/tv_server_name"
                 android:layout_width="wrap_content"
@@ -61,6 +57,7 @@
                 />
 
             <TextView
+                android:id="@+id/tv_receipt_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Tips Statement"
@@ -107,8 +104,7 @@
                 android:layout_marginTop="2mm"
                 android:layout_marginBottom="2mm"
                 tools:itemCount="3"
-                tools:listitem="@layout/layout_p_tip_revenue_center"
-                />
+                tools:listitem="@layout/layout_p_tip_revenue_center" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
