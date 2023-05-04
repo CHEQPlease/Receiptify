@@ -111,7 +111,7 @@ object Receiptify  {
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
-        return Utils.generateBitmap(customerReceipt)
+        return Utils.generateBitmap(customerReceipt,highQuality = true)
     }
 
     private fun buildCustomerReceiptHandheld(receiptDTO: ReceiptDTO) : Bitmap {
@@ -135,7 +135,8 @@ object Receiptify  {
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
-        return Utils.generateBitmap(customerReceipt)
+
+        return Utils.generateBitmap(customerReceipt,highQuality = true)
 
     }
 
@@ -182,7 +183,7 @@ object Receiptify  {
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt,highQuality = true)
     }
 
 
@@ -207,7 +208,7 @@ object Receiptify  {
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, highQuality = true)
 
     }
 
@@ -254,7 +255,7 @@ object Receiptify  {
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, highQuality = true)
 
     }
 
