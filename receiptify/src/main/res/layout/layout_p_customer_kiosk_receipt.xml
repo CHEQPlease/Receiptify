@@ -5,15 +5,17 @@
     android:layout_width="75mm"
     android:background="@android:color/white"
     android:orientation="vertical"
+    android:padding="3mm"
     android:layout_gravity="center_horizontal"
     android:layout_height="wrap_content"
     android:theme="@style/ReceiptifyThemePOS"
     tools:ignore="InOrMmUsage">
 
 
+    <!-- Whitespace for line feed-->
     <View
         android:layout_width="match_parent"
-        android:layout_height="4mm"/>
+        android:layout_height="6mm"/>
 
     <!--  Top Section -->
     <LinearLayout
@@ -239,8 +241,9 @@
 
     </LinearLayout>
 
+    <!-- Whitespace for linefeed -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="4mm"/>
+        android:layout_height="10mm"/>
 
 </LinearLayout>

@@ -4,8 +4,9 @@
 
     <stroke
         android:color="#000000"
-        android:dashWidth="2mm"
-        android:dashGap="0.5mm"
-        android:width="0.1mm"
+        android:dashWidth="1mm"
+        android:dashGap="0.2mm"
+        android:width="0.2mm"
         />
+
 </shape>

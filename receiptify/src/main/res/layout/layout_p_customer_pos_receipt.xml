@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_customer_receipt_pos"
     android:layout_width="75mm"
+    android:padding="3mm"
     android:background="@android:color/white"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
@@ -10,6 +11,10 @@
     android:theme="@style/ReceiptifyThemePOS"
     tools:ignore="InOrMmUsage">
 
+    <!-- Whitespace for line feed-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6mm"/>
 
     <!-- Brand Name -->
     <LinearLayout
@@ -159,5 +164,10 @@
             />
 
     </LinearLayout>
+
+    <!-- Whitespace for line feed-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8mm"/>
 
 </LinearLayout>

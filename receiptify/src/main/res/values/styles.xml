@@ -5,12 +5,12 @@
     <!-- Theme for receipt -->
     <style name="ReceiptifyThemeHandheld">
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:fontFamily">@font/roboto_bold_typography</item>
     </style>
 
     <style name="ReceiptifyThemePOS">
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:fontFamily">@font/exo</item>
+        <item name="android:fontFamily">@font/roboto_regular_typography</item>
     </style>
 
 </resources>

@@ -6,7 +6,6 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/ReceiptifyThemeHandheld" >
-    </application>
+        android:theme="@style/ReceiptifyThemePOS" />
 
 </manifest>
