@@ -85,7 +85,7 @@ object Receiptify  {
                         return buildKitchenReceiptPOS(receiptDTO)
                     }
 
-                    ReceiptType.SERVER_TIP.name -> {
+                    ReceiptType.SERVER_TIPS.name -> {
                         return buildTipsReceiptForServer(receiptDTO)
                     }
                 }
@@ -285,12 +285,12 @@ object Receiptify  {
 
         /* TODO : Move to string resource to support localization in future */
 
-        binding.tvServerName.text = receiptDTO.serverName
-        binding.tvServerId.text = receiptDTO.serverId
+        binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
+        binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
         binding.tvReceiptTitle.text = "Tips Statement"
-        binding.rvTipsInfoBreakdown.adapter = PTipsInfoBreakdownListAdapter(receiptDTO.tipsInfoBreakdown)
+        binding.rvTipsInfoBreakdown.adapter = PTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
         binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
-        binding.rvTipsRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.tipPerRevenueCenter)
+        binding.rvTipsRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
         binding.rvTipsRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
 

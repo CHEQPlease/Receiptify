@@ -25,6 +25,11 @@ data class ReceiptDTO(
     val timeOfOrder: String?,
     @SerializedName("totalItems")
     val totalItems: String?,
+    @SerializedName("serverTipInfo")
+    val serverTipInfo: ServerTipInfo,
+)
+
+data class ServerTipInfo(
     @SerializedName("serverName")
     val serverName: String?,
     @SerializedName("serverId")
@@ -74,7 +79,7 @@ data class TipsPerRevenueCenter(
 )
 
 enum class ReceiptType {
-    CUSTOMER, MERCHANT, KITCHEN, KIOSK, SERVER_TIP
+    CUSTOMER, MERCHANT, KITCHEN, KIOSK, SERVER_TIPS
 }
 enum class DeviceType {
     POS, HANDHELD
