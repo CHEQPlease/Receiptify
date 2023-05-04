@@ -104,6 +104,7 @@ class MainActivity : AppCompatActivity() {
           "serverTipInfo": {
             "serverName": "Shorol",
             "serverId": "123333330022",
+            "totalTip": " $200.19",
             "tipInfoBreakdown": [
               {
                 "key": "Placed at",

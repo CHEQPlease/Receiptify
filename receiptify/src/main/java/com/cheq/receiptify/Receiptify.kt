@@ -288,6 +288,8 @@ object Receiptify  {
         binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
         binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
         binding.tvReceiptTitle.text = "Tips Statement"
+        binding.tvTipsTitle.text = "Total Tips:"
+        binding.tvTotalTips.text = receiptDTO.serverTipInfo.totalTip
         binding.rvTipsInfoBreakdown.adapter = PTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
         binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
         binding.rvTipsRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)

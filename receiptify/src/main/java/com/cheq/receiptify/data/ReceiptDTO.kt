@@ -34,6 +34,8 @@ data class ServerTipInfo(
     val serverName: String?,
     @SerializedName("serverId")
     val serverId: String?,
+    @SerializedName("totalTip")
+    val totalTip: String?,
     @SerializedName("tipInfoBreakdown")
     val tipsInfoBreakdown: List<TipsInfoBreakdown> = listOf(),
     @SerializedName("tipPerRevenueCenter")
