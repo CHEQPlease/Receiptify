@@ -181,7 +181,8 @@ implementation 'com.github.CHEQPlease:Receiptify:1.0.0'
 Customer,
 Merchant,
 Kitchen,
-Kiosk
+Kiosk,
+ServerTips
 
 **Supported values for "deviceType":**
 POS,
