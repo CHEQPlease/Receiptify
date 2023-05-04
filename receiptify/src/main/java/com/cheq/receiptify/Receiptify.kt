@@ -279,7 +279,7 @@ object Receiptify  {
         return Utils.generateBitmap(receipt)
     }
 
-    private fun buildTipsReceiptForServer(receiptDTO: ReceiptDTO) : Bitmap? {
+    private fun buildTipsReceiptForServer(receiptDTO: ReceiptDTO) : Bitmap {
         val binding = LayoutPTipsReceiptBinding.inflate(LayoutInflater.from(context.get()))
         val receipt = binding.layoutTipsReceipt
 

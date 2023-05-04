@@ -24,7 +24,7 @@ class PTipsPerRevenueCenterListAdapter(private val tipsPerRevenueCenter: List<Ti
         holder.binding.tvCenterName.text = tipsPerRevenueCenter.name
         holder.binding.tvTip.text = tipsPerRevenueCenter.tip
         holder.binding.rvDeviceList.adapter =
-            PTipsDeviceListAdapter(tipsPerRevenueCenter.revenueCenterList)
+            PTipsDeviceListAdapter(tipsPerRevenueCenter.deviceList)
         holder.binding.rvDeviceList.layoutManager =
             LinearLayoutManager(holder.binding.rvDeviceList.context, RecyclerView.VERTICAL, false)
 

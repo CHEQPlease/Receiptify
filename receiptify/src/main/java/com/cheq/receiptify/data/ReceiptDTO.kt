@@ -69,8 +69,8 @@ data class TipsPerRevenueCenter(
     val name: String?,
     @SerializedName("tip")
     val tip: String?,
-    @SerializedName("revenueCenterList")
-    val revenueCenterList: List<String> = listOf()
+    @SerializedName("deviceList")
+    val deviceList: List<String> = listOf()
 )
 
 enum class ReceiptType {

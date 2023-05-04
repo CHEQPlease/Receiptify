@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                 {
                   "name": "Obie's",
                   "tip": "${'$'}120",
-                  "revenueCenterList": [
+                  "deviceList": [
                     "KIOSK_1",
                     "KIOSK_2",
                     "KIOSK_3"
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
                 {
                   "name": "Python Cook House",
                   "tip": "${'$'}210.22",
-                  "revenueCenterList": [
+                  "deviceList": [
                     "KIOSK_4",
                     "KIOSK_2",
                     "KIOSK_5"
@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
                 {
                   "name": "Grill House",
                   "tip": "${'$'}10.22",
-                  "revenueCenterList": [
+                  "deviceList": [
                     "KIOSK_4",
                     "KIOSK_2"
                   ]
