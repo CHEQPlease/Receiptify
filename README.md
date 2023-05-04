@@ -119,7 +119,7 @@ implementation 'com.github.CHEQPlease:Receiptify:1.0.0'
 	  ],
 	  "serverTipInfo": {
 	    "serverName": "Shorol",
-	    "serverId": "123333330022",
+	    "serverId": "(123333330022)",
 	    "totalTip": " $200.19",
 	    "tipInfoBreakdown": [
 	      {
