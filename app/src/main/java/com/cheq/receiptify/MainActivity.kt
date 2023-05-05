@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 {
                   "itemName": "Salmon Fry",
                   "description": "  -- Olive\n  -- Deep Fried Salmon\n  -- ADD Addition 1\n  -- no Nuts\n  -- no Olive Oil\n  -- Substitution 1 SUB\n  -- allergy 1 ALLERGY\n",
-                  "quantity": " ̶3̶x̶ 1x",
+                  "quantity": "1x",
                   "price": "${'$'}10000.0",
                   "strikethrough": false
                 },
