@@ -5,6 +5,8 @@
     android:layout_width="78mm"
     android:layout_height="match_parent"
     android:padding="3mm"
+    android:id="@+id/layout_qr_payment"
+    android:background="@android:color/white"
     android:theme="@style/ReceiptifyThemePOS"
     tools:ignore="InOrMmUsage">
 
@@ -14,33 +16,36 @@
         android:id="@+id/tv_brand_name"
         tools:text="CHEQ HQ Testing"
         android:layout_gravity="center"
-        android:textSize="6.3mm"
+        android:textSize="6.5mm"
         android:textFontWeight="900"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_order_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Order :: 9"
+        android:layout_gravity="center"
+        android:textSize="6mm"
+        android:textStyle="bold"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_table_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Table Number :: 36C"
         android:layout_gravity="center"
         android:textSize="5.5mm"
         android:textStyle="bold"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Table Number :: 36C"
-        android:layout_gravity="center"
-        android:textSize="5mm"
-        android:textStyle="bold"
-        />
-
-    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_placed_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="4mm"
+        android:textSize="3.5mm"
         tools:text="PLACED AT : MAY 03 @ 9:34 PDT"
         />
 
@@ -56,10 +61,12 @@
     <!-- Whitespace for linefeed -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="8mm"/>
+        android:layout_height="4mm"/>
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_payment_qr"
         android:layout_width="match_parent"
+        android:adjustViewBounds="true"
         android:layout_height="80mm"
         tools:src="@drawable/qr_cheq_app_apple_qr"
         />
@@ -67,7 +74,7 @@
     <!-- Whitespace for linefeed -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="8mm"/>
+        android:layout_height="4mm"/>
 
     <!-- Divider -->
     <ImageView
