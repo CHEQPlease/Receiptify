@@ -3,10 +3,15 @@ package com.cheq.receiptify.utils
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Matrix
+import android.graphics.Paint
+import android.graphics.PorterDuff
 import android.util.TypedValue
 import android.view.View
 import com.cheq.receiptify.data.ReceiptDTO
 import com.google.gson.Gson
+
 
 object Utils {
 

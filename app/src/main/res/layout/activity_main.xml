@@ -10,8 +10,19 @@
         android:id="@+id/iv_receipt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/btn_print"
         android:adjustViewBounds="true"
         android:layout_centerInParent="true"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_print"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Print"
         />
 
 </RelativeLayout>
