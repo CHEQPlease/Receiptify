@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:theme="@style/ReceiptifyThemePOS"
+    android:layout_marginTop="1mm"
+    >
+
+
+    <TextView
+        android:id="@+id/tv_tips_breakdown_key_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Device Name"
+        android:textStyle="bold"
+        android:textSize="3.5mm"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/tv_tips_breakdown_key_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="$4.00"
+        android:textStyle="normal"
+        android:textSize="3.5mm"
+        android:gravity="end"
+        />
+
+</LinearLayout>
+

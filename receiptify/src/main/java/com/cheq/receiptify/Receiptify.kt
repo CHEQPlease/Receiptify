@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.adapter.handheld.HBreakdownListAdapter
 import com.cheq.receiptify.adapter.handheld.HDishListAdapterCustomer
 import com.cheq.receiptify.adapter.handheld.HKitchenDishListAdapter
-import com.cheq.receiptify.adapter.pos.PBreakdownListAdapter
-import com.cheq.receiptify.adapter.pos.PDishListAdapterCustomer
-import com.cheq.receiptify.adapter.pos.PKitchenDishListAdapter
+import com.cheq.receiptify.adapter.pos.*
 import com.cheq.receiptify.data.DeviceType
 import com.cheq.receiptify.data.ReceiptDTO
 import com.cheq.receiptify.data.ReceiptType
@@ -85,6 +83,10 @@ object Receiptify  {
 
                     ReceiptType.KITCHEN.name -> {
                         return buildKitchenReceiptPOS(receiptDTO)
+                    }
+
+                    ReceiptType.SERVER_TIPS.name -> {
+                        return buildTipsReceiptForServer(receiptDTO)
                     }
                 }
             }
@@ -241,7 +243,6 @@ object Receiptify  {
         val binding = LayoutPKitchenReceiptBinding.inflate(LayoutInflater.from(context.get()))
         val receipt = binding.layoutKitchenReceipt
 
-
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvOrderNo.text = "Order #: ${receiptDTO.orderNo}"
@@ -274,6 +275,29 @@ object Receiptify  {
             binding.tvOrderSubtitle.visibility = View.GONE
         }
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+        receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
+
+        return Utils.generateBitmap(receipt)
+    }
+
+    private fun buildTipsReceiptForServer(receiptDTO: ReceiptDTO) : Bitmap {
+        val binding = LayoutPTipsReceiptBinding.inflate(LayoutInflater.from(context.get()))
+        val receipt = binding.layoutTipsReceipt
+
+        /* TODO : Move to string resource to support localization in future */
+
+        binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
+        binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
+        binding.tvReceiptTitle.text = "Tips Statement"
+        binding.tvTipsTitle.text = "Total Tips:"
+        binding.tvTotalTips.text = receiptDTO.serverTipInfo.totalTip
+        binding.rvTipsInfoBreakdown.adapter = PTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
+        binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        binding.rvTipsRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
+        binding.rvTipsRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+
+
+        receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
         return Utils.generateBitmap(receipt)
