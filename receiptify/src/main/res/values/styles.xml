@@ -10,11 +10,7 @@
 
     <style name="ReceiptifyThemePOS">
         <item name="android:textColor">@android:color/black</item>
-<<<<<<< Updated upstream
-        <item name="android:fontFamily">@font/montserrat</item>
-=======
         <item name="android:fontFamily">@font/roboto_regular_typography</item>
->>>>>>> Stashed changes
     </style>
 
 </resources>

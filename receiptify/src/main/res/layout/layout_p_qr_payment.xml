@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="78mm"
+    android:layout_height="match_parent"
+    android:padding="3mm"
+    android:theme="@style/ReceiptifyThemePOS"
+    tools:ignore="InOrMmUsage">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_brand_name"
+        tools:text="CHEQ HQ Testing"
+        android:layout_gravity="center"
+        android:textSize="6.3mm"
+        android:textFontWeight="900"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Order :: 9"
+        android:layout_gravity="center"
+        android:textSize="5.5mm"
+        android:textStyle="bold"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Table Number :: 36C"
+        android:layout_gravity="center"
+        android:textSize="5mm"
+        android:textStyle="bold"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="4mm"
+        tools:text="PLACED AT : MAY 03 @ 9:34 PDT"
+        />
+
+    <!-- Divider -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1mm"
+        android:src="@drawable/dotted_line"
+        android:layout_marginTop="1mm"
+        android:layout_marginBottom="1mm"
+        />
+
+    <!-- Whitespace for linefeed -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8mm"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="80mm"
+        tools:src="@drawable/qr_cheq_app_apple_qr"
+        />
+
+    <!-- Whitespace for linefeed -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8mm"/>
+
+    <!-- Divider -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1mm"
+        android:src="@drawable/dotted_line"
+        android:layout_marginTop="1mm"
+        android:layout_marginBottom="1mm"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="5mm"
+        android:layout_marginTop="2mm"
+        android:textFontWeight="900"
+        android:text="@string/scan_top_pay"
+        />
+
+    <!-- Whitespace for linefeed -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8mm"/>
+
+</LinearLayout>
