@@ -26,11 +26,13 @@ class MainActivity : AppCompatActivity() {
               "deviceType": "pos",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
               "paymentQRLink": "https://raw.githubusercontent.com/CHEQPlease/Receiptify/bd90ec14f119a9d767ab765d5a59057bcccabd33/app/src/main/java/com/cheq/receiptify/MainActivity.kt",
+              "isRefunded" : true,
+              "isReprinted" : false,
               "items": [
                 {
                   "itemName": "Salmon Fry",
                   "description": "  -- Olive\n  -- Deep Fried Salmon\n  -- ADD Addition 1\n  -- no Nuts\n  -- no Olive Oil\n  -- Substitution 1 SUB\n  -- allergy 1 ALLERGY\n",
-                  "quantity": "231",
+                  "quantity": " ̶3̶x̶ 1x",
                   "price": "${'$'}10000.0",
                   "strikethrough": false
                 },

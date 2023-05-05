@@ -17,8 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="x1"
-            android:textSize="4mm"
-            android:layout_marginRight="3.5mm"
+            android:textSize="5mm"
+            android:layout_marginRight="5mm"
             android:layout_marginLeft="2mm"
             android:textStyle="bold"
             android:layout_gravity="center"
@@ -37,8 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Soup"
-            android:textStyle="bold"
-            android:textSize="4.5mm"
+            android:textSize="5.2mm"
             />
 
         <TextView
@@ -46,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="-- Side 1"
-            android:textSize="3.8mm"
+            android:textSize="4.8mm"
             />
 
 

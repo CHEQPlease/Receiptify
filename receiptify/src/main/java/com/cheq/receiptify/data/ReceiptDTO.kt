@@ -25,6 +25,10 @@ data class ReceiptDTO(
     val timeOfOrder: String?,
     @SerializedName("totalItems")
     val totalItems: String?,
+    @SerializedName("isRefunded")
+    val isRefunded: Boolean = false,
+    @SerializedName("isReprinted")
+    val isReprinted: Boolean = false,
     @SerializedName("serverTipInfo")
     val serverTipInfo: ServerTipInfo,
     @SerializedName("gratuityInfo")
