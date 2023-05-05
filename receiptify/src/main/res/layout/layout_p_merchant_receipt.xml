@@ -104,7 +104,8 @@
     <!-- Divider -->
     <include
         android:id="@+id/include_gratuity_section"
-        layout="@layout/layout_p_gratuity_section"/>
+        layout="@layout/layout_p_gratuity_section"
+        />
 
     <ImageView
         android:layout_width="match_parent"

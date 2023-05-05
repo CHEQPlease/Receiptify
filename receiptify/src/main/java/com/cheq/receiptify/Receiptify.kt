@@ -214,6 +214,8 @@ object Receiptify  {
             binding.includeGratuitySection.tvSuggestedGratuity.text = "Suggested Gratuity"
             binding.includeGratuitySection.rvGratuityList.adapter = PGratuityListAdapter(receiptDTO.gratuityInfo.gratuityItems)
             binding.includeGratuitySection.rvGratuityList.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        }else{
+            binding.includeGratuitySection.root.visibility = View.GONE
         }
 
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
