@@ -12,7 +12,7 @@
         android:id="@+id/tv_breakdown_key_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="SUBTOTAL"
+        tools:text="@tools:sample/lorem"
         android:textStyle="bold"
         android:textSize="3.5mm"
         />
