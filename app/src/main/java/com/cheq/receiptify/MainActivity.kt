@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.widget.ImageView
 import com.cheq.receiptify.data.ReceiptDTO
 import com.cheq.receiptify.sampleapp.R
+import com.cheq.receiptify.sampleapp.databinding.ActivityMainBinding
 import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val jsonString = """
            
@@ -22,7 +24,8 @@ class MainActivity : AppCompatActivity() {
            	"totalItems": "2",
            	"orderNo": "K10",
            	"tableNo": "234",
-           	"receiptType": "kiosk_P",
+           	"receiptType": "customer",
+            "deviceType": "pos",
            	"timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
            	"items": [{
            			"itemName": "Salmon Fry",
@@ -105,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         """.trimIndent()
         Receiptify.init(this)
         val receiptBitmap = Receiptify.buildReceipt(jsonString)
-        val  receiptView = findViewById<ImageView>(R.id.iv_receipt)
-        receiptView.setImageBitmap(receiptBitmap)
+        binding.ivReceipt.setImageBitmap(receiptBitmap)
+
     }
 }
