@@ -14,7 +14,7 @@
     <!-- Whitespace for line feed-->
     <View
         android:layout_width="match_parent"
-        android:layout_height="6mm"/>
+        android:layout_height="2mm"/>
 
     <!-- Brand Name -->
     <LinearLayout
@@ -101,7 +101,7 @@
         tools:listitem="@layout/layout_p_meta_info"
         />
 
-    <!-- Divider -->
+    <!-- Suggested Gratuity Section -->
     <include
         android:id="@+id/include_gratuity_section"
         layout="@layout/layout_p_gratuity_section"
@@ -147,6 +147,7 @@
             android:layout_gravity="center"
             android:text="@string/cheq"
             android:textSize="3mm"
+            android:layout_marginLeft="1mm"
             android:textStyle="bold"
             />
 

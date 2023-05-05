@@ -14,7 +14,7 @@
     <!-- Whitespace for line feed-->
     <View
         android:layout_width="match_parent"
-        android:layout_height="6mm"/>
+        android:layout_height="2mm"/>
 
     <!-- Brand Name -->
     <LinearLayout
@@ -66,7 +66,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="3mm"
-        android:textStyle="bold"
         android:layout_marginTop="1mm"
         android:layout_gravity="center"
         tools:text="Placed at 01/11/2023 1:00 AM PST"
@@ -117,6 +116,11 @@
         tools:listitem="@layout/layout_p_meta_info"
         />
 
+    <!-- Suggested Gratuity Section -->
+    <include
+        android:id="@+id/include_gratuity_section"
+        layout="@layout/layout_p_gratuity_section"
+        />
 
     <!-- Divider -->
     <ImageView
