@@ -27,6 +27,8 @@ data class ReceiptDTO(
     val totalItems: String?,
     @SerializedName("serverTipInfo")
     val serverTipInfo: ServerTipInfo,
+    @SerializedName("paymentQRLink")
+    val paymentQRLink: String?
 )
 
 data class ServerTipInfo(
@@ -81,7 +83,7 @@ data class TipsPerRevenueCenter(
 )
 
 enum class ReceiptType {
-    CUSTOMER, MERCHANT, KITCHEN, KIOSK, SERVER_TIPS
+    CUSTOMER, MERCHANT, KITCHEN, KIOSK, SERVER_TIPS, QR_PAYMENT
 }
 enum class DeviceType {
     POS, HANDHELD

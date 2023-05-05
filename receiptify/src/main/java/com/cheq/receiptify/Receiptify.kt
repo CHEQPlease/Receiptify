@@ -88,12 +88,17 @@ object Receiptify  {
                     ReceiptType.SERVER_TIPS.name -> {
                         return buildTipsReceiptForServer(receiptDTO)
                     }
+
+                    ReceiptType.QR_PAYMENT.name -> {
+                        return buildQRPaymentReceipt(receiptDTO)
+                    }
                 }
             }
         }
 
         throw IllegalArgumentException("Invalid Device/Receipt type")
     }
+
 
     private fun buildCustomerReceiptPOS(receiptDTO: ReceiptDTO): Bitmap {
         val binding = LayoutPCustomerPosReceiptBinding.inflate(LayoutInflater.from(context.get()))
@@ -303,5 +308,23 @@ object Receiptify  {
         return Utils.generateBitmap(receipt)
     }
 
+    private fun buildQRPaymentReceipt(receiptDTO: ReceiptDTO): Bitmap? {
 
+        val binding = LayoutPQrPaymentBinding.inflate(LayoutInflater.from(context.get()))
+        val receipt = binding.layoutQrPayment
+
+        /* TODO : Move to string resource to support localization in future */
+
+        binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvOrderNo.text = receiptDTO.orderNo
+        binding.tvTableNo.text = receiptDTO.tableNo
+        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        binding.ivPaymentQr.setImageBitmap(Utils.generateQRBitmap(receiptDTO.paymentQRLink,800,800))
+
+        receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+        receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
+
+        return Utils.generateBitmap(receipt)
+
+    }
 }
