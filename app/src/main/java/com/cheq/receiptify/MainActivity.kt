@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
               "totalItems": "2",
               "orderNo": "K10",
               "tableNo": "234",
-              "receiptType": "qr_payment",
+              "receiptType": "merchant",
               "deviceType": "pos",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
               "paymentQRLink": "https://raw.githubusercontent.com/CHEQPlease/Receiptify/bd90ec14f119a9d767ab765d5a59057bcccabd33/app/src/main/java/com/cheq/receiptify/MainActivity.kt",
@@ -98,14 +98,14 @@ class MainActivity : AppCompatActivity() {
                 "gratuityItems": [
                   {
                     "tip": "❏ ${'$'}1.0 tip = ${'$'}1.00 ,",
-                    "total": "TOTAL =  ${'$'}91.00"
+                    "total": "TOTAL =  ${'$'}93.00"
                   },
                   {
                     "tip": "❏ ${'$'}3.0 tip = ${'$'}3.00 ,",
                     "total": "TOTAL =  ${'$'}93.00"
                   },
                   {
-                    "tip": "❏ ${'$'}5.0 tip = ${'$'}5.00 ,",
+                    "tip": "❏ ${'$'}100.0 tip = ${'$'}5.00 ,",
                     "total": "TOTAL =  ${'$'}95.00"
                   }
                 ]

@@ -12,9 +12,9 @@ import com.cheq.receiptify.adapter.handheld.HBreakdownListAdapter
 import com.cheq.receiptify.adapter.handheld.HDishListAdapterCustomer
 import com.cheq.receiptify.adapter.handheld.HKitchenDishListAdapter
 import com.cheq.receiptify.adapter.pos.*
-import com.cheq.receiptify.data.DeviceType
+import com.cheq.receiptify.enums.DeviceType
 import com.cheq.receiptify.data.ReceiptDTO
-import com.cheq.receiptify.data.ReceiptType
+import com.cheq.receiptify.enums.ReceiptType
 import com.cheq.receiptify.databinding.*
 import com.cheq.receiptify.databinding.LayoutPCustomerPosReceiptBinding
 import com.cheq.receiptify.utils.Utils
@@ -209,6 +209,15 @@ object Receiptify  {
             binding.tvTableNo.text = receiptDTO.tableNo
             binding.tvOrderNo.gravity = Gravity.END
         }
+
+        if(receiptDTO.gratuityInfo != null){
+            binding.includeGratuitySection.tvSuggestedGratuity.text = "Suggested Gratuity"
+            binding.includeGratuitySection.rvGratuityList.adapter = PGratuityListAdapter(receiptDTO.gratuityInfo.gratuityItems)
+            binding.includeGratuitySection.rvGratuityList.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        }else{
+            binding.includeGratuitySection.root.visibility = View.GONE
+        }
+
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
