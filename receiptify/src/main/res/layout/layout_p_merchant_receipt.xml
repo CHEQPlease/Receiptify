@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="MERCHANT COPY"
-        android:textSize="2.5mm"
+        android:textSize="3mm"
         android:textStyle="bold"
         />
 
@@ -135,6 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="POWERED BY"
+            android:textSize="3mm"
             />
 
         <TextView
@@ -142,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text=" CHEQ"
-            android:textSize="2.5mm"
+            android:textSize="3mm"
             android:textStyle="bold"
             />
 

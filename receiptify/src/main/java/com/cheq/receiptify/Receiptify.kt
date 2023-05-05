@@ -14,11 +14,13 @@ import com.cheq.receiptify.adapter.handheld.HKitchenDishListAdapter
 import com.cheq.receiptify.adapter.pos.PBreakdownListAdapter
 import com.cheq.receiptify.adapter.pos.PDishListAdapterCustomer
 import com.cheq.receiptify.adapter.pos.PKitchenDishListAdapter
+import com.cheq.receiptify.data.DeviceType
 import com.cheq.receiptify.data.ReceiptDTO
 import com.cheq.receiptify.data.ReceiptType
 import com.cheq.receiptify.databinding.*
 import com.cheq.receiptify.databinding.LayoutPCustomerPosReceiptBinding
 import com.cheq.receiptify.utils.Utils
+import java.lang.IllegalArgumentException
 import java.lang.ref.SoftReference
 import kotlin.properties.Delegates
 
@@ -45,38 +47,50 @@ object Receiptify  {
 
         val receiptDTO = Utils.getReceiptDTO(receiptDTOJSON)
         if (receiptDTO != null) {
-            when(receiptDTO.receiptType?.uppercase()){
-                ReceiptType.CUSTOMER_H.name ->{
-                    return buildCustomerReceiptHandheld(receiptDTO)
-                }
-                ReceiptType.CUSTOMER_P.name -> {
-                    return buildCustomerReceiptPOS(receiptDTO)
+            val deviceType = receiptDTO.deviceType.uppercase()
+            val receiptType = receiptDTO.receiptType.uppercase()
 
-                }
-                ReceiptType.KIOSK_H.name ->{
-                    return buildKioskReceiptHandheld(receiptDTO)
+            if (deviceType.uppercase() == DeviceType.HANDHELD.name) {
+                when (receiptType) {
+                    ReceiptType.CUSTOMER.name -> {
+                        return buildCustomerReceiptHandheld(receiptDTO)
+                    }
 
-                }
-                ReceiptType.KIOSK_P.name ->{
-                    return buildKioskReceiptPOS(receiptDTO)
-                }
-                ReceiptType.MERCHANT_H.name -> {
-                    return buildMerchantReceiptHandheld(receiptDTO)
+                    ReceiptType.KIOSK.name -> {
+                        return buildKioskReceiptHandheld(receiptDTO)
+                    }
 
-                }
-                ReceiptType.MERCHANT_P.name ->{
-                    return buildMerchantReceiptPOS(receiptDTO)
-                }
-                ReceiptType.KITCHEN_P.name ->{
-                    return buildKitchenReceiptPOS(receiptDTO)
+                    ReceiptType.MERCHANT.name -> {
+                        return buildMerchantReceiptHandheld(receiptDTO)
+                    }
 
+                    ReceiptType.KITCHEN.name -> {
+                        return buildKitchenReceiptHandHeld(receiptDTO)
+                    }
                 }
-                ReceiptType.KITCHEN_H.name ->{
-                    return buildKitchenReceiptHandHeld(receiptDTO)
+
+            } else if (deviceType.uppercase() == DeviceType.POS.name) {
+                when (receiptType) {
+                    ReceiptType.CUSTOMER.name -> {
+                        return buildCustomerReceiptPOS(receiptDTO)
+                    }
+
+                    ReceiptType.KIOSK.name -> {
+                        return buildKioskReceiptPOS(receiptDTO)
+                    }
+
+                    ReceiptType.MERCHANT.name -> {
+                        return buildMerchantReceiptPOS(receiptDTO)
+                    }
+
+                    ReceiptType.KITCHEN.name -> {
+                        return buildKitchenReceiptPOS(receiptDTO)
+                    }
                 }
             }
         }
-        return  null
+
+        throw IllegalArgumentException("Invalid Device/Receipt type")
     }
 
     private fun buildCustomerReceiptPOS(receiptDTO: ReceiptDTO): Bitmap {
@@ -97,7 +111,7 @@ object Receiptify  {
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
-        return Utils.generateBitmap(customerReceipt)
+        return Utils.generateBitmap(customerReceipt,highQuality = true)
     }
 
     private fun buildCustomerReceiptHandheld(receiptDTO: ReceiptDTO) : Bitmap {
@@ -121,7 +135,8 @@ object Receiptify  {
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
-        return Utils.generateBitmap(customerReceipt)
+
+        return Utils.generateBitmap(customerReceipt,highQuality = true)
 
     }
 
@@ -168,7 +183,7 @@ object Receiptify  {
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt,highQuality = true)
     }
 
 
@@ -193,7 +208,7 @@ object Receiptify  {
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, highQuality = true)
 
     }
 
@@ -240,7 +255,7 @@ object Receiptify  {
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, highQuality = true)
 
     }
 

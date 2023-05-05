@@ -19,8 +19,10 @@ object Utils {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_MM, mm, context.resources.displayMetrics).toInt()
     }
 
-    fun generateBitmap(view: View): Bitmap {
-        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.RGB_565)
+    fun generateBitmap(view: View,highQuality: Boolean = false): Bitmap {
+
+        val bitmapConfig : Bitmap.Config = if (highQuality) Bitmap.Config.ARGB_8888 else Bitmap.Config.RGB_565
+        val bitmap = Bitmap.createBitmap(view.width, view.height, bitmapConfig)
         val canvas = Canvas(bitmap)
         view.draw(canvas)
         return bitmap
