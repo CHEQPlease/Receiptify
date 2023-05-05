@@ -26,15 +26,16 @@
             android:id="@+id/tv_suggested_gratuity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/suggested_gratuity"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:layout_marginBottom="2mm"
             android:layout_marginTop="2mm"
-            android:textSize="3mm"/>
+            android:layout_marginBottom="2mm"
+            android:text="@string/suggested_gratuity"
+            android:textSize="3mm"
+            android:textStyle="bold" />
 
         <!-- Suggested Gratuity List -->
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_gratuity_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/layout_p_gratuity_subsection"
