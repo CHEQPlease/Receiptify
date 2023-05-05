@@ -214,6 +214,10 @@ object Receiptify  {
             binding.includeGratuitySection.tvSuggestedGratuity.text = "Suggested Gratuity"
             binding.includeGratuitySection.rvGratuityList.adapter = PGratuityListAdapter(receiptDTO.gratuityInfo.gratuityItems)
             binding.includeGratuitySection.rvGratuityList.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+            if(!receiptDTO.gratuityInfo.isSignatureNeeded){
+                binding.includeGratuitySection.containerSignature.visibility = View.GONE
+            }
+
         }else{
             binding.includeGratuitySection.root.visibility = View.GONE
         }

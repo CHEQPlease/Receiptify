@@ -108,7 +108,8 @@ class MainActivity : AppCompatActivity() {
                     "tip": "❏ ${'$'}100.0 tip = ${'$'}5.00 ,",
                     "total": "TOTAL =  ${'$'}95.00"
                   }
-                ]
+                ],
+                "isSignatureNeeded": true
               },
               "serverTipInfo": {
                 "serverName": "Shorol",

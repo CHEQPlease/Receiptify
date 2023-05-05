@@ -66,7 +66,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="2.5mm"
+                    android:textSize="2.8mm"
+                    android:layout_marginLeft="6.5mm"
                     android:text="@string/custom_tip"
                     />
 
@@ -91,7 +92,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="2.5mm"
+                    android:textSize="2.8mm"
                     android:layout_gravity="end"
                     android:text="TOTAL             "
                     tools:ignore="HardcodedText" />
@@ -101,6 +102,7 @@
 
 
             <LinearLayout
+                android:id="@+id/container_signature"
                 android:layout_below="@+id/container_custom_tip_input"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="4mm"
@@ -118,7 +120,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="2.5mm"
+                    android:textSize="2.8mm"
                     android:layout_gravity="center"
                     android:text="SIGNATURE"
                     tools:ignore="HardcodedText" />
