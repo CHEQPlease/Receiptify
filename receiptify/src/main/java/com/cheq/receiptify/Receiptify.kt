@@ -115,6 +115,19 @@ object Receiptify  {
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
+        if(receiptDTO.gratuityInfo != null){
+            binding.includeGratuitySection.tvSuggestedGratuity.text = "Suggested Gratuity"
+            binding.includeGratuitySection.rvGratuityList.adapter = PGratuityListAdapter(receiptDTO.gratuityInfo.gratuityItems)
+            binding.includeGratuitySection.rvGratuityList.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+            if(!receiptDTO.gratuityInfo.isSignatureNeeded){
+                binding.includeGratuitySection.containerSignature.visibility = View.GONE
+            }
+
+        }else{
+            binding.includeGratuitySection.root.visibility = View.GONE
+        }
+
+
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 

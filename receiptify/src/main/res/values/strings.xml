@@ -7,7 +7,7 @@
     <string name="suggested_gratuity">Suggested Gratuity</string>
     <string name="merchant_copy">MERCHANT COPY</string>
     <string name="powered_by">POWERED BY</string>
-    <string name="cheq"> CHEQ </string>
+    <string name="cheq">CHEQ</string>
     <string name="custom_tip">CUSTOM TIP</string>
 
 </resources>

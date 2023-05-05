@@ -21,7 +21,7 @@
             android:src="@drawable/dotted_line"
             android:layout_marginTop="3mm"
             android:layout_marginBottom="1mm"
-            tools:ignore="Suspicious0dp" />
+            tools:ignore="InOrMmUsage,Suspicious0dp" />
 
         <TextView
             android:id="@+id/tv_suggested_gratuity"
@@ -46,6 +46,7 @@
         <RelativeLayout
             android:paddingRight="2.5mm"
             android:paddingLeft="2.5mm"
+            android:layout_marginTop="2mm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -56,18 +57,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <TextView
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="3mm"
-                    android:text="❏   ＿＿＿＿＿＿＿"
-                    />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="❏"
+                        android:textSize="3.5mm"
+                        />
+
+                    <ImageView
+                        android:layout_width="22mm"
+                        android:layout_height="4mm"
+                        android:src="@drawable/underline"
+                        android:layout_marginLeft="1mm" />
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="2.8mm"
-                    android:layout_marginLeft="6.5mm"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2mm"
                     android:text="@string/custom_tip"
                     />
 
@@ -82,19 +97,19 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="3mm"
-                    android:text="＿＿＿＿＿＿＿＿"
-                    tools:ignore="HardcodedText" />
+                <ImageView
+                    android:layout_width="23mm"
+                    android:layout_height="4mm"
+                    android:src="@drawable/underline"
+                    android:layout_marginLeft="1mm" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="2.8mm"
-                    android:layout_gravity="end"
-                    android:text="TOTAL             "
+                    android:layout_gravity="center"
+                    android:text="TOTAL"
                     tools:ignore="HardcodedText" />
 
 
@@ -110,12 +125,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="3mm"
-                    android:text="X  ＿＿＿＿＿＿＿＿＿＿＿＿＿"
-                    tools:ignore="HardcodedText" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X"
+                        android:textStyle="bold"
+                        android:textSize="2.5mm"
+                        />
+
+                    <ImageView
+                        android:layout_width="28mm"
+                        android:layout_height="3mm"
+                        android:src="@drawable/underline"
+                        android:layout_marginLeft="1mm" />
+
+                </LinearLayout>
+
 
                 <TextView
                     android:layout_width="wrap_content"
