@@ -101,7 +101,10 @@
         tools:listitem="@layout/layout_p_meta_info"
         />
 
-
+    <!-- Divider -->
+    <include
+        android:id="@+id/include_gratuity_section"
+        layout="@layout/layout_p_gratuity_section"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -111,7 +114,6 @@
         android:layout_marginBottom="1mm"
         />
 
-
     <View
         android:layout_width="match_parent"
         android:layout_height="2mm"/>
@@ -120,7 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="MERCHANT COPY"
+        android:text="@string/merchant_copy"
         android:textSize="3mm"
         android:textStyle="bold"
         />
@@ -134,7 +136,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="POWERED BY"
+            android:text="@string/powered_by"
             android:textSize="3mm"
             />
 
@@ -142,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=" CHEQ"
+            android:text="@string/cheq"
             android:textSize="3mm"
             android:textStyle="bold"
             />

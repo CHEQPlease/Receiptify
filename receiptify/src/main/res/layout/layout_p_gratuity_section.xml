@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/container_gratuity_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Divider -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5mm"
+            android:src="@drawable/dotted_line"
+            android:layout_marginTop="3mm"
+            android:layout_marginBottom="1mm"
+            tools:ignore="Suspicious0dp" />
+
+        <TextView
+            android:id="@+id/tv_suggested_gratuity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suggested_gratuity"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginBottom="2mm"
+            android:layout_marginTop="2mm"
+            android:textSize="3mm"/>
+
+        <!-- Suggested Gratuity List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/layout_p_gratuity_subsection"
+            tools:itemCount="3"
+            />
+
+        <RelativeLayout
+            android:paddingRight="2.5mm"
+            android:paddingLeft="2.5mm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/container_custom_tip_input"
+                android:layout_marginTop="4mm"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3mm"
+                    android:text="❏   ＿＿＿＿＿＿＿"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="2.5mm"
+                    android:text="@string/custom_tip"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_custom_total"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4mm"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3mm"
+                    android:text="＿＿＿＿＿＿＿＿"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="2.5mm"
+                    android:layout_gravity="end"
+                    android:text="TOTAL             "
+                    tools:ignore="HardcodedText" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_below="@+id/container_custom_tip_input"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4mm"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3mm"
+                    android:text="X  ＿＿＿＿＿＿＿＿＿＿＿＿＿"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="2.5mm"
+                    android:layout_gravity="center"
+                    android:text="SIGNATURE"
+                    tools:ignore="HardcodedText" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
