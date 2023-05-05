@@ -3,13 +3,16 @@ package com.cheq.receiptify
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import com.cheq.dantsu.DantsuPrintManager
 import com.cheq.receiptify.sampleapp.R
+import com.cheq.receiptify.sampleapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val jsonString = """
            
@@ -103,8 +106,14 @@ class MainActivity : AppCompatActivity() {
             
         """.trimIndent()
         Receiptify.init(this)
+        DantsuPrintManager.init(this)
         val receiptBitmap = Receiptify.buildReceipt(jsonString)
-        val  receiptView = findViewById<ImageView>(R.id.iv_receipt)
-        receiptView.setImageBitmap(receiptBitmap)
+        binding.ivReceipt.setImageBitmap(receiptBitmap)
+        binding.btnPrint.setOnClickListener {
+            if (receiptBitmap != null) {
+                DantsuPrintManager.requestPrintBitmap(receiptBitmap,false)
+            }
+        }
+
     }
 }
