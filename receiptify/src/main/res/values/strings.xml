@@ -3,5 +3,6 @@
 
     <string name="app_name">Receiptify</string>
     <string name="promo_text"> Save time, order from your phone!\nScan the code to download the CHEQ App</string>
+    <string name="scan_top_pay">SCAN TOP PAY</string>
 
 </resources>
