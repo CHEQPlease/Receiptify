@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                 },
                 {
                   "key": "GRAND TOTAL",
-                  "value": "${'$'}25.66 ",
+                  "value": "${'$'}25.66",
                   "important": true
                 }
               ],

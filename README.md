@@ -117,6 +117,23 @@ implementation 'com.github.CHEQPlease:Receiptify:1.0.0'
 	      "important": true
 	    }
 	  ],
+    "gratuityInfo": {
+        "gratuityItems": [
+        {
+        "tip": "❏ ${'$'}1.0 tip = ${'$'}1.00 ,",
+        "total": "TOTAL =  ${'$'}93.00"
+        },
+        {
+        "tip": "❏ ${'$'}3.0 tip = ${'$'}3.00 ,",
+        "total": "TOTAL =  ${'$'}93.00"
+        },
+        {
+        "tip": "❏ ${'$'}100.0 tip = ${'$'}5.00 ,",
+        "total": "TOTAL =  ${'$'}95.00"
+        }
+        ],
+        "isSignatureNeeded": true
+    },
 	  "serverTipInfo": {
 	    "serverName": "Shorol",
 	    "serverId": "(123333330022)",
