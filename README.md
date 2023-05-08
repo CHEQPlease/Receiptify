@@ -39,6 +39,7 @@ implementation 'com.github.CHEQPlease:Receiptify:1.0.0'
 	  "receiptType": "server_tips",
 	  "deviceType": "pos",
 	  "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
+      "paymentQRLink": "https://www.google.com",
 	  "items": [
 	    {
 	      "itemName": "Salmon Fry",

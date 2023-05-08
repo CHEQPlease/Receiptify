@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
               "receiptType": "customer",
               "deviceType": "pos",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
-              "paymentQRLink": "https://raw.githubusercontent.com/CHEQPlease/Receiptify/bd90ec14f119a9d767ab765d5a59057bcccabd33/app/src/main/java/com/cheq/receiptify/MainActivity.kt",
+              "paymentQRLink": "https://www.google.com",
               "isRefunded" : true,
               "isReprinted" : false,
               "items": [
