@@ -152,8 +152,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="2.8mm"
                     android:layout_gravity="center"
-                    android:text="SIGNATURE"
-                    tools:ignore="HardcodedText" />
+                    android:text="@string/signature" />
 
 
             </LinearLayout>
