@@ -107,7 +107,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
-        android:src="@drawable/dotted_line"
+        android:src="@drawable/divider_dotted_line"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
@@ -131,7 +131,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
-        android:src="@drawable/dotted_line"
+        android:src="@drawable/divider_dotted_line"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
@@ -152,7 +152,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
-        android:src="@drawable/dotted_line"
+        android:src="@drawable/divider_dotted_line"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
@@ -192,7 +192,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
-        android:src="@drawable/dotted_line"
+        android:src="@drawable/divider_dotted_line"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
