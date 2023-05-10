@@ -127,6 +127,10 @@ object Receiptify  {
             binding.includeGratuitySection.root.visibility = View.GONE
         }
 
+        if(!receiptDTO.isRefunded){
+            binding.tvRefunded.visibility = View.GONE
+        }
+
 
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
@@ -276,6 +280,7 @@ object Receiptify  {
 
         /* TODO : Move to string resource to support localization in future */
 
+        binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "Order #: ${receiptDTO.orderNo}"
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle

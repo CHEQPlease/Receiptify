@@ -11,10 +11,6 @@
     android:theme="@style/ReceiptifyThemePOS"
     tools:ignore="InOrMmUsage">
 
-    <!-- Whitespace for line feed-->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2mm"/>
 
     <!-- Brand Name -->
     <LinearLayout
@@ -120,6 +116,17 @@
     <include
         android:id="@+id/include_gratuity_section"
         layout="@layout/layout_p_gratuity_section"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_refunded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refunded"
+        android:layout_marginTop="4mm"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="4mm"
         />
 
     <!-- Divider -->

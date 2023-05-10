@@ -12,11 +12,6 @@
     tools:ignore="InOrMmUsage">
 
 
-    <!-- Whitespace for line feed-->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2mm"/>
-
     <!--  Top Section -->
     <LinearLayout
         android:layout_width="wrap_content"

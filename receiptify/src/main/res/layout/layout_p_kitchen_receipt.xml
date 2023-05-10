@@ -30,7 +30,7 @@
             tools:text="Order # 398"
             android:layout_marginTop="5mm"
             android:layout_marginBottom="1mm"
-            android:textSize="5mm"
+            android:textSize="5.3mm"
             android:gravity="center"
             android:textStyle="bold"
             />
@@ -40,10 +40,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Kiosk - Counter"
-            android:textSize="3.5mm"
+            android:textSize="4mm"
             android:layout_marginBottom="3mm"
             android:gravity="center"
-            android:textStyle="bold"
             />
 
     </LinearLayout>
@@ -62,8 +61,7 @@
         android:id="@+id/tv_placed_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="2.8mm"
-        android:textStyle="bold"
+        android:textSize="3.5mm"
         android:layout_marginTop="2mm"
         android:layout_marginBottom="2mm"
         android:layout_gravity="center"
@@ -103,6 +101,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="3mm"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_brand_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="CHEQ HQ Testing"
+        android:layout_gravity="center"
+        android:textSize="3.5mm"
         />
 
     <!-- Whitespace for line feed-->
