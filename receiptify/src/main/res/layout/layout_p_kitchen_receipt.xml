@@ -118,4 +118,11 @@
         android:layout_width="match_parent"
         android:layout_height="8mm"/>
 
+    <!-- Extra Line Feed For Small receipt Paper Cut Issue-->
+    <View
+        android:id="@+id/view_extra_line_feed"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="8mm"/>
+
 </LinearLayout>

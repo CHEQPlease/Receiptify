@@ -4,6 +4,8 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.PorterDuff
 import android.util.TypedValue
 import android.view.View
 import com.cheq.receiptify.data.ReceiptDTO
@@ -25,6 +27,7 @@ object Utils {
         val bitmapConfig : Bitmap.Config = if (highQuality) Bitmap.Config.ARGB_8888 else Bitmap.Config.RGB_565
         val bitmap = Bitmap.createBitmap(view.width, view.height, bitmapConfig)
         val canvas = Canvas(bitmap)
+
         view.draw(canvas)
         return bitmap
     }
