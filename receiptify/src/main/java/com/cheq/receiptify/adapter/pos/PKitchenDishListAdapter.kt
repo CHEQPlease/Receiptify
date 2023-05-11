@@ -1,6 +1,7 @@
 package com.cheq.receiptify.adapter.pos
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.data.Item
@@ -26,6 +27,10 @@ class PKitchenDishListAdapter(private val dishes: List<Item>) : RecyclerView.Ada
             holder.binding.tvItemName.showStrikeThrough(true)
             holder.binding.tvItemDetails.showStrikeThrough(true)
             holder.binding.tvQty.showStrikeThrough(true)
+        }
+
+        if(dish.description.isNullOrEmpty()){
+            holder.binding.tvItemDetails.visibility = View.GONE
         }
 
     }

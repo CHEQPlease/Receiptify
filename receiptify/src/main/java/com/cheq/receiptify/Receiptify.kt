@@ -107,8 +107,8 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future*/
 
         binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvOrderNo.text = "ORDER #: ${receiptDTO.orderNo}"
-        binding.tvTotalItems.text = "TOTAL ITEMS - ${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+        binding.tvOrderNo.text = "${receiptDTO.orderNo}"
+        binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -146,8 +146,8 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future*/
 
         binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvOrderNo.text = "ORDER #: ${receiptDTO.orderNo}"
-        binding.tvTotalItems.text = "TOTAL ITEMS - ${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+        binding.tvOrderNo.text = "${receiptDTO.orderNo}"
+        binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
@@ -172,8 +172,8 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvOrderNo.text = "ORDER #: ${receiptDTO.orderNo}"
-        binding.tvTotalItems.text = "TOTAL ITEMS - ${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+        binding.tvOrderNo.text = "${receiptDTO.orderNo}"
+        binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
@@ -195,8 +195,8 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvOrderNo.text = "ORDER #: ${receiptDTO.orderNo}"
-        binding.tvTotalItems.text = "TOTAL ITEMS - ${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+        binding.tvOrderNo.text = "${receiptDTO.orderNo}"
+        binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -217,7 +217,7 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvOrderNo.text = "ORDER #: ${receiptDTO.orderNo}"
+        binding.tvOrderNo.text = receiptDTO.orderNo
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNo.visibility = View.GONE
             binding.tvOrderNo.gravity = Gravity.CENTER
@@ -225,6 +225,7 @@ object Receiptify  {
             binding.tvTableNo.text = receiptDTO.tableNo
             binding.tvOrderNo.gravity = Gravity.END
         }
+
 
         if(receiptDTO.gratuityInfo != null){
             binding.includeGratuitySection.tvSuggestedGratuity.text = "Suggested Gratuity"
@@ -255,7 +256,7 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvOrderNo.text = "ORDER #: ${receiptDTO.orderNo}"
+        binding.tvOrderNo.text = receiptDTO.orderNo
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNo.visibility = View.GONE
             binding.tvOrderNo.gravity = Gravity.CENTER
@@ -281,16 +282,22 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvOrderNo.text = "Order #: ${receiptDTO.orderNo}"
+        binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = PKitchenDishListAdapter(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+
         if(receiptDTO.orderSubtitle.isNullOrEmpty()){
             binding.tvOrderSubtitle.visibility = View.GONE
         }
         if(requiresExtraLineFeed){
             binding.viewExtraLineFeed.visibility = View.VISIBLE
+        }
+
+        if(receiptDTO.isReprinted){
+            binding.tvReprinted.visibility = View.VISIBLE
+            binding.tvBrandName.visibility = View.GONE
         }
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
@@ -306,7 +313,7 @@ object Receiptify  {
 
         /* TODO : Move to string resource to support localization in future */
 
-        binding.tvOrderNo.text = "Order #: ${receiptDTO.orderNo}"
+        binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = HKitchenDishListAdapter(receiptDTO.items)
