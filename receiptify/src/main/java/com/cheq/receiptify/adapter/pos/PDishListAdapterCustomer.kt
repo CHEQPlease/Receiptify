@@ -2,6 +2,7 @@ package com.cheq.receiptify.adapter.pos
 
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.data.Item
@@ -22,6 +23,10 @@ class PDishListAdapterCustomer(private val dishes: List<Item>) : RecyclerView.Ad
         holder.binding.tvItemDetails.text = dish.description
         holder.binding.tvPrice.text = "${dish.price}"
         holder.binding.tvQty.text = "${dish.quantity}"
+
+        if(dish.description.isNullOrEmpty()){
+            holder.binding.tvItemDetails.visibility = View.GONE
+        }
 
 //        if(dish.strikethrough){
 //            holder.binding.tvQty

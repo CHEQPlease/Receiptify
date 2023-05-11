@@ -22,23 +22,23 @@ class MainActivity : AppCompatActivity() {
               "totalItems": "2",
               "orderNo": "K10",
               "tableNo": "234",
-              "receiptType": "customer",
+              "receiptType": "kitchen",
               "deviceType": "pos",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
               "paymentQRLink": "https://www.google.com",
               "isRefunded" : true,
-              "isReprinted" : false,
+              "isReprinted" : true,
               "items": [
                 {
                   "itemName": "Salmon Fry",
-                  "description": "  -- Olive\n  -- Deep Fried Salmon\n  -- ADD Addition 1\n  -- no Nuts\n  -- no Olive Oil\n  -- Substitution 1 SUB\n  -- allergy 1 ALLERGY\n",
+                  "description": "  -- Olive\n  -- Deep Fried Salmon\n  -- ADD Addition 1\n  -- no Nuts\n  -- no Olive Oil\n  -- Substitution 1 SUB\n  -- allergy 1 ALLERGY",
                   "quantity": "1x",
                   "price": "${'$'}10000.0",
                   "strikethrough": false
                 },
                 {
                   "itemName": "Water + Apple Pay",
-                  "description": "  -- Onions\n",
+                  "description": "  -- Onions",
                   "quantity": "1",
                   "price": "${'$'}1.0",
                   "strikethrough": true

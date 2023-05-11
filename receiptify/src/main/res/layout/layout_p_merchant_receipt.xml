@@ -25,7 +25,7 @@
             tools:text="CHEQ Inc."
             android:layout_marginTop="5mm"
             android:layout_marginBottom="4mm"
-            android:textSize="5mm"
+            android:textSize="5.2mm"
             android:textStyle="bold"
             />
 

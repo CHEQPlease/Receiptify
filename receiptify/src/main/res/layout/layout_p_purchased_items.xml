@@ -21,9 +21,9 @@
             android:layout_height="wrap_content"
             android:paddingRight="3mm"
             tools:text="Egg"
-            android:textSize="4mm"
+            android:textSize="3.3mm"
             tools:ignore="NestedWeights"
-            android:paddingEnd="3mm" />
+             />
 
         <TextView
             android:id="@+id/tv_item_details"
@@ -43,7 +43,7 @@
         tools:text="123"
         android:gravity="end"
         android:layout_weight="1"
-        android:textSize="4mm"
+        android:textSize="3mm"
         tools:ignore="InOrMmUsage" />
 
 
@@ -52,7 +52,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="$4000.00"
-        android:textSize="4mm"
+        android:textSize="3mm"
         android:gravity="end"
         android:layout_weight="2.5"
         tools:ignore="InOrMmUsage" />
