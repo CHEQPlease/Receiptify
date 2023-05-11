@@ -107,7 +107,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
-        android:src="@drawable/dotted_line"
+        android:src="@drawable/divider_dotted_line"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
@@ -131,7 +131,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
-        android:src="@drawable/dotted_line"
+        android:src="@drawable/divider_dotted_line"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
@@ -152,7 +152,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
-        android:src="@drawable/dotted_line"
+        android:src="@drawable/divider_dotted_line"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
@@ -192,7 +192,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
-        android:src="@drawable/dotted_line"
+        android:src="@drawable/divider_dotted_line"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
@@ -207,7 +207,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="CUSTOMER COPY"
-        android:textSize="2.8mm"
+        android:textSize="3mm"
         android:textStyle="bold"
         />
 
@@ -221,7 +221,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="POWERED BY"
-            android:textSize="2.5mm"
+            android:textSize="3mm"
 
             />
 
@@ -230,7 +230,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text=" CHEQ"
-            android:textSize="2.8mm"
+            android:textSize="3mm"
             android:textStyle="normal"
             />
 
@@ -239,6 +239,6 @@
     <!-- Whitespace for linefeed -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="10mm"/>
+        android:layout_height="6mm"/>
 
 </LinearLayout>

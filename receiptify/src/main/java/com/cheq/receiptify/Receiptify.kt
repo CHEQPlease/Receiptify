@@ -131,7 +131,6 @@ object Receiptify  {
             binding.tvRefunded.visibility = View.GONE
         }
 
-
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
@@ -277,6 +276,7 @@ object Receiptify  {
     private fun buildKitchenReceiptPOS(receiptDTO: ReceiptDTO) : Bitmap? {
         val binding = LayoutPKitchenReceiptBinding.inflate(LayoutInflater.from(context.get()))
         val receipt = binding.layoutKitchenReceipt
+        val requiresExtraLineFeed = receiptDTO.items.size < 2
 
         /* TODO : Move to string resource to support localization in future */
 
@@ -289,10 +289,14 @@ object Receiptify  {
         if(receiptDTO.orderSubtitle.isNullOrEmpty()){
             binding.tvOrderSubtitle.visibility = View.GONE
         }
+        if(requiresExtraLineFeed){
+            binding.viewExtraLineFeed.visibility = View.VISIBLE
+        }
+
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt, highQuality = true)
+        return Utils.generateBitmap(receipt, highQuality = false)
 
     }
 

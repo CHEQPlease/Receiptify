@@ -10,5 +10,6 @@
     <string name="cheq">CHEQ</string>
     <string name="custom_tip">CUSTOM TIP</string>
     <string name="refunded">REFUNDED</string>
+    <string name="signature">SIGNATURE</string>
 
 </resources>

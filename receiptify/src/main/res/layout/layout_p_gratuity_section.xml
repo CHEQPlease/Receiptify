@@ -18,7 +18,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="0.5mm"
-            android:src="@drawable/dotted_line"
+            android:src="@drawable/divider_dotted_line"
             android:layout_marginTop="3mm"
             android:layout_marginBottom="1mm"
             tools:ignore="InOrMmUsage,Suspicious0dp" />
@@ -152,8 +152,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="2.8mm"
                     android:layout_gravity="center"
-                    android:text="SIGNATURE"
-                    tools:ignore="HardcodedText" />
+                    android:text="@string/signature" />
 
 
             </LinearLayout>

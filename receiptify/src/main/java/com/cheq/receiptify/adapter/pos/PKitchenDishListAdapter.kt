@@ -20,7 +20,7 @@ class PKitchenDishListAdapter(private val dishes: List<Item>) : RecyclerView.Ada
 
         holder.binding.tvItemName.text = "${dish.itemName}" /* TODO : Move to string resource to support localization in future */
         holder.binding.tvItemDetails.text = dish.description
-        holder.binding.tvQty.text = "x${dish.quantity}"
+        holder.binding.tvQty.text = "${dish.quantity}"
 
         if(dish.strikethrough){
             holder.binding.tvItemName.showStrikeThrough(true)
