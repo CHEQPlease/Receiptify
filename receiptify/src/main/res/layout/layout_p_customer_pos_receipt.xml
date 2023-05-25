@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="CHEQ Inc."
+            android:gravity="center"
             android:layout_marginTop="2mm"
             android:layout_marginBottom="1mm"
             android:textSize="5mm"

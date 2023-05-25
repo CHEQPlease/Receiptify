@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_kitchen_receipt"
-    android:layout_width="48mm"
+    android:layout_width="40mm"
     android:background="@android:color/white"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
@@ -24,7 +24,7 @@
             tools:text="Order # 398"
             android:layout_marginTop="5mm"
             android:layout_marginBottom="1mm"
-            android:textSize="4.5mm"
+            android:textSize="4.3mm"
             android:gravity="center"
             android:textStyle="bold"
             />
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Kiosk - Counter"
-            android:textSize="3mm"
+            android:textSize="2.8mm"
             android:layout_marginBottom="3mm"
             android:gravity="center"
             android:textStyle="bold"
@@ -56,12 +56,12 @@
         android:id="@+id/tv_placed_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="2.2mm"
+        android:textSize="2.1mm"
         android:textStyle="bold"
         android:layout_marginTop="2mm"
         android:layout_marginBottom="2mm"
         android:layout_gravity="center"
-        android:text="Placed at 01/11/2023 1:00 AM PST"
+        android:text="Placed at 01/11/2023 12:00 AM PST"
         />
 
 

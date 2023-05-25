@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_customer_receipt_kiosk"
-    android:layout_width="44mm"
+    android:layout_width="40mm"
     android:background="@android:color/white"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Self Order"
-                    android:textSize="2.5mm"
+                    android:textSize="2.3mm"
                     android:textStyle="bold"
                     />
 
@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Total Items : 1"
-                    android:textSize="2.5mm"
+                    android:textSize="2.3mm"
                     android:textStyle="bold"
                     />
 
@@ -66,7 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Order #K20"
-                    android:textSize="3mm"
+                    android:textSize="2.5mm"
                     android:textStyle="bold"
                     />
 
@@ -87,6 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="CHEQ Inc."
+            android:gravity="center"
             android:padding="2mm"
             android:textSize="4mm"
             android:textStyle="bold"
@@ -211,7 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="CUSTOMER COPY"
-        android:textSize="2.5mm"
+        android:textSize="2.2mm"
         android:textStyle="bold"
         />
 
@@ -225,7 +226,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="POWERED BY"
-            android:textSize="2.5mm"
+            android:textSize="2.3mm"
 
             />
 
@@ -234,7 +235,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text=" CHEQ"
-            android:textSize="2.5mm"
+            android:textSize="2.3mm"
             android:textStyle="normal"
             />
 

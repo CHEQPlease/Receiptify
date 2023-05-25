@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:layout_width="match_parent"
+    android:layout_width="40mm"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
     android:theme="@style/ReceiptifyThemeHandheld"
@@ -17,21 +17,22 @@
 
         <TextView
             android:id="@+id/tv_item_name"
-            android:layout_width="28mm"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="3mm"
             tools:text="Egg"
             android:textStyle="bold"
-            android:textSize="3mm"
+            android:textSize="2.2mm"
             tools:ignore="NestedWeights"
             android:paddingEnd="3mm" />
 
         <TextView
             android:id="@+id/tv_item_details"
-            android:layout_width="28mm"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="-- Cucumber\n-- Carrot"
-            android:textSize="2.4mm"
+            tools:text="-- Cucumber\n-- Carrot aiusdof iaoui dfoa"
+            android:textSize="2mm"
+            android:maxLines="3"
             android:textStyle="bold"
             />
 
@@ -41,13 +42,14 @@
         android:id="@+id/tv_qty"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2mm"
+        android:layout_marginEnd="1.5mm"
         tools:text="123"
         android:gravity="end"
         android:textStyle="bold"
         android:layout_weight="2"
-        android:textSize="2.8mm"
-        tools:ignore="InOrMmUsage" />
+        android:textSize="2.2mm"
+        tools:ignore="InOrMmUsage"
+        android:layout_marginRight="1.5mm" />
 
 
     <TextView
@@ -55,7 +57,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="$4000.00"
-        android:textSize="2.8mm"
+        android:textSize="2.2mm"
         android:gravity="end"
         android:textStyle="bold"
         android:layout_weight="2.5"

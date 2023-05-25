@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_customer_receipt_pos"
-    android:layout_width="48mm"
+    android:layout_width="40mm"
     android:background="@android:color/white"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
@@ -22,9 +22,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="CHEQ Inc."
+            android:gravity="center"
             android:layout_marginTop="2mm"
             android:layout_marginBottom="1mm"
-            android:textSize="4mm"
+            android:textSize="3.2mm"
             android:textStyle="bold"
             />
 
@@ -51,7 +52,7 @@
         android:layout_height="wrap_content"
         tools:text="TOTAL ITEMS - 7"
         android:layout_gravity="center"
-        android:textSize="3mm"
+        android:textSize="2.8mm"
         android:textStyle="bold"
         />
 
@@ -60,7 +61,7 @@
         android:id="@+id/tv_placed_at"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="2.5mm"
+        android:textSize="1.8mm"
         android:textStyle="bold"
         android:layout_marginTop="1mm"
         android:layout_gravity="center"
@@ -126,14 +127,14 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="4mm"/>
+        android:layout_height="3mm"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="CUSTOMER COPY"
-        android:textSize="2.5mm"
+        android:textSize="2mm"
         android:textStyle="bold"
         />
 
@@ -147,6 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="POWERED BY"
+            android:textSize="2mm"
             />
 
         <TextView
@@ -154,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text=" CHEQ"
-            android:textSize="2.5mm"
+            android:textSize="2mm"
             android:textStyle="bold"
             />
 

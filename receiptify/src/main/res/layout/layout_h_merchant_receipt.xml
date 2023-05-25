@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_merchant_receipt_binding"
-    android:layout_width="48mm"
+    android:layout_width="40mm"
     android:background="@android:color/white"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
@@ -21,9 +21,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="CHEQ Inc."
+            android:gravity="center"
             android:layout_marginTop="5mm"
             android:layout_marginBottom="4mm"
-            android:textSize="4mm"
+            android:textSize="3.8mm"
             android:textStyle="bold"
             />
 
@@ -41,7 +42,7 @@
             android:id="@+id/tv_table_no"
             tools:visibility="visible"
             tools:text="Table :# 23"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:textStyle="bold"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -51,7 +52,7 @@
         <TextView
             android:id="@+id/tv_order_no"
             tools:text="Order #: K16 "
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:textStyle="bold"
             android:layout_weight="1"
             android:gravity="end"
@@ -115,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="MERCHANT COPY"
-        android:textSize="2.5mm"
+        android:textSize="2.2mm"
         android:textStyle="bold"
         />
 
@@ -129,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="POWERED BY"
-            android:textSize="2.5mm"
+            android:textSize="2.2mm"
             />
 
         <TextView
@@ -137,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text=" CHEQ"
-            android:textSize="2.5mm"
+            android:textSize="2.2mm"
             android:textStyle="bold"
             />
 

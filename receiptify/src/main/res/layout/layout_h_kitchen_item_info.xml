@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
-    android:layout_width="match_parent"
+    android:layout_width="40mm"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
     android:theme="@style/ReceiptifyThemeHandheld"
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="x1"
-            android:textSize="4mm"
+            android:textSize="3.8mm"
             android:layout_marginRight="3.5mm"
             android:layout_marginLeft="2mm"
             android:textStyle="bold"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Soup"
-            android:textSize="4mm"
+            android:textSize="3.8mm"
             />
 
         <TextView
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="-- Side 1"
-            android:textSize="3.5mm"
+            android:textSize="3.4mm"
             />
 
 
