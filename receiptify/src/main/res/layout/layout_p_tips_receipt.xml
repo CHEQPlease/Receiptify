@@ -39,18 +39,22 @@
 
             <TextView
                 android:id="@+id/tv_server_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="5.5mm"
                 android:textStyle="bold"
                 android:layout_marginTop="1mm"
+                android:layout_marginLeft="8.5mm"
+                android:layout_marginRight="6mm"
                 tools:text="Server Name" />
 
             <TextView
                 android:id="@+id/tv_server_id"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8mm"
+                android:layout_marginRight="6mm"
                 tools:text="(123498795974)"
                 android:textSize="4mm"
                 android:textStyle="bold"
