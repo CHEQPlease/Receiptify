@@ -32,7 +32,7 @@ object Receiptify  {
 
     fun init(context: Context){
         this.context = SoftReference(context.applicationContext)
-        this.handheldPaperWidth = Utils.convertMmToPixel(58f, context)
+        this.handheldPaperWidth = Utils.convertMmToPixel(40f, context)
         this.posPaperWidth = Utils.convertMmToPixel(75f, context)
     }
 
