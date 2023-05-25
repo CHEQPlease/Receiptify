@@ -30,8 +30,8 @@
             android:id="@+id/tv_item_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="-- Cucumber\n-- Carrot aiusdof iaoui dfoa"
-            android:textSize="2mm"
+            tools:text="-- Deep Fried Salmon"
+            android:textSize="1.9mm"
             android:textStyle="bold"
             />
 
@@ -41,7 +41,7 @@
         android:id="@+id/tv_qty"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1.5mm"
+        android:layout_marginEnd="1mm"
         tools:text="123"
         android:gravity="end"
         android:textStyle="bold"
