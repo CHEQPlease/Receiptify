@@ -20,9 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="3mm"
-            tools:text="Egg"
+            tools:text="Water + Apple Pay"
             android:textStyle="bold"
-            android:textSize="2.5mm"
+            android:textSize="2.1mm"
             tools:ignore="NestedWeights"
             android:paddingEnd="3mm" />
 
@@ -46,7 +46,7 @@
         android:gravity="end"
         android:textStyle="bold"
         android:layout_weight="1"
-        android:textSize="2.5mm"
+        android:textSize="2.2mm"
         tools:ignore="InOrMmUsage"
         android:layout_marginRight="1.5mm" />
 
@@ -56,7 +56,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="$4000.00"
-        android:textSize="2.5mm"
+        android:textSize="2.2mm"
         android:gravity="end"
         android:textStyle="bold"
         android:layout_weight="2.5"
