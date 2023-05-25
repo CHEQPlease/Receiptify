@@ -139,8 +139,8 @@ object Receiptify  {
 
     private fun buildCustomerReceiptHandheld(receiptDTO: ReceiptDTO) : Bitmap {
 
-        val binding = LayoutHCustomerKioskReceiptBinding.inflate(LayoutInflater.from(context.get()))
-        val customerReceipt = binding.layoutCustomerReceiptKiosk
+        val binding = LayoutHCustomerPosReceiptBinding.inflate(LayoutInflater.from(context.get()))
+        val customerReceipt = binding.layoutCustomerReceiptPos
         val context = context.get()!!
 
         /* TODO : Move to string resource to support localization in future*/
