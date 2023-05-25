@@ -45,7 +45,7 @@
         tools:text="123"
         android:gravity="end"
         android:textStyle="bold"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:textSize="2.5mm"
         tools:ignore="InOrMmUsage"
         android:layout_marginRight="1.5mm" />
