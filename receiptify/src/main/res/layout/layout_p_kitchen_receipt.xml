@@ -14,7 +14,7 @@
     <!-- Whitespace for line feed-->
     <View
         android:layout_width="match_parent"
-        android:layout_height="6mm"/>
+        android:layout_height="1mm"/>
 
     <!-- Brand Name -->
     <LinearLayout
@@ -132,15 +132,30 @@
         />
 
 
-    <TextView
+    <LinearLayout
         android:id="@+id/tv_brand_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="CHEQ HQ Testing"
+        android:layout_height="26dp"
         android:layout_gravity="center"
-        android:textSize="3.5mm"
-        tools:visibility="visible"
-        />
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POWERED BY"
+            android:textSize="2.5mm"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=" CHEQ"
+            android:textSize="2.5mm"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_reprinted"
@@ -163,7 +178,7 @@
     <View
         android:id="@+id/view_extra_line_feed"
         android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="8mm"/>
+        android:visibility="visible"
+        android:layout_height="1mm"/>
 
 </LinearLayout>

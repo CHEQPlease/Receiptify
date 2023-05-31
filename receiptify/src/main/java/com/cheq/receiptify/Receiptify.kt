@@ -277,13 +277,11 @@ object Receiptify  {
     private fun buildKitchenReceiptPOS(receiptDTO: ReceiptDTO) : Bitmap? {
         val binding = LayoutPKitchenReceiptBinding.inflate(LayoutInflater.from(context.get()))
         val receipt = binding.layoutKitchenReceipt
-        val requiresExtraLineFeed = receiptDTO.items.size < 2
 
         /* TODO : Move to string resource to support localization in future */
 
-        binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvTableNo.text = "Table #: ${receiptDTO.tableNo}"
-        binding.tvCustomerName.text = "Customer name : ${receiptDTO.customerName}"
+        binding.tvTableNo.text = receiptDTO.tableNo
+        binding.tvCustomerName.text = receiptDTO.customerName
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
@@ -300,10 +298,6 @@ object Receiptify  {
 
         if(receiptDTO.customerName.isNullOrEmpty()){
             binding.tvCustomerName.visibility = View.GONE
-        }
-
-        if(requiresExtraLineFeed){
-            binding.viewExtraLineFeed.visibility = View.VISIBLE
         }
 
         if(receiptDTO.isReprinted){

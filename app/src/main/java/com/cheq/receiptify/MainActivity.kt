@@ -21,14 +21,14 @@ class MainActivity : AppCompatActivity() {
              // "orderSubtitle": "Kiosk-Order",
               "totalItems": "2",
               "orderNo": "K10",
-              "tableNo": "234",
-              "customerName": "Sheikh Faisal Khelzi",
+              "tableNo": "Table #: 234",
+              "customerName": "Customer name : Sheikh Faisal Khelzi",
               "receiptType": "kitchen",
               "deviceType": "pos",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
               "paymentQRLink": "https://www.google.com",
               "isRefunded" : true,
-              "isReprinted" : true,
+              "isReprinted" : false,
               "items": [
                 {
                   "itemName": "Salmon Fry",
