@@ -45,6 +45,8 @@
             />
 
         <RelativeLayout
+            android:id="@+id/layout_custom_tip"
+            android:visibility="visible"
             android:paddingRight="2.5mm"
             android:paddingLeft="2.5mm"
             android:layout_marginTop="2mm"

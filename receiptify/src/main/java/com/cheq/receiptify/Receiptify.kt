@@ -123,6 +123,9 @@ object Receiptify  {
                 binding.includeGratuitySection.containerSignature.visibility = View.GONE
             }
 
+            if(!receiptDTO.gratuityInfo.isCustomTip){
+                binding.includeGratuitySection.layoutCustomTip.visibility = View.GONE
+            }
         }else{
             binding.includeGratuitySection.root.visibility = View.GONE
         }

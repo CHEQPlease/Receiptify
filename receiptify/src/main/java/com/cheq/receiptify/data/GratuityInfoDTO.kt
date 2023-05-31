@@ -7,4 +7,6 @@ data class GratuityInfo(
     val gratuityItems: List<GratuityItem> = listOf(),
     @SerializedName("isSignatureNeeded")
     var isSignatureNeeded: Boolean = false,
+    @SerializedName("isCustomTip")
+    var isCustomTip: Boolean = true,
 )
