@@ -35,6 +35,21 @@
             android:textStyle="bold"
             />
 
+        <!-- Table number show if table is available -->
+        <TextView
+            android:id="@+id/tv_table_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Table Number #: 324"
+            android:layout_marginTop="1mm"
+            android:layout_marginBottom="1mm"
+            android:textSize="5.5mm"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:visibility="visible"
+            />
+
+
         <TextView
             android:id="@+id/tv_order_subtitle"
             android:layout_width="wrap_content"
@@ -43,6 +58,19 @@
             android:textSize="4mm"
             android:layout_marginBottom="3mm"
             android:gravity="center"
+            android:visibility="visible"
+            />
+
+        <!-- Show based on customer name availability -->
+        <TextView
+            android:id="@+id/tv_customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Customer Name: "
+            android:textSize="4mm"
+            android:layout_marginBottom="3mm"
+            android:gravity="center"
+            android:visibility="visible"
             />
 
     </LinearLayout>

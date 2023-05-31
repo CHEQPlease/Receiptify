@@ -282,6 +282,8 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvTableNo.text = "Table #: ${receiptDTO.tableNo}"
+        binding.tvCustomerName.text = "Customer name : ${receiptDTO.customerName}"
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
@@ -291,6 +293,15 @@ object Receiptify  {
         if(receiptDTO.orderSubtitle.isNullOrEmpty()){
             binding.tvOrderSubtitle.visibility = View.GONE
         }
+
+        if(receiptDTO.tableNo.isNullOrEmpty()){
+            binding.tvTableNo.visibility = View.GONE
+        }
+
+        if(receiptDTO.customerName.isNullOrEmpty()){
+            binding.tvCustomerName.visibility = View.GONE
+        }
+
         if(requiresExtraLineFeed){
             binding.viewExtraLineFeed.visibility = View.VISIBLE
         }

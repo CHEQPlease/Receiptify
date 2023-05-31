@@ -18,10 +18,11 @@ class MainActivity : AppCompatActivity() {
             {
               "brandName": "CHEQ Diner",
               "orderType": "Self-Order",
-              "orderSubtitle": "Kiosk-Order",
+             // "orderSubtitle": "Kiosk-Order",
               "totalItems": "2",
               "orderNo": "K10",
               "tableNo": "234",
+              "customerName": "Sheikh Faisal Khelzi",
               "receiptType": "kitchen",
               "deviceType": "pos",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
