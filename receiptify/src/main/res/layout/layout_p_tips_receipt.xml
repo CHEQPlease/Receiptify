@@ -157,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="SERVER COPY"
-                android:textSize="2.5mm"
+                android:textSize="4mm"
                 android:textStyle="bold"
                 />
 
@@ -170,7 +170,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="POWERED BY"
-                    android:textSize="2.5mm"
+                    android:textSize="4mm"
                     android:layout_gravity="center"
                     />
 
@@ -179,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text=" CHEQ"
-                    android:textSize="2.5mm"
+                    android:textSize="4mm"
                     android:textStyle="normal" />
 
             </LinearLayout>

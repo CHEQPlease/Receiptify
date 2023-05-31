@@ -208,7 +208,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="CUSTOMER COPY"
-        android:textSize="3mm"
+        android:textSize="4mm"
         android:textStyle="bold"
         />
 
