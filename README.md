@@ -16,7 +16,7 @@ allprojects {
 Add the dependency
 
 ```css
-implementation 'com.github.CHEQPlease:Receiptify:1.0.0'
+implementation 'com.github.CHEQPlease:Receiptify:1.4.5'
 ```
 
 **Generating Receipt**
