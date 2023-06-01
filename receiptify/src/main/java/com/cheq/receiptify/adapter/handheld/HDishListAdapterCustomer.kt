@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.data.Item
 import com.cheq.receiptify.databinding.LayoutHPurchasedItemsBinding
+import com.cheq.receiptify.utils.Utils
+
 class HDishListAdapterCustomer(private val dishes: List<Item>) : RecyclerView.Adapter<HDishListAdapterCustomer.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -17,8 +19,8 @@ class HDishListAdapterCustomer(private val dishes: List<Item>) : RecyclerView.Ad
 
         val dish = dishes[position]
 
-        holder.binding.tvItemName.text = "${dish.itemName}" /* TODO : Move to string resource to support localization in future */
-        holder.binding.tvItemDetails.text = dish.description
+        holder.binding.tvItemName.text = Utils.getHTMLFormattedString(dish.itemName) /* TODO : Move to string resource to support localization in future */
+        holder.binding.tvItemDetails.text = Utils.getHTMLFormattedString(dish.description)
         holder.binding.tvPrice.text = "${dish.price}"
         holder.binding.tvQty.text = "${dish.quantity}"
 

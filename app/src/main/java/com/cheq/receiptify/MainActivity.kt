@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
               "orderNo": "K10",
               "tableNo": "Table #: 234",
               "customerName": "Customer name : Sheikh Faisal Khelzi",
-              "receiptType": "kiosk",
+              "receiptType": "customer",
               "deviceType": "pos",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
               "paymentQRLink": "https://www.google.com",
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
               "items": [
                 {
                   "itemName": "Salmon Fry",
-                  "description": "  -- Olive\n  -- Deep Fried Salmon\n  -- ADD Addition 1\n  -- no Nuts\n  -- no Olive Oil\n  -- Substitution 1 SUB\n  -- allergy 1 ALLERGY",
+                  "description": "-- <b>Olive</b> \n  -- Deep Fried Salmon\n  -- ADD Addition 1\n  -- no Nuts\n  -- no Olive Oil\n  -- Substitution 1 SUB\n  -- allergy 1 ALLERGY",
                   "quantity": "1x",
                   "price": "${'$'}10000.0",
                   "strikethrough": false

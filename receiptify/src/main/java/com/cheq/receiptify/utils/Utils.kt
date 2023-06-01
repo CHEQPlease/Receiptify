@@ -6,6 +6,9 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.PorterDuff
+import android.os.Build
+import android.text.Html
+import android.text.Spanned
 import android.util.TypedValue
 import android.view.View
 import com.cheq.receiptify.data.ReceiptDTO
@@ -55,6 +58,15 @@ object Utils {
         } catch (e: Exception) {
             e.printStackTrace()
             null
+        }
+    }
+
+    fun getHTMLFormattedString(data: String?): Spanned? {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return Html.fromHtml(data, Html.FROM_HTML_MODE_COMPACT)
+        } else {
+            @Suppress("DEPRECATION")
+            return Html.fromHtml(data)
         }
     }
 }
