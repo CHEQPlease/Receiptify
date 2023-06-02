@@ -30,7 +30,7 @@
             tools:text="Order # 398"
             android:layout_marginTop="5mm"
             android:layout_marginBottom="1mm"
-            android:textSize="5.5mm"
+            android:textSize="6mm"
             android:gravity="center"
             android:textStyle="bold"
             />
@@ -179,6 +179,6 @@
         android:id="@+id/view_extra_line_feed"
         android:layout_width="match_parent"
         android:visibility="visible"
-        android:layout_height="1mm"/>
+        android:layout_height="6mm"/>
 
 </LinearLayout>
