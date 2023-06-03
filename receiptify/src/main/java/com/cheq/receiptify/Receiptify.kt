@@ -306,7 +306,8 @@ object Receiptify  {
 
         if(receiptDTO.isReprinted){
             binding.tvReprinted.visibility = View.VISIBLE
-            binding.tvBrandName.visibility = View.GONE
+
+//            binding.tvBrandName.visibility = View.GONE
         }
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))

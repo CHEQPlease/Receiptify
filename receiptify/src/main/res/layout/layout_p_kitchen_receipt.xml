@@ -137,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="26dp"
         android:layout_gravity="center"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
