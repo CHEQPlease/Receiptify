@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
               "tableNo": "Table #: 234",
               "customerName": "Customer name : Sheikh Faisal Khelzi",
               "receiptType": "kitchen",
-              "deviceType": "pos",
+              "deviceType": "handheld",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
               "paymentQRLink": "https://www.google.com",
               "isRefunded" : true,

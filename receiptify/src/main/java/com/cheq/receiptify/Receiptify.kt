@@ -284,6 +284,7 @@ object Receiptify  {
 
         /* TODO : Move to string resource to support localization in future */
 
+        binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvTableNo.text = receiptDTO.tableNo
         binding.tvCustomerName.text = receiptDTO.customerName
         binding.tvOrderNo.text = receiptDTO.orderNo
