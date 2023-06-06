@@ -160,18 +160,20 @@
                 android:textSize="4mm"
                 android:textStyle="bold"
                 />
-
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="26dp"
-                android:layout_gravity="center">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="1mm"
+                android:paddingBottom="1mm"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="POWERED BY"
-                    android:textSize="4mm"
-                    android:layout_gravity="center"
+                    android:textSize="3mm"
+
                     />
 
                 <TextView
@@ -179,11 +181,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text=" CHEQ"
-                    android:textSize="4mm"
-                    android:textStyle="normal" />
+                    android:textSize="3mm"
+                    android:textStyle="normal"
+                    />
 
             </LinearLayout>
 
+            <!-- Whitespace for linefeed -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="6mm"/>
@@ -191,11 +195,6 @@
         </LinearLayout>
 
     </RelativeLayout>
-
-    <!-- Whitespace for line feed-->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="6mm"/>
 
     <!-- Extra Line Feed For Small receipt Paper Cut Issue-->
     <View
