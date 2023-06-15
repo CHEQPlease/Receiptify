@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_tips_receipt"
+    android:layout_width="40mm"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="match_parent"
+    android:theme="@style/ReceiptifyThemeHandheld"
+    tools:ignore="InOrMmUsage">
+
+    <!-- Server Image -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="2.5mm"
+        android:paddingRight="2.5mm"
+        android:paddingTop="1mm"
+        >
+        <ImageView
+            android:src="@drawable/server_avatar"
+            android:layout_height="5mm"
+            android:adjustViewBounds="true"
+            android:maxWidth="60dp"
+            android:layout_gravity="left"
+            android:maxHeight="60dp"
+            android:layout_marginLeft="0mm"
+            android:layout_marginTop="1mm"
+            android:scaleType="fitCenter"
+            android:layout_width="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_server_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8mm"
+                android:layout_marginTop=".5mm"
+                android:layout_marginRight="6mm"
+                android:gravity="center"
+                android:textSize="2.5mm"
+                android:textStyle="bold"
+                tools:text="Server Name" />
+
+            <TextView
+                android:id="@+id/tv_server_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8mm"
+                android:layout_marginRight="6mm"
+                android:gravity="center"
+                android:textSize="2mm"
+                android:textStyle="bold"
+                tools:text="(123498795974)" />
+
+            <TextView
+                android:id="@+id/tv_receipt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3mm"
+                android:layout_marginBottom="3mm"
+                android:gravity="center"
+                android:textSize="3mm"
+                android:textStyle="bold"
+                tools:text="Tip Report" />
+
+            <!-- Divider -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1mm"
+                android:layout_marginTop="2mm"
+                android:layout_marginBottom="1mm"
+                android:src="@drawable/divider_dotted_line" />
+
+            <!-- info breakdown -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tips_info_breakdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1mm"
+                android:layout_marginBottom="1mm"
+                tools:itemCount="3"
+                tools:listitem="@layout/layout_h_tips_info" />
+
+            <!-- Divider -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1mm"
+                android:layout_marginTop="2mm"
+                android:layout_marginBottom="1mm"
+                android:src="@drawable/divider_dotted_line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tips_revenue_center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2mm"
+                android:layout_marginBottom="2mm"
+                tools:itemCount="3"
+                tools:listitem="@layout/layout_h_tip_revenue_center" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_tips_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1mm"
+                    android:gravity="center"
+                    android:textSize="3.5mm"
+                    android:textStyle="bold"
+                    tools:text="Total Tips :" />
+
+                <TextView
+                    android:id="@+id/tv_total_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1mm"
+                    android:gravity="center"
+                    android:textSize="3.5mm"
+                    android:textStyle="bold"
+                    tools:text="$200.29" />
+
+
+            </LinearLayout>
+
+            <!-- Divider -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1mm"
+                android:layout_marginTop="2mm"
+                android:layout_marginBottom="1mm"
+                android:src="@drawable/divider_dotted_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2mm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="SERVER COPY"
+                android:textSize="3mm"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="1mm"
+                android:paddingBottom="1mm">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POWERED BY"
+                    android:textSize="2mm"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" CHEQ"
+                    android:textSize="2mm"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <!-- Whitespace for linefeed -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6mm" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Extra Line Feed For Small receipt Paper Cut Issue-->
+    <View
+        android:id="@+id/view_extra_line_feed"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="6mm"/>
+
+</LinearLayout>

@@ -8,9 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.cheq.receiptify.adapter.handheld.HBreakdownListAdapter
-import com.cheq.receiptify.adapter.handheld.HDishListAdapterCustomer
-import com.cheq.receiptify.adapter.handheld.HKitchenDishListAdapter
+import com.cheq.receiptify.adapter.handheld.*
 import com.cheq.receiptify.adapter.pos.*
 import com.cheq.receiptify.enums.DeviceType
 import com.cheq.receiptify.data.ReceiptDTO
@@ -65,6 +63,10 @@ object Receiptify  {
                     ReceiptType.KITCHEN.name -> {
                         return buildKitchenReceiptHandHeld(receiptDTO)
                     }
+
+                    ReceiptType.SERVER_TIPS.name -> {
+                        return buildTipsReceiptForServerHandheld(receiptDTO)
+                    }
                 }
 
             } else if (deviceType.uppercase() == DeviceType.POS.name) {
@@ -86,7 +88,7 @@ object Receiptify  {
                     }
 
                     ReceiptType.SERVER_TIPS.name -> {
-                        return buildTipsReceiptForServer(receiptDTO)
+                        return buildTipsReceiptForServerPOS(receiptDTO)
                     }
 
                     ReceiptType.QR_PAYMENT.name -> {
@@ -338,7 +340,7 @@ object Receiptify  {
         return Utils.generateBitmap(receipt)
     }
 
-    private fun buildTipsReceiptForServer(receiptDTO: ReceiptDTO) : Bitmap {
+    private fun buildTipsReceiptForServerPOS(receiptDTO: ReceiptDTO) : Bitmap {
         val binding = LayoutPTipsReceiptBinding.inflate(LayoutInflater.from(context.get()))
         val receipt = binding.layoutTipsReceipt
 
@@ -352,6 +354,29 @@ object Receiptify  {
         binding.rvTipsInfoBreakdown.adapter = PTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
         binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
         binding.rvTipsRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
+        binding.rvTipsRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+
+
+        receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+        receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
+
+        return Utils.generateBitmap(receipt)
+    }
+
+    private fun buildTipsReceiptForServerHandheld(receiptDTO: ReceiptDTO) : Bitmap {
+        val binding = LayoutHTipsReceiptBinding.inflate(LayoutInflater.from(context.get()))
+        val receipt = binding.layoutTipsReceipt
+
+        /* TODO : Move to string resource to support localization in future */
+
+        binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
+        binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
+        binding.tvReceiptTitle.text = "Tip Report"
+        binding.tvTipsTitle.text = "Total Tips:"
+        binding.tvTotalTips.text = receiptDTO.serverTipInfo.totalTip
+        binding.rvTipsInfoBreakdown.adapter = HTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
+        binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        binding.rvTipsRevenueCenter.adapter = HTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
         binding.rvTipsRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
 

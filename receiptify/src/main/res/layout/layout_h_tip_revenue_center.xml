@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:theme="@style/ReceiptifyThemePOS"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="0.5mm"
+        android:layout_weight="4"
+        tools:ignore="InOrMmUsage">
+
+        <TextView
+            android:id="@+id/tv_center_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="3mm"
+            tools:text="The Hot Dog"
+            android:textStyle="bold"
+            android:textSize="2mm"
+            android:paddingEnd="3mm" />
+        <!-- Tips per revenue center Breakdown View -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_device_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1mm"
+            android:layout_marginBottom="2mm"
+            tools:itemCount="3"
+            tools:listitem="@layout/layout_h_tips_meta_info"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="$4000.00"
+        android:textSize="2mm"
+        android:gravity="end"
+        android:textStyle="bold"
+        android:layout_weight="2.5"
+        tools:ignore="InOrMmUsage" />
+
+</LinearLayout>
