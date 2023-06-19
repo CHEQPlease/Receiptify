@@ -379,8 +379,7 @@ object Receiptify  {
         binding.rvTipsRevenueCenter.adapter = HTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
         binding.rvTipsRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
-
-        receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+        receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
         return Utils.generateBitmap(receipt)
