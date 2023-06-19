@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         tools:text="Device Name"
         android:textStyle="bold"
-        android:textSize="2mm"
+        android:textSize="3mm"
         />
 
     <TextView
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8mm"
         android:gravity="end"
-        android:textSize="2mm"
+        android:textSize="3mm"
         android:textStyle="normal"
         tools:text="pos_1_pos2_pos_1_pos2" />
 

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         tools:text="KIOSK_1"
         android:textStyle="normal | italic"
-        android:textSize="2mm"
+        android:textSize="2.8mm"
         />
 
 </LinearLayout>

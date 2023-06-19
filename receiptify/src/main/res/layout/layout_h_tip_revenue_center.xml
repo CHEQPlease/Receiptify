@@ -22,7 +22,7 @@
             android:paddingRight="3mm"
             tools:text="The Hot Dog"
             android:textStyle="bold"
-            android:textSize="2mm"
+            android:textSize="3mm"
             android:paddingEnd="3mm" />
         <!-- Tips per revenue center Breakdown View -->
 
@@ -44,7 +44,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="$4000.00"
-        android:textSize="2mm"
+        android:textSize="3mm"
         android:gravity="end"
         android:textStyle="bold"
         android:layout_weight="2.5"

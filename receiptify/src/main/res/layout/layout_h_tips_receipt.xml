@@ -15,8 +15,8 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="2.5mm"
-        android:paddingRight="2.5mm"
+        android:paddingLeft="1mm"
+        android:paddingRight="1mm"
         android:paddingTop="1mm"
         >
         <ImageView
