@@ -15,8 +15,8 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="1mm"
-        android:paddingRight="1mm"
+        android:paddingLeft=".5mm"
+        android:paddingRight=".5mm"
         android:paddingTop="1mm"
         >
         <ImageView
@@ -42,10 +42,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8mm"
-                android:layout_marginTop=".5mm"
+                android:layout_marginTop="6mm"
                 android:layout_marginRight="6mm"
                 android:gravity="center"
-                android:textSize="2.5mm"
+                android:textSize="3mm"
                 android:textStyle="bold"
                 tools:text="Server Name" />
 
@@ -56,7 +56,7 @@
                 android:layout_marginLeft="8mm"
                 android:layout_marginRight="6mm"
                 android:gravity="center"
-                android:textSize="2mm"
+                android:textSize="3mm"
                 android:textStyle="bold"
                 tools:text="(123498795974)" />
 
@@ -67,7 +67,7 @@
                 android:layout_marginTop="3mm"
                 android:layout_marginBottom="3mm"
                 android:gravity="center"
-                android:textSize="3mm"
+                android:textSize="3.8mm"
                 android:textStyle="bold"
                 tools:text="Tip Report" />
 
