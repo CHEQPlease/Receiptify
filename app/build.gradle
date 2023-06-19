@@ -11,8 +11,8 @@ android {
         applicationId "com.cheq.receiptify"
         minSdk 16
         targetSdk 33
-        versionCode 127
-        versionName "1.4.12"
+        versionCode 128
+        versionName "1.4.13"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
