@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8mm"
-                android:layout_marginTop="6mm"
+                android:layout_marginTop="1mm"
                 android:layout_marginRight="6mm"
                 android:gravity="center"
                 android:textSize="3mm"
@@ -56,7 +56,7 @@
                 android:layout_marginLeft="8mm"
                 android:layout_marginRight="6mm"
                 android:gravity="center"
-                android:textSize="3mm"
+                android:textSize="2.8mm"
                 android:textStyle="bold"
                 tools:text="(123498795974)" />
 
@@ -67,7 +67,7 @@
                 android:layout_marginTop="3mm"
                 android:layout_marginBottom="3mm"
                 android:gravity="center"
-                android:textSize="3.8mm"
+                android:textSize="3.4mm"
                 android:textStyle="bold"
                 tools:text="Tip Report" />
 

@@ -15,16 +15,16 @@
         android:layout_height="wrap_content"
         tools:text="Device Name"
         android:textStyle="bold"
-        android:textSize="3.5mm"
+        android:textSize="2.8mm"
         />
 
     <TextView
         android:id="@+id/tv_tips_breakdown_key_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4mm"
+        android:layout_marginLeft="3mm"
         android:gravity="end"
-        android:textSize="3.5mm"
+        android:textSize="2.8mm"
         android:textStyle="normal"
         tools:text="pos_1_pos2_pos_1_pos2" />
 
