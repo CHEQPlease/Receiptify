@@ -65,9 +65,12 @@
                     android:id="@+id/tv_order_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxEms="8"
                     tools:text="Order #K20"
                     android:textSize="2.5mm"
                     android:textStyle="bold"
+                    android:layout_gravity="end"
+                    android:gravity="end"
                     />
 
             </LinearLayout>
