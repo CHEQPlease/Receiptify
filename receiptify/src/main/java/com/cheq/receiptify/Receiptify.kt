@@ -326,6 +326,7 @@ object Receiptify  {
 
         /* TODO : Move to string resource to support localization in future */
 
+        binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle

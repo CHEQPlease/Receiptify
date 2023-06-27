@@ -23,12 +23,13 @@ class MainActivity : AppCompatActivity() {
               "orderNo": "K10",
               "tableNo": "Table #: 234",
               "customerName": "Customer name : Sheikh Faisal Khelzi",
-              "receiptType": "server_tips",
+              "receiptType": "kitchen",
               "deviceType": "handheld",
               "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
               "paymentQRLink": "https://www.google.com",
               "isRefunded" : true,
               "isReprinted" : false,
+              "offlineHeaderMsg" : "Please provide this copy to an attendant",
               "items": [
                 {
                   "itemName": "Salmon Fry",
