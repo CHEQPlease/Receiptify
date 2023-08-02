@@ -160,32 +160,11 @@
         android:layout_marginBottom="1mm"
         />
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/promo_text"
-        android:gravity="center"
-        android:textSize="2.8mm"
-        android:layout_marginTop="0.5mm"
-        android:layout_marginBottom="0.5mm"
-        android:textStyle="normal"
-        />
-
-    <ImageView
-        android:layout_width="24mm"
-        android:layout_height="24mm"
-        android:src="@drawable/qr_cheq_app_apple_qr"
-        android:layout_gravity="center"
-        android:layout_marginTop="1mm"
-        />
-
-
     <TextView
         android:id="@+id/tv_brand_name_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CHEQ Diner"
+        tools:text="CHEQ Diner"
         android:textStyle="bold"
         android:gravity="center"
         android:textSize="2.5mm"
@@ -200,7 +179,6 @@
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
-
 
     <View
         android:layout_width="match_parent"
