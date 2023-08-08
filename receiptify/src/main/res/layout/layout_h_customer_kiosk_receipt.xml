@@ -156,46 +156,6 @@
         />
 
 
-    <!-- Divider -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1mm"
-        android:src="@drawable/divider_dotted_line"
-        android:layout_marginTop="1mm"
-        android:layout_marginBottom="1mm"
-        />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/promo_text"
-        android:gravity="center"
-        android:textSize="2mm"
-        android:layout_marginTop="0.5mm"
-        android:layout_marginBottom="0.5mm"
-        android:textStyle="bold"
-        />
-
-    <ImageView
-        android:layout_width="14mm"
-        android:layout_height="14mm"
-        android:src="@drawable/qr_cheq_app_apple_qr"
-        android:layout_gravity="center"
-        android:layout_marginTop="1mm"
-        />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CHEQ Inc."
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="1.8mm"
-        android:layout_marginTop="0.5mm"
-        android:layout_marginBottom="0.5mm"
-        />
 
     <ImageView
         android:layout_width="match_parent"
