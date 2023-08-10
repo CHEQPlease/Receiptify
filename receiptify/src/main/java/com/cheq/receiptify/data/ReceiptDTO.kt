@@ -38,5 +38,7 @@ data class ReceiptDTO(
     @SerializedName("paymentQRLink")
     val paymentQRLink: String?,
     @SerializedName("offlineHeaderMsg")
-    val offlineHeaderMsg: String?
+    val offlineHeaderMsg: String?,
+    @SerializedName("supportInfo")
+    val supportInfo: String?,
 )

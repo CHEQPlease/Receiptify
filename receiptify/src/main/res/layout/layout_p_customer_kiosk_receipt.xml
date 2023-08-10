@@ -127,8 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1mm"
         tools:itemCount="3"
-        tools:listitem="@layout/layout_p_purchased_items"
-        />
+        tools:listitem="@layout/layout_p_purchased_items" />
 
     <!-- Divider -->
     <ImageView
@@ -151,7 +150,6 @@
         />
 
 
-    <!-- Divider -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
@@ -159,36 +157,31 @@
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
+
+
+    <!-- Support Information -->
 
     <TextView
-        android:id="@+id/tv_brand_name_2"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_support_info"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="CHEQ Diner"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="2.5mm"
-        android:layout_marginTop="0.5mm"
-        android:layout_marginBottom="0.5mm"
+        android:maxEms="14"
+        android:textSize="3.5mm"
+        android:layout_marginTop="5mm"
+        android:layout_marginBottom="4mm"
+        tools:text="For support, please contact us at help@cheq.io"
+        android:layout_gravity="center"
+        android:textAlignment="center"
         />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1mm"
-        android:src="@drawable/divider_dotted_line"
-        android:layout_marginTop="1mm"
-        android:layout_marginBottom="1mm"
-        />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4mm"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="CUSTOMER COPY"
+        android:layout_marginTop="4mm"
         android:textSize="4mm"
         android:textStyle="bold"
         />
