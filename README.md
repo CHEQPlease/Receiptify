@@ -44,6 +44,7 @@ implementation 'com.github.CHEQPlease:Receiptify:1.4.5'
               "isRefunded" : true,
               "isReprinted" : false,
               "offlineHeaderMsg" : "Please provide this copy to an attendant",
+              "supportInfo" : "For support, please contact 1-800-123-4567",
               "items": [
                 {
                   "itemName": "Salmon Fry",
