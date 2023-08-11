@@ -125,9 +125,20 @@
         />
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="3mm"/>
+    <!-- Support Information-->
+
+    <TextView
+        android:id="@+id/tv_support_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxEms="14"
+        android:layout_marginTop="3mm"
+        android:textSize="2.2mm"
+        android:layout_marginBottom="2mm"
+        tools:text="For support, please contact us at help@cheq.io"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -135,6 +146,7 @@
         android:layout_gravity="center"
         android:text="CUSTOMER COPY"
         android:textSize="2mm"
+        android:layout_marginTop="2mm"
         android:textStyle="bold"
         />
 

@@ -156,7 +156,7 @@
         />
 
 
-    <!-- Divider -->
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1mm"
@@ -166,49 +166,20 @@
         />
 
 
+    <!-- Support Information-->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tv_support_info"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/promo_text"
-        android:gravity="center"
-        android:textSize="2mm"
-        android:layout_marginTop="0.5mm"
-        android:layout_marginBottom="0.5mm"
-        android:textStyle="bold"
-        />
-
-    <ImageView
-        android:layout_width="14mm"
-        android:layout_height="14mm"
-        android:src="@drawable/qr_cheq_app_apple_qr"
+        android:maxEms="14"
+        android:textSize="2.2mm"
+        android:layout_marginTop="3mm"
+        android:layout_marginBottom="2mm"
+        tools:text="For support, please contact us at help@cheq.io"
         android:layout_gravity="center"
-        android:layout_marginTop="1mm"
+        android:textAlignment="center"
         />
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CHEQ Inc."
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="1.8mm"
-        android:layout_marginTop="0.5mm"
-        android:layout_marginBottom="0.5mm"
-        />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1mm"
-        android:src="@drawable/divider_dotted_line"
-        android:layout_marginTop="1mm"
-        android:layout_marginBottom="1mm"
-        />
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4mm"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -216,6 +187,7 @@
         android:layout_gravity="center"
         android:text="CUSTOMER COPY"
         android:textSize="2.2mm"
+        android:layout_marginTop="2mm"
         android:textStyle="bold"
         />
 

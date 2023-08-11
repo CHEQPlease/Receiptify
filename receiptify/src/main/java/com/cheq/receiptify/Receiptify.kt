@@ -136,6 +136,13 @@ object Receiptify  {
             binding.tvRefunded.visibility = View.GONE
         }
 
+        if(receiptDTO.supportInfo?.isNotEmpty() == true){
+            binding.tvSupportInfo.text = receiptDTO.supportInfo
+            binding.tvSupportInfo.visibility = View.VISIBLE
+        }else{
+            binding.tvSupportInfo.visibility = View.GONE
+        }
+
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
@@ -159,6 +166,12 @@ object Receiptify  {
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
+        if(receiptDTO.supportInfo?.isNotEmpty() == true){
+            binding.tvSupportInfo.text = receiptDTO.supportInfo
+            binding.tvSupportInfo.visibility = View.VISIBLE
+        }else{
+            binding.tvSupportInfo.visibility = View.GONE
+        }
 
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
@@ -185,6 +198,14 @@ object Receiptify  {
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.tvOrderType.text = receiptDTO.orderType
+
+        if(receiptDTO.supportInfo?.isNotEmpty() == true){
+            binding.tvSupportInfo.text = receiptDTO.supportInfo
+            binding.tvSupportInfo.visibility = View.VISIBLE
+        }else{
+            binding.tvSupportInfo.visibility = View.GONE
+        }
+
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
@@ -200,7 +221,6 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
-        binding.tvBrandName2.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
@@ -209,6 +229,16 @@ object Receiptify  {
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
         binding.tvOrderType.text = receiptDTO.orderType
+
+        if(receiptDTO.supportInfo?.isNotEmpty() == true){
+            var text = receiptDTO.supportInfo
+            binding.tvSupportInfo.visibility = View.VISIBLE
+            binding.tvSupportInfo.text = text
+        }else{
+            binding.tvSupportInfo.visibility = View.GONE
+        }
+
+
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
@@ -310,8 +340,6 @@ object Receiptify  {
 
         if(receiptDTO.isReprinted){
             binding.tvReprinted.visibility = View.VISIBLE
-
-//            binding.tvBrandName.visibility = View.GONE
         }
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
