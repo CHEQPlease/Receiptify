@@ -124,6 +124,16 @@
         android:layout_marginBottom="1mm"
         />
 
+    <!-- Refunded -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_refunded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refunded"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="3mm"
+        />
 
     <!-- Support Information-->
 
@@ -138,6 +148,7 @@
         tools:text="For support, please contact us at help@cheq.io"
         android:layout_gravity="center"
         android:textAlignment="center"
+        tools:visibility="visible"
         />
 
     <TextView
