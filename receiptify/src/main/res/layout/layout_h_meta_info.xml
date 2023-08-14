@@ -12,15 +12,17 @@
         android:id="@+id/tv_breakdown_key_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="SUBTOTAL"
+        tools:text="SUBTOTAL aklsdhjf laisdhf lak alksdh falksdh ajkshd  alkdhf"
+        android:maxEms="10"
         android:textStyle="bold"
+        android:layout_weight="3"
         android:textSize="2.5mm"
         />
 
 
 
     <View
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1"
         />
@@ -32,7 +34,9 @@
         tools:text="$4.00"
         android:textStyle="bold"
         android:textSize="2.5mm"
+        android:layout_weight="3"
         android:gravity="end"
+        android:layout_gravity="center"
         />
 
 </LinearLayout>

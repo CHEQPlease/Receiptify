@@ -173,6 +173,10 @@ object Receiptify  {
             binding.tvSupportInfo.visibility = View.GONE
         }
 
+        if(!receiptDTO.isRefunded){
+            binding.tvRefunded.visibility = View.GONE
+        }
+
         customerReceipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
