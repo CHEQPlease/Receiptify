@@ -361,10 +361,16 @@ object Receiptify  {
 
         binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.tvOrderNo.text = receiptDTO.orderNo
+        binding.tvTableNo.text = receiptDTO.tableNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = HKitchenDishListAdapter(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+
+        if(receiptDTO.tableNo.isNullOrEmpty()){
+            binding.tvTableNo.visibility = View.GONE
+        }
+
         if(receiptDTO.orderSubtitle.isNullOrEmpty()){
             binding.tvOrderSubtitle.visibility = View.GONE
         }

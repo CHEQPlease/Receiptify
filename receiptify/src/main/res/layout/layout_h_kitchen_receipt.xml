@@ -42,6 +42,17 @@
             />
 
         <TextView
+            android:id="@+id/tv_table_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Table No : #442"
+            android:textSize="2.8mm"
+            android:layout_marginBottom="1mm"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+
+        <TextView
             android:id="@+id/tv_order_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
