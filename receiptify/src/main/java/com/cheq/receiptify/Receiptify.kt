@@ -374,6 +374,12 @@ object Receiptify  {
         if(receiptDTO.orderSubtitle.isNullOrEmpty()){
             binding.tvOrderSubtitle.visibility = View.GONE
         }
+
+        if(receiptDTO.isReprinted){
+            binding.tvReprinted.visibility = View.VISIBLE
+        }
+
+
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 

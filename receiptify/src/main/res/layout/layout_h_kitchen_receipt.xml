@@ -122,4 +122,35 @@
         android:layout_marginBottom="3mm"
         />
 
+    <TextView
+        android:id="@+id/tv_reprinted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reprinted"
+        android:layout_gravity="center"
+        android:textSize="3mm"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <TextView
+        android:id="@+id/k_tv_brand_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Partner name"
+        android:layout_gravity="center"
+        android:textSize="2.8mm"
+        android:textStyle="normal"
+        android:visibility="visible"
+        tools:visibility="visible"
+        />
+
+    <!-- Extra Line Feed For Small receipt Paper Cut Issue-->
+    <View
+        android:id="@+id/view_extra_line_feed"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="2mm"/>
+
 </LinearLayout>

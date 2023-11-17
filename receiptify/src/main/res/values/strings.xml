@@ -11,5 +11,6 @@
     <string name="custom_tip">CUSTOM TIP</string>
     <string name="refunded">REFUNDED</string>
     <string name="signature">SIGNATURE</string>
+    <string name="reprinted">**REPRINTED**</string>
 
 </resources>
