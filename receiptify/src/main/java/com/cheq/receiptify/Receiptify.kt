@@ -108,7 +108,7 @@ object Receiptify  {
 
         /* TODO : Move to string resource to support localization in future*/
 
-        binding.tvCompanyName.text = receiptDTO.brandName
+        binding.tvCompanyName.text = receiptDTO.companyName
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
@@ -159,6 +159,7 @@ object Receiptify  {
         /* TODO : Move to string resource to support localization in future*/
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvCompanyName.text = receiptDTO.companyName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
