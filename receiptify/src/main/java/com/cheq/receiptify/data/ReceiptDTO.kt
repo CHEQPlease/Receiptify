@@ -3,6 +3,8 @@ package com.cheq.receiptify.data
 import com.google.gson.annotations.SerializedName
 
 data class ReceiptDTO(
+    @SerializedName("companyName")
+    val companyName: String?,
     @SerializedName("brandName")
     val brandName: String?,
     @SerializedName("breakdown")
