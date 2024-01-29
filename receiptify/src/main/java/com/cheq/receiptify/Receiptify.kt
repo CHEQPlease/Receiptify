@@ -3,6 +3,7 @@ package com.cheq.receiptify
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.Typeface
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -381,6 +382,19 @@ object Receiptify  {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
+        // `Updated` or `Updated - Full Void` will be placed at the position of
+        // `Reprinted` for Void/Comp order so `tvReprinted` is used
+        if(receiptDTO.isUpdated) {
+            binding.tvReprinted.text = "Updated"
+            binding.tvReprinted.typeface = Typeface.DEFAULT_BOLD
+            binding.tvReprinted.visibility = View.VISIBLE
+        }
+
+        if(receiptDTO.isUpdatedFullVoid) {
+            binding.tvReprinted.text = "Updated - Full Void"
+            binding.tvReprinted.typeface = Typeface.DEFAULT_BOLD
+            binding.tvReprinted.visibility = View.VISIBLE
+        }
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
