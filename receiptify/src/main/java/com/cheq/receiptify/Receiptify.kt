@@ -382,16 +382,9 @@ object Receiptify  {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
-        // `Updated` or `Updated - Full Void` will be placed at the position of
-        // `Reprinted` for Void/Comp order so `tvReprinted` is used
-        if(receiptDTO.isUpdated) {
-            binding.tvReprinted.text = "Updated"
-            binding.tvReprinted.typeface = Typeface.DEFAULT_BOLD
-            binding.tvReprinted.visibility = View.VISIBLE
-        }
-
-        if(receiptDTO.isUpdatedFullVoid) {
-            binding.tvReprinted.text = "Updated - Full Void"
+        // 'printStatusText' will be printed to the place of **REPRINTED**
+        if(receiptDTO.printStatusText != null) {
+            binding.tvReprinted.text = receiptDTO.printStatusText
             binding.tvReprinted.typeface = Typeface.DEFAULT_BOLD
             binding.tvReprinted.visibility = View.VISIBLE
         }

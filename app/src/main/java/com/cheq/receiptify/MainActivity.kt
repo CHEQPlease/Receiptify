@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
   "footerText": null,
   "paymentQRLink": null,
   "isRefunded": null,
-  "isReprinted": null,
+  "isReprinted": true,
+  "printStatusText": "**UPDATED**",
   "supportInfo": "",
   "offlineHeaderMsg": "",
   "items": [

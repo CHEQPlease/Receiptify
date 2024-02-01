@@ -33,8 +33,8 @@ data class ReceiptDTO(
     val isRefunded: Boolean = false,
     @SerializedName("isReprinted")
     val isReprinted: Boolean = false,
-    @SerializedName("isUpdated")
-    val isUpdated: Boolean = false,
+    @SerializedName("printStatusText")
+    val printStatusText: String?,
     @SerializedName("isUpdatedFullVoid")
     val isUpdatedFullVoid: Boolean = false,
     @SerializedName("serverTipInfo")
