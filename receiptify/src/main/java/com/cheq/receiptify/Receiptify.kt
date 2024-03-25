@@ -109,7 +109,6 @@ object Receiptify  {
 
         /* TODO : Move to string resource to support localization in future*/
 
-        binding.tvCompanyName.text = receiptDTO.brandName
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
