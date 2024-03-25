@@ -3,6 +3,7 @@ package com.cheq.receiptify
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.Typeface
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -381,6 +382,12 @@ object Receiptify  {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
+        // 'printStatusText' will be printed to the place of **REPRINTED**
+        if(receiptDTO.printStatusText != null) {
+            binding.tvReprinted.text = receiptDTO.printStatusText
+            binding.tvReprinted.typeface = Typeface.DEFAULT_BOLD
+            binding.tvReprinted.visibility = View.VISIBLE
+        }
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
