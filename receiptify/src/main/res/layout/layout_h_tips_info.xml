@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:theme="@style/ReceiptifyThemePOS"
-    android:layout_marginTop="1mm"
+    android:theme="@style/ReceiptifyThemeHandheld"
+    android:layout_marginBottom="0.8mm"
     >
 
 
@@ -13,20 +13,19 @@
         android:id="@+id/tv_tips_breakdown_key_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Device Name"
-        android:textStyle="bold"
-        android:textSize="2.8mm"
+        tools:text="Sign In time"
+        android:textSize="2.2mm"
         />
 
     <TextView
         android:id="@+id/tv_tips_breakdown_key_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="3mm"
+        android:layout_marginLeft="2.5mm"
         android:gravity="end"
-        android:textSize="2.8mm"
+        android:textSize="2.2mm"
         android:textStyle="normal"
-        tools:text="pos_1_pos2_pos_1_pos2" />
+        tools:text="May 14, 2024 1:12 PM" />
 
 </LinearLayout>
 

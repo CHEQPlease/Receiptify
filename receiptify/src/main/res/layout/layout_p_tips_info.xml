@@ -14,7 +14,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Device Name"
-        android:textStyle="bold"
         android:textSize="3.5mm"
         />
 

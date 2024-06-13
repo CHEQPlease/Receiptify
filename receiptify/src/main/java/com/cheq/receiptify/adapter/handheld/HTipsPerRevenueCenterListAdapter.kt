@@ -21,7 +21,7 @@ class HTipsPerRevenueCenterListAdapter(private val tipsPerRevenueCenter: List<Ti
 
         val tipsPerRevenueCenter = tipsPerRevenueCenter[position]
         holder.binding.tvCenterName.text = tipsPerRevenueCenter.name
-        holder.binding.tvTip.text = tipsPerRevenueCenter.tip
+        holder.binding.tvNetSales.text = tipsPerRevenueCenter.netSales
         holder.binding.rvDeviceList.adapter =
             HTipsDeviceListAdapter(tipsPerRevenueCenter.deviceList)
         holder.binding.rvDeviceList.layoutManager =

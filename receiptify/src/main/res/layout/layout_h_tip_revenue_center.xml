@@ -41,7 +41,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_tip"
+        android:id="@+id/tv_net_sales"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="$4000.00"

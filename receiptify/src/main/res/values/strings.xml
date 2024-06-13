@@ -12,5 +12,7 @@
     <string name="refunded">REFUNDED</string>
     <string name="signature">SIGNATURE</string>
     <string name="reprinted">**REPRINTED**</string>
+    <string name="total_transaction_statement">Total Transaction Statement</string>
+    <string name="total_tips">Total Tips</string>
 
 </resources>

@@ -402,13 +402,17 @@ object Receiptify  {
 
         binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
         binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
-        binding.tvReceiptTitle.text = "Tips Statement"
-        binding.tvTipsTitle.text = "Total Tips:"
-        binding.tvTotalTips.text = receiptDTO.serverTipInfo.totalTip
+        if(receiptDTO.serverTipInfo.serverId.isNullOrEmpty()){
+            binding.tvServerId.visibility = View.GONE
+        }
+        binding.tvTotalTipsValue.text = receiptDTO.serverTipInfo.totalTip
+        binding.tvTotalNetSalesValue.text = receiptDTO.serverTipInfo.totalNetSales
+        binding.tvCashValue.text = receiptDTO.serverTipInfo.cash
+        binding.tvOtherPaymentTypesValue.text = receiptDTO.serverTipInfo.otherPayment
         binding.rvTipsInfoBreakdown.adapter = PTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
         binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
-        binding.rvTipsRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
-        binding.rvTipsRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        binding.rvSalesByRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
+        binding.rvSalesByRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
@@ -425,13 +429,17 @@ object Receiptify  {
 
         binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
         binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
-        binding.tvReceiptTitle.text = "Tip Report"
-        binding.tvTipsTitle.text = "Total Tips:"
-        binding.tvTotalTips.text = receiptDTO.serverTipInfo.totalTip
+        if(receiptDTO.serverTipInfo.serverId.isNullOrEmpty()){
+            binding.tvServerId.visibility = View.GONE
+        }
+        binding.tvTotalTipsValue.text = receiptDTO.serverTipInfo.totalTip
+        binding.tvTotalNetSalesValue.text = receiptDTO.serverTipInfo.totalNetSales
+        binding.tvCashValue.text = receiptDTO.serverTipInfo.cash
+        binding.tvOtherPaymentTypesValue.text = receiptDTO.serverTipInfo.otherPayment
         binding.rvTipsInfoBreakdown.adapter = HTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
         binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
-        binding.rvTipsRevenueCenter.adapter = HTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
-        binding.rvTipsRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        binding.rvSalesByRevenueCenter.adapter = HTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
+        binding.rvSalesByRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
