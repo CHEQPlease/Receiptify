@@ -47,6 +47,16 @@
     <!-- Total Items -->
 
     <TextView
+        android:id="@+id/tv_table_no_hh_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1mm"
+        android:gravity="center"
+        android:textSize="2.3mm"
+        android:textStyle="bold"
+        tools:text="Table No : #442" />
+
+    <TextView
         android:id="@+id/tv_total_items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

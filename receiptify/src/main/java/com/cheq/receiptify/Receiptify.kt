@@ -111,6 +111,10 @@ object Receiptify  {
 
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
+        if (receiptDTO.tableNo.isNullOrEmpty()) {
+            binding.tvTableNoPosCustomer.visibility = View.VISIBLE
+            binding.tvTableNoPosCustomer.text = receiptDTO.tableNo
+        }
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
@@ -160,6 +164,10 @@ object Receiptify  {
 
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
+        if (receiptDTO.tableNo.isNullOrEmpty()) {
+            binding.tvTableNoHhCustomer.visibility = View.VISIBLE
+            binding.tvTableNoHhCustomer.text = receiptDTO.tableNo
+        }
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
