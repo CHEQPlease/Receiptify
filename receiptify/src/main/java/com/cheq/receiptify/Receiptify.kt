@@ -112,6 +112,8 @@ object Receiptify  {
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         if (receiptDTO.tableNo.isNullOrEmpty()) {
+            binding.tvTableNoPosCustomer.visibility = View.GONE
+        }else{
             binding.tvTableNoPosCustomer.visibility = View.VISIBLE
             binding.tvTableNoPosCustomer.text = receiptDTO.tableNo
         }
@@ -165,6 +167,8 @@ object Receiptify  {
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         if (receiptDTO.tableNo.isNullOrEmpty()) {
+            binding.tvTableNoHhCustomer.visibility = View.GONE
+        }else{
             binding.tvTableNoHhCustomer.visibility = View.VISIBLE
             binding.tvTableNoHhCustomer.text = receiptDTO.tableNo
         }
