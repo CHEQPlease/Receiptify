@@ -14,5 +14,6 @@
     <string name="reprinted">**REPRINTED**</string>
     <string name="total_transaction_statement">Total Transaction Statement</string>
     <string name="total_tips">Total Tips</string>
+    <string name="server_copy">SERVER COPY</string>
 
 </resources>

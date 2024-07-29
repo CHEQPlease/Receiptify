@@ -9,12 +9,12 @@
 
     <TextView
         android:id="@+id/tv_tips_meta_info"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="KIOSK_1"
         android:layout_weight="2.5"
         android:textStyle="normal | italic"
-        android:textSize="2.5mm"
+        android:textSize="2.2mm"
         />
 
 </LinearLayout>

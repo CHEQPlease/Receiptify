@@ -417,43 +417,135 @@ object Receiptify  {
         if(receiptDTO.serverTipInfo.serverId.isNullOrEmpty()){
             binding.tvServerId.visibility = View.GONE
         }
-        binding.tvTotalTipsValue.text = receiptDTO.serverTipInfo.totalTip
-        binding.tvTotalNetSalesValue.text = receiptDTO.serverTipInfo.totalNetSales
-        binding.tvCashValue.text = receiptDTO.serverTipInfo.cash
-        binding.tvOtherPaymentTypesValue.text = receiptDTO.serverTipInfo.otherPayment
-        binding.rvTipsInfoBreakdown.adapter = PTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
-        binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
-        binding.rvSalesByRevenueCenter.adapter = PTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
-        binding.rvSalesByRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        binding.tvTotalTipsValue.apply {
+            text = receiptDTO.serverTipInfo.totalTip
+            visibility = if (receiptDTO.serverTipInfo.totalTip == null) View.GONE else View.VISIBLE
+            binding.tvTotalTips.visibility = visibility
+        }
+        binding.tvTotalNetSalesValue.apply {
+            text = receiptDTO.serverTipInfo.totalNetSales
+            visibility = if (receiptDTO.serverTipInfo.totalNetSales == null) View.GONE else View.VISIBLE
+            binding.tvTotalNetSales.visibility = visibility
+        }
+        binding.tvCashValue.apply {
+            text = receiptDTO.serverTipInfo.cash
+            visibility = if (receiptDTO.serverTipInfo.cash.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvCash.visibility = visibility
+        }
+        binding.tvOtherPaymentTypesValue.apply {
+            text = receiptDTO.serverTipInfo.otherPayment
+            visibility = if (receiptDTO.serverTipInfo.otherPayment.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvOtherPaymentTypes.visibility = visibility
+        }
+
+        binding.rvTipsInfoBreakdown.apply {
+            adapter = receiptDTO.serverTipInfo.tipsInfoBreakdown?.let {
+                PTipsInfoBreakdownListAdapter(
+                    it
+                )
+            }
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            visibility = if (receiptDTO.serverTipInfo.tipsInfoBreakdown.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        binding.rvSalesByRevenueCenter.apply {
+            adapter = receiptDTO.serverTipInfo.tipPerRevenueCenter?.let {
+                PTipsPerRevenueCenterListAdapter(
+                    it
+                )
+            }
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            visibility = if (receiptDTO.serverTipInfo.tipPerRevenueCenter.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        val shouldHideDividers =
+            receiptDTO.serverTipInfo.totalTip == null &&
+                    receiptDTO.serverTipInfo.totalNetSales == null &&
+                    receiptDTO.serverTipInfo.cash == null &&
+                    receiptDTO.serverTipInfo.otherPayment == null &&
+                    receiptDTO.serverTipInfo.tipPerRevenueCenter.isNullOrEmpty()
 
 
+        binding.ivDivider3.visibility = if (shouldHideDividers) View.GONE else View.VISIBLE
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
         return Utils.generateBitmap(receipt)
     }
 
-    private fun buildTipsReceiptForServerHandheld(receiptDTO: ReceiptDTO) : Bitmap {
+    private fun buildTipsReceiptForServerHandheld(receiptDTO: ReceiptDTO): Bitmap {
         val binding = LayoutHTipsReceiptBinding.inflate(LayoutInflater.from(context.get()))
         val receipt = binding.layoutTipsReceipt
 
         /* TODO : Move to string resource to support localization in future */
 
-        binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
-        binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
-        if(receiptDTO.serverTipInfo.serverId.isNullOrEmpty()){
-            binding.tvServerId.visibility = View.GONE
+        binding.tvServerName.apply {
+            text = receiptDTO.serverTipInfo.serverName
+            visibility = if (receiptDTO.serverTipInfo.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
-        binding.tvTotalTipsValue.text = receiptDTO.serverTipInfo.totalTip
-        binding.tvTotalNetSalesValue.text = receiptDTO.serverTipInfo.totalNetSales
-        binding.tvCashValue.text = receiptDTO.serverTipInfo.cash
-        binding.tvOtherPaymentTypesValue.text = receiptDTO.serverTipInfo.otherPayment
-        binding.rvTipsInfoBreakdown.adapter = HTipsInfoBreakdownListAdapter(receiptDTO.serverTipInfo.tipsInfoBreakdown)
-        binding.rvTipsInfoBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
-        binding.rvSalesByRevenueCenter.adapter = HTipsPerRevenueCenterListAdapter(receiptDTO.serverTipInfo.tipPerRevenueCenter)
-        binding.rvSalesByRevenueCenter.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
-        receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+        binding.tvServerId.apply {
+            text = receiptDTO.serverTipInfo.serverId
+            visibility = if (receiptDTO.serverTipInfo.serverId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        binding.tvTotalTipsValue.apply {
+            text = receiptDTO.serverTipInfo.totalTip
+            visibility = if (receiptDTO.serverTipInfo.totalTip == null) View.GONE else View.VISIBLE
+            binding.tvTotalTips.visibility = visibility
+        }
+
+        binding.tvTotalNetSalesValue.apply {
+            text = receiptDTO.serverTipInfo.totalNetSales
+            visibility = if (receiptDTO.serverTipInfo.totalNetSales == null) View.GONE else View.VISIBLE
+            binding.tvTotalNetSales.visibility = visibility
+        }
+
+        binding.tvCashValue.apply {
+            text = receiptDTO.serverTipInfo.cash
+            visibility = if (receiptDTO.serverTipInfo.cash == null) View.GONE else View.VISIBLE
+            binding.tvCash.visibility = visibility
+        }
+
+        binding.tvOtherPaymentTypesValue.apply {
+            text = receiptDTO.serverTipInfo.otherPayment
+            visibility = if (receiptDTO.serverTipInfo.otherPayment == null) View.GONE else View.VISIBLE
+            binding.tvOtherPaymentTypes.visibility = visibility
+        }
+
+        binding.rvTipsInfoBreakdown.apply {
+            adapter = receiptDTO.serverTipInfo.tipsInfoBreakdown?.let {
+                HTipsInfoBreakdownListAdapter(
+                    it
+                )
+            }
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            visibility = if (receiptDTO.serverTipInfo.tipsInfoBreakdown.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        binding.rvSalesByRevenueCenter.apply {
+            adapter = receiptDTO.serverTipInfo.tipPerRevenueCenter?.let {
+                HTipsPerRevenueCenterListAdapter(
+                    it
+                )
+            }
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            visibility = if (receiptDTO.serverTipInfo.tipPerRevenueCenter.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        val shouldHideDividers =
+                receiptDTO.serverTipInfo.totalTip == null &&
+                receiptDTO.serverTipInfo.totalNetSales == null &&
+                receiptDTO.serverTipInfo.cash == null &&
+                receiptDTO.serverTipInfo.otherPayment == null &&
+                receiptDTO.serverTipInfo.tipPerRevenueCenter.isNullOrEmpty()
+
+        binding.ivDivider2.visibility = if (shouldHideDividers) View.GONE else View.VISIBLE
+
+        receipt.measure(
+            View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY),
+            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
         return Utils.generateBitmap(receipt)

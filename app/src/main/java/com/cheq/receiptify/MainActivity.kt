@@ -16,65 +16,45 @@ class MainActivity : AppCompatActivity() {
 
         val jsonString = """
 {
-  "brandName": "CHEQ DINER",
+  "brandName": null,
   "customerName": null,
-  "orderType": "",
+  "orderType": null,
   "orderSubtitle": null,
-  "totalItems": "Total Items : 1",
-  "orderNo": "Order #: H5",
-
-  "deviceType": "handheld",
-  "receiptType": "KITCHEN",
-  "timeOfOrder": "Placed at : 10/16/2023 04:14 AM EDT",
+  "totalItems": null,
+  "orderNo": null,
+  "tableNo": null,
+  "deviceType": "pos",
+  "receiptType": "SERVER_TIPS",
+  "timeOfOrder": "Placed at : 07/29/2024 11:23 AM AKDT",
   "footerText": null,
   "paymentQRLink": null,
   "isRefunded": null,
-  "isReprinted": true,
-  "printStatusText": "**UPDATED**",
+  "isReprinted": null,
+  "printStatusText": null,
   "supportInfo": "",
   "offlineHeaderMsg": "",
-  "items": [
-    {
-      "itemName": "Toast and Poached Eggs",
-      "description": "",
-      "quantity": "x1",
-      "quantityExtra": null,
-      "price": "${'$'}4.00",
-      "strikethrough": false
-    }
-  ],
-  "breakdown": [
-    {
-      "key": "PAYMENT TYPE",
-      "value": "Card",
-      "important": null
-    },
-    {
-      "key": "SUB TOTAL",
-      "value": "${'$'}4.00",
-      "important": null
-    },
-    {
-      "key": "SERVICE CHARGES",
-      "value": "${'$'}0.88",
-      "important": null
-    },
-    {
-      "key": "TAX",
-      "value": "${'$'}0.39",
-      "important": null
-    },
-    {
-      "key": "CONVENIENCE FEE",
-      "value": "${'$'}0.23",
-      "important": null
-    },
-    {
-      "key": "GRAND TOTAL",
-      "value": "${'$'}5.50",
-      "important": true
-    }
-  ]
+  "serverTipInfo": {
+    "serverName": "CHEQ Diner",
+    "serverId": "",
+    "tipInfoBreakdown": [
+      {
+        "key": "Sign in time",
+        "value": "July 30, 2024 1:08 AM"
+      },
+      {
+        "key": "Sign out time",
+        "value": ""
+      },
+      {
+        "key": "Print time",
+        "value": "July 30, 2024 1:08 AM"
+      },
+      {
+        "key": "Device Name",
+        "value": "H_027_The_CHEQ_Diner"
+      }
+    ]
+  }
 }
         """.trimIndent()
         Receiptify.init(this)

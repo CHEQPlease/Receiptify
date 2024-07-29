@@ -2,6 +2,7 @@ package com.cheq.receiptify.adapter.pos
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.data.TipsPerRevenueCenter
@@ -27,6 +28,22 @@ class PTipsPerRevenueCenterListAdapter(private val tipsPerRevenueCenter: List<Ti
             PTipsDeviceListAdapter(tipsPerRevenueCenter.deviceList)
         holder.binding.rvDeviceList.layoutManager =
             LinearLayoutManager(holder.binding.rvDeviceList.context, RecyclerView.VERTICAL, false)
+
+
+        if(position == itemCount - 1){
+            val layoutParams = holder.binding.rvDeviceList.layoutParams as ViewGroup.MarginLayoutParams
+            layoutParams.bottomMargin = 0
+            holder.binding.rvDeviceList.layoutParams = layoutParams
+        } else {
+            // Convert 3 mm to pixels
+            val displayMetrics = holder.binding.rvDeviceList.context.resources.displayMetrics
+            val marginInPixels = (3 * displayMetrics.xdpi / 25.4).toInt()
+
+            // Set the bottom margin to 3 mm in pixels
+            val layoutParams = holder.binding.rvDeviceList.layoutParams as ViewGroup.MarginLayoutParams
+            layoutParams.bottomMargin = marginInPixels
+            holder.binding.rvDeviceList.layoutParams = layoutParams
+        }
 
     }
 

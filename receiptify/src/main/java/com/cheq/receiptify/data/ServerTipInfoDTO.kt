@@ -16,7 +16,7 @@ data class ServerTipInfo(
     @SerializedName("otherPayment")
     val otherPayment: String?,
     @SerializedName("tipInfoBreakdown")
-    val tipsInfoBreakdown: List<TipsInfoBreakdown> = listOf(),
+    val tipsInfoBreakdown: List<TipsInfoBreakdown>?,
     @SerializedName("tipPerRevenueCenter")
-    val tipPerRevenueCenter: List<TipsPerRevenueCenter> = listOf()
+    val tipPerRevenueCenter: List<TipsPerRevenueCenter>?
 )

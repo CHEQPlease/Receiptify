@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:theme="@style/ReceiptifyThemePOS"
+    android:theme="@style/ReceiptifyThemeHandheld"
     >
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:paddingRight="3mm"
             tools:text="The Hot Dog"
             android:textStyle="bold"
-            android:textSize="3mm"
+            android:textSize="2.5mm"
             android:layout_weight="2.5"
             android:paddingEnd="3mm" />
         <!-- Tips per revenue center Breakdown View -->
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1mm"
-            android:layout_marginBottom="2mm"
+            android:layout_marginBottom="1.8mm"
             tools:itemCount="3"
             tools:listitem="@layout/layout_h_tips_meta_info"
             />
@@ -41,11 +41,11 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_net_sales"
+        android:id="@+id/tv_total_tips_value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="$4000.00"
-        android:textSize="3mm"
+        android:textSize="2.5mm"
         android:gravity="end"
         android:textStyle="bold"
         android:layout_weight="2.5"

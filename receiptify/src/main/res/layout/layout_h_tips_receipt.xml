@@ -80,6 +80,7 @@
 
             <!-- Divider -->
             <ImageView
+                android:id="@+id/iv_divider_1"
                 android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="1mm"
@@ -89,139 +90,148 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:visibility="gone"
+                tools:visibility="visible"
                 android:id="@+id/rv_sales_by_revenue_center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2mm"
-                android:layout_marginBottom="2mm"
                 tools:itemCount="3"
                 tools:listitem="@layout/layout_h_tip_revenue_center" />
 
-            <!-- Net Sales -->
+
             <LinearLayout
-                android:layout_marginTop="1mm"
+                tools:visibility="gone"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tv_total_net_sales"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Net Sales"
-                    android:textSize="2.3mm"
-                    android:textStyle="bold"
-                    />
+                <!-- Net Sales -->
+                <LinearLayout
+                    android:layout_marginTop="1mm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    />
+                    <TextView
+                        android:id="@+id/tv_total_net_sales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Net Sales"
+                        android:textSize="2.3mm"
+                        android:textStyle="bold"
+                        />
 
-                <TextView
-                    android:id="@+id/tv_total_net_sales_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="$16000.00"
-                    android:textSize="2.3mm"
-                    android:textStyle="bold"
-                    />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_total_net_sales_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="$16000.00"
+                        android:textSize="2.3mm"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+                <!-- Cash -->
+                <LinearLayout
+                    android:layout_marginTop="0.8mm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_cash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  - Cash"
+                        android:textSize="2.2mm"
+                        />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_cash_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="$4600.00"
+                        android:textSize="2.2mm"
+                        />
+
+                </LinearLayout>
+                <!-- Other Payment Types -->
+                <LinearLayout
+                    android:layout_marginTop="0.8mm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_other_payment_types"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  - Other Payment Types"
+                        android:textSize="2.2mm"
+                        />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_other_payment_types_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="$4600.00"
+                        android:textSize="2.2mm"
+                        />
+
+                </LinearLayout>
+                <!-- Total Tips -->
+                <LinearLayout
+                    android:layout_marginTop="0.8mm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_total_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_tips"
+                        android:textSize="2.5mm"
+                        android:textStyle="bold"
+                        />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_total_tips_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="$468.00"
+                        android:textSize="2.5mm"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="0.8mm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_cash"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="  - Cash"
-                    android:textSize="2.2mm"
-                    />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_cash_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="$4600.00"
-                    android:textSize="2.2mm"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="0.8mm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_other_payment_types"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="  - Other Payment Types"
-                    android:textSize="2.2mm"
-                    />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_other_payment_types_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="$4600.00"
-                    android:textSize="2.2mm"
-                    />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_marginTop="0.8mm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_total_tips"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/total_tips"
-                    android:textSize="2.5mm"
-                    android:textStyle="bold"
-                    />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_total_tips_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="$468.00"
-                    android:textSize="2.5mm"
-                    android:textStyle="bold"
-                    />
-
-            </LinearLayout>
-
 
             <!-- Divider -->
             <ImageView
+                android:id="@+id/iv_divider_2"
                 android:layout_width="match_parent"
                 android:layout_height="1mm"
                 android:layout_marginTop="2mm"
