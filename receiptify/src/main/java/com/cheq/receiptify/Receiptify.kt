@@ -143,10 +143,10 @@ object Receiptify  {
             binding.tvRefunded.visibility = View.GONE
         }
 
-        if(receiptDTO.supportInfo?.isNotEmpty() == true){
+        if(receiptDTO.supportInfo?.isNotEmpty() == true) {
             binding.tvSupportInfo.text = receiptDTO.supportInfo
             binding.tvSupportInfo.visibility = View.VISIBLE
-        }else{
+        } else {
             binding.tvSupportInfo.visibility = View.GONE
         }
 
@@ -385,6 +385,12 @@ object Receiptify  {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
             text = receiptDTO.serverName
         }
+        receiptDTO.footerQR?.let {
+            binding.ivFooterQrCode.apply {
+                visibility = if (receiptDTO.footerQR.isNullOrEmpty()) View.GONE else View.VISIBLE
+                setImageBitmap(Utils.generateQRBitmap(context,receiptDTO.footerQR, 40f, 60f))
+            }
+        }
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
@@ -435,7 +441,12 @@ object Receiptify  {
             text = receiptDTO.serverName
         }
 
-
+        receiptDTO.footerQR?.let {
+            binding.ivFooterQrCode.apply {
+                visibility = if (receiptDTO.footerQR.isNullOrEmpty()) View.GONE else View.VISIBLE
+                setImageBitmap(Utils.generateQRBitmap(context,receiptDTO.footerQR, 40f, 60f))
+            }
+        }
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
@@ -598,7 +609,8 @@ object Receiptify  {
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
-        binding.ivPaymentQr.setImageBitmap(Utils.generateQRBitmap(receiptDTO.paymentQRLink,800,800))
+        binding.ivPaymentQr.setImageBitmap(context.get()
+            ?.let { Utils.generateQRBitmap(it,receiptDTO.paymentQR,30f,40f) })
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)

@@ -24,15 +24,16 @@ class MainActivity : AppCompatActivity() {
           "tableNo": "Table #: 234",
           "customerName": "Customer name : Sheikh Faisal Khelzi",
           "receiptType": "kitchen",
-          "deviceType": "handheld",
+          "deviceType": "pos",
           "timeOfOrder": "Placed at : 01/12/2023 03:57 AM AKST",
-          "paymentQRLink": "https://www.google.com",
+          "paymentQR": "https://www.google.com",
+          "footerQR" : "123456wvweq2512123tqdsasdgasdgasdg",
           "isRefunded" : true,
-          "isReprinted" : false,
+          "isReprinted" : true,
           "deviceName": "Kiosk_1_q2345_2341",
           "serverName": "Served by Niaz",
           
-        //"offlineHeaderMsg" : "Please provide this copy to an attendant",
+          "offlineHeaderMsg" : "Please provide this copy to an attendant",
           "supportInfo" : "For support, please contact 1-800-123-4567",
           "items": [
             {

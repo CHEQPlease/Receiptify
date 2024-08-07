@@ -149,6 +149,18 @@
         android:layout_marginBottom="1mm"
         />
 
+    <ImageView
+        android:id="@+id/iv_footer_qr_code"
+        android:layout_width="wrap_content"
+        android:layout_height="24mm"
+        android:layout_marginTop="2mm"
+        android:layout_marginBottom="2mm"
+        android:layout_gravity="center"
+        tools:src="@drawable/qr_cheq_app_apple_qr"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
 
     <View
         android:layout_width="match_parent"
