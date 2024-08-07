@@ -13,6 +13,7 @@
     <!-- Brand Name -->
     <LinearLayout
         android:gravity="center"
+        android:layout_marginBottom="1mm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -23,16 +24,33 @@
             tools:text="CHEQ Inc."
             android:gravity="center"
             android:layout_marginTop="5mm"
-            android:layout_marginBottom="4mm"
+            android:layout_marginBottom="2mm"
             android:textSize="3.8mm"
             android:textStyle="bold"
             />
 
     </LinearLayout>
 
+
+    <!-- Server Name -->
+    <TextView
+        android:id="@+id/tv_server_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="2.2mm"
+        android:textStyle="bold"
+        android:layout_marginBottom="1mm"
+        android:gravity="center"
+        android:layout_gravity="center"
+        tools:text="Served By Mr. John Doe"
+        />
+
+
     <!-- Table Section -->
 
     <LinearLayout
+        android:layout_marginTop="1.5mm"
+        android:layout_marginBottom="1.5mm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -61,6 +79,8 @@
 
     </LinearLayout>
 
+
+
     <!-- Placed At -->
     <TextView
         android:id="@+id/tv_placed_at"
@@ -69,19 +89,55 @@
         android:textSize="2mm"
         android:textStyle="bold"
         android:layout_marginTop="1mm"
-        android:layout_marginBottom="2mm"
+        android:layout_marginBottom="1mm"
         android:layout_gravity="center"
         tools:text="Placed at 01/11/2023 1:00 AM PST"
         />
 
+    <!-- Device Name -->
+    <LinearLayout
+        android:id="@+id/container_device_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1.2mm"
+        >
 
+        <TextView
+            android:id="@+id/tv_device_name_title"
+            android:layout_width="0mm"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Device Name: "
+            android:textSize="2mm"
+            android:gravity="start"
+            android:minEms="11"
+            android:visibility="visible"
+            />
+
+        <View
+            android:layout_width="0mm"
+            android:layout_height="0mm"/>
+
+        <TextView
+            android:id="@+id/tv_device_name_value"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            tools:text="H_014_The_CHEQ_Diner"
+            android:textSize="2mm"
+            android:gravity="end"
+            android:visibility="visible"
+            />
+
+
+    </LinearLayout>
 
     <!-- Divider -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0.5mm"
         android:src="@drawable/divider_dotted_line"
-        android:layout_marginTop="1mm"
+        android:layout_marginTop="2mm"
         android:layout_marginBottom="1mm"
         />
 

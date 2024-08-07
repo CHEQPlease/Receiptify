@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         tools:text="TOTAL ITEMS - 7"
         android:layout_gravity="center"
-        android:textSize="2.8mm"
+        android:textSize="2.3mm"
         android:textStyle="bold"
         />
 
