@@ -295,6 +295,14 @@ object Receiptify  {
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        binding.containerDeviceName.apply {
+            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        }
+        binding.tvServerName.apply {
+            visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            text = receiptDTO.serverName
+        }
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
@@ -320,6 +328,16 @@ object Receiptify  {
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+
+        binding.containerDeviceName.apply {
+            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        }
+        binding.tvServerName.apply {
+            visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            text = receiptDTO.serverName
+        }
+
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
@@ -359,6 +377,14 @@ object Receiptify  {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
+        binding.containerDeviceName.apply {
+            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        }
+        binding.tvServerName.apply {
+            visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            text = receiptDTO.serverName
+        }
         receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
@@ -399,6 +425,16 @@ object Receiptify  {
             binding.tvReprinted.typeface = Typeface.DEFAULT_BOLD
             binding.tvReprinted.visibility = View.VISIBLE
         }
+
+        binding.containerDeviceName.apply {
+            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        }
+        binding.tvServerName.apply {
+            visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            text = receiptDTO.serverName
+        }
+
 
         receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
