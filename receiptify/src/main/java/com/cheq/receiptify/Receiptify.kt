@@ -9,21 +9,43 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.cheq.receiptify.adapter.handheld.*
-import com.cheq.receiptify.adapter.pos.*
-import com.cheq.receiptify.enums.DeviceType
+import com.cheq.receiptify.adapter.handheld.HBreakdownListAdapter
+import com.cheq.receiptify.adapter.handheld.HDeviceSalesReportBreakdownAdapter
+import com.cheq.receiptify.adapter.handheld.HDeviceSalesReportMetaAdapter
+import com.cheq.receiptify.adapter.handheld.HDishListAdapterCustomer
+import com.cheq.receiptify.adapter.handheld.HKitchenDishListAdapter
+import com.cheq.receiptify.adapter.handheld.HTipsInfoBreakdownListAdapter
+import com.cheq.receiptify.adapter.handheld.HTipsPerRevenueCenterListAdapter
+import com.cheq.receiptify.adapter.pos.PBreakdownListAdapter
+import com.cheq.receiptify.adapter.pos.PDeviceSalesReportBreakdownAdapter
+import com.cheq.receiptify.adapter.pos.PDeviceSalesReportMetaAdapter
+import com.cheq.receiptify.adapter.pos.PDishListAdapterCustomer
+import com.cheq.receiptify.adapter.pos.PGratuityListAdapter
+import com.cheq.receiptify.adapter.pos.PKitchenDishListAdapter
+import com.cheq.receiptify.adapter.pos.PTipsInfoBreakdownListAdapter
+import com.cheq.receiptify.adapter.pos.PTipsPerRevenueCenterListAdapter
 import com.cheq.receiptify.data.ReceiptDTO
-import com.cheq.receiptify.enums.ReceiptType
-import com.cheq.receiptify.databinding.*
+import com.cheq.receiptify.databinding.LayoutHCustomerKioskReceiptBinding
+import com.cheq.receiptify.databinding.LayoutHCustomerPosReceiptBinding
+import com.cheq.receiptify.databinding.LayoutHDeviceSalesReportBinding
+import com.cheq.receiptify.databinding.LayoutHKitchenReceiptBinding
+import com.cheq.receiptify.databinding.LayoutHMerchantReceiptBinding
+import com.cheq.receiptify.databinding.LayoutHTipsReceiptBinding
+import com.cheq.receiptify.databinding.LayoutPCustomerKioskReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPCustomerPosReceiptBinding
+import com.cheq.receiptify.databinding.LayoutPDeviceSalesReportBinding
+import com.cheq.receiptify.databinding.LayoutPKitchenReceiptBinding
+import com.cheq.receiptify.databinding.LayoutPMerchantReceiptBinding
+import com.cheq.receiptify.databinding.LayoutPQrPaymentBinding
+import com.cheq.receiptify.databinding.LayoutPTipsReceiptBinding
+import com.cheq.receiptify.enums.DeviceType
+import com.cheq.receiptify.enums.ReceiptType
 import com.cheq.receiptify.utils.Utils
-import java.lang.IllegalArgumentException
 import java.lang.ref.SoftReference
 import kotlin.properties.Delegates
 
 
 object Receiptify  {
-
 
     private lateinit var context: SoftReference<Context>
     private var handheldPaperWidth by Delegates.notNull<Int>()
@@ -68,6 +90,10 @@ object Receiptify  {
                     ReceiptType.SERVER_TIPS.name -> {
                         return buildTipsReceiptForServerHandheld(receiptDTO)
                     }
+
+                    ReceiptType.DEVICE_SALES_REPORT.name -> {
+                        return buildDeviceSalesReportHandheld(receiptDTO)
+                    }
                 }
 
             } else if (deviceType.uppercase() == DeviceType.POS.name) {
@@ -95,13 +121,16 @@ object Receiptify  {
                     ReceiptType.QR_PAYMENT.name -> {
                         return buildQRPaymentReceipt(receiptDTO)
                     }
+
+                    ReceiptType.DEVICE_SALES_REPORT.name -> {
+                        return buildDeviceSalesReportPOS(receiptDTO)
+                    }
                 }
             }
         }
 
         throw IllegalArgumentException("Invalid Device/Receipt type")
     }
-
 
     private fun buildCustomerReceiptPOS(receiptDTO: ReceiptDTO): Bitmap {
         val binding = LayoutPCustomerPosReceiptBinding.inflate(LayoutInflater.from(context.get()))
@@ -616,6 +645,57 @@ object Receiptify  {
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
         return Utils.generateBitmap(receipt)
-
     }
+
+    private fun buildDeviceSalesReportHandheld(receiptDTO: ReceiptDTO): Bitmap {
+        val binding = LayoutHDeviceSalesReportBinding.inflate(LayoutInflater.from(context.get()))
+        val receipt = binding.layoutDeviceSalesReport
+
+        binding.tvPartnerName.text = receiptDTO.deviceSalesReport.header
+
+        if(receiptDTO.deviceSalesReport.headerMeta?.isNotEmpty() == true) {
+            binding.rvDevicesSalesHeaderMeta.adapter =
+                HDeviceSalesReportMetaAdapter(receiptDTO.deviceSalesReport.headerMeta)
+            binding.rvDevicesSalesHeaderMeta.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        }
+
+        if(receiptDTO.deviceSalesReport.breakdown?.isNotEmpty() == true) {
+            binding.rvDeviceSalesPaymentBreakdown.adapter =
+                HDeviceSalesReportBreakdownAdapter(receiptDTO.deviceSalesReport.breakdown)
+            binding.rvDeviceSalesPaymentBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        }
+
+        receipt.measure( View.MeasureSpec.makeMeasureSpec(handheldPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+        receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
+
+        return Utils.generateBitmap(receipt, highQuality = true)
+    }
+
+
+    private fun buildDeviceSalesReportPOS(receiptDTO: ReceiptDTO): Bitmap {
+        val binding = LayoutPDeviceSalesReportBinding.inflate(LayoutInflater.from(context.get()))
+        val receipt = binding.layoutDeviceSalesReport
+
+        binding.tvPartnerName.text = receiptDTO.deviceSalesReport.header
+
+        if(receiptDTO.deviceSalesReport.headerMeta?.isNotEmpty() == true) {
+            binding.rvDeviceSalesHeaderMeta.adapter =
+                PDeviceSalesReportMetaAdapter(receiptDTO.deviceSalesReport.headerMeta)
+            binding.rvDeviceSalesHeaderMeta.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+
+        }
+
+        if(receiptDTO.deviceSalesReport.breakdown?.isNotEmpty() == true) {
+            binding.rvDeviceSalesPaymentBreakdown.adapter =
+                PDeviceSalesReportBreakdownAdapter(receiptDTO.deviceSalesReport.breakdown)
+            binding.rvDeviceSalesPaymentBreakdown.layoutManager = LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        }
+
+        receipt.measure( View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+        receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
+
+        return Utils.generateBitmap(receipt, highQuality = true)
+    }
+
+
 }

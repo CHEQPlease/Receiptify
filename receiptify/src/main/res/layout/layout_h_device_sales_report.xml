@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_device_sales_report"
+    android:layout_width="40mm"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="match_parent"
+    android:theme="@style/ReceiptifyThemeHandheld"
+    tools:ignore="InOrMmUsage,hardcodedText"
+    >
+
+    <!-- Server Image -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft=".5mm"
+        android:paddingRight=".5mm"
+        android:paddingTop="1mm"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_partner_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1mm"
+                android:gravity="center"
+                android:textSize="3mm"
+                android:textStyle="bold"
+                tools:text="Partner Name" />
+
+            <TextView
+                android:id="@+id/tv_receipt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1.5mm"
+                android:layout_marginBottom="2mm"
+                android:gravity="center"
+                android:textSize="2.5mm"
+                android:textStyle="bold"
+                android:text="@string/total_transaction_statement" />
+
+            <!-- Device Sales Receipt info breakdown -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="visible"
+                android:id="@+id/rv_devices_sales_header_meta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1mm"
+                android:layout_marginBottom="1mm"
+                tools:itemCount="2"
+                tools:listitem="@layout/layout_h_device_sales_meta_info" />
+
+            <!-- Divider -->
+            <ImageView
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="1mm"
+                android:layout_marginTop="1mm"
+                android:layout_marginBottom="1mm"
+                android:src="@drawable/divider_dotted_line" />
+
+            <LinearLayout
+                tools:visibility="visible"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Device Sales Receipt info breakdown -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="visible"
+                    android:id="@+id/rv_device_sales_payment_breakdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/layout_h_device_sales_meta_info" />
+
+            </LinearLayout>
+
+            <!-- Divider -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1mm"
+                android:layout_marginTop="1mm"
+                android:layout_marginBottom="1mm"
+                android:src="@drawable/divider_dotted_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1mm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="SALES COPY"
+                android:textSize="3mm"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="1mm"
+                android:paddingBottom="1mm">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POWERED BY"
+                    android:textSize="2mm"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" CHEQ"
+                    android:textSize="2mm"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <!-- Whitespace for linefeed -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6mm" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Extra Line Feed For Small receipt Paper Cut Issue-->
+    <View
+        android:id="@+id/view_extra_line_feed"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="6mm"/>
+
+</LinearLayout>

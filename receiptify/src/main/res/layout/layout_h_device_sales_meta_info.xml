@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:theme="@style/ReceiptifyThemeHandheld"
+    android:layout_marginBottom="0.8mm"
+    >
+
+    <TextView
+        android:id="@+id/tv_device_sales_meta_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Report Start Time"
+        android:textSize="2.1mm"
+        />
+
+    <TextView
+        android:id="@+id/tv_device_sales_meta_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2.5mm"
+        android:gravity="end"
+        android:textSize="2.1mm"
+        android:textStyle="normal"
+        tools:text="May 14, 2024 1:12 PM" />
+
+</LinearLayout>
+

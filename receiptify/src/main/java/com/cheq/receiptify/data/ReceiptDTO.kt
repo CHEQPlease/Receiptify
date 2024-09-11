@@ -43,6 +43,8 @@ data class ReceiptDTO(
     val isUpdatedFullVoid: Boolean = false,
     @SerializedName("serverTipInfo")
     val serverTipInfo: ServerTipInfo,
+    @SerializedName("deviceSalesReport")
+    val deviceSalesReport: DeviceSalesReport,
     @SerializedName("gratuityInfo")
     val gratuityInfo: GratuityInfo?,
     @SerializedName("paymentQR")
