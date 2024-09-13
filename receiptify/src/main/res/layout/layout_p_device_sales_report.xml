@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/server_copy"
+                android:text="SALES COPY"
                 android:textSize="4mm"
                 android:textStyle="bold" />
 
