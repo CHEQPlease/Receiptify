@@ -200,16 +200,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="POWERED BY"
+            android:text="@string/powered_by"
             android:textSize="2.3mm"
 
             />
+
+        <View
+            android:layout_width="0.5mm"
+            android:layout_height="0mm"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=" CHEQ"
+            android:text="@string/cantaloupe"
             android:textSize="2.3mm"
             android:textStyle="normal"
             />

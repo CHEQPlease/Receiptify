@@ -7,7 +7,6 @@
     <string name="suggested_gratuity">Suggested Gratuity</string>
     <string name="merchant_copy">MERCHANT COPY</string>
     <string name="powered_by">POWERED BY</string>
-    <string name="cheq">CHEQ</string>
     <string name="custom_tip">CUSTOM TIP</string>
     <string name="refunded">REFUNDED</string>
     <string name="signature">SIGNATURE</string>
@@ -15,5 +14,6 @@
     <string name="total_transaction_statement">Total Transaction Statement</string>
     <string name="total_tips">Total Tips</string>
     <string name="server_copy">SERVER COPY</string>
+    <string name="cantaloupe">CANTALOUPE</string>
 
 </resources>

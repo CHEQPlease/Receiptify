@@ -113,16 +113,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="POWERED BY"
+                    android:text="@string/powered_by"
                     android:textSize="3mm"
-
-                    />
+                    android:layout_marginEnd="0.6mm"
+                    android:layout_marginRight="0.6mm" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text=" CHEQ"
+                    android:text="@string/cantaloupe"
                     android:textSize="3mm"
                     android:textStyle="bold" />
 

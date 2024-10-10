@@ -243,6 +243,32 @@
         android:visibility="visible"
         tools:visibility="visible"
         />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="2mm"
+        android:paddingTop="1mm"
+        android:paddingBottom="1mm">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/powered_by"
+            android:textSize="3mm"
+            android:layout_marginEnd="0.6mm"
+            android:layout_marginRight="0.6mm" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/cantaloupe"
+            android:textSize="3mm"
+            android:textStyle="bold" />
+
+    </LinearLayout>
     <!-- Extra Line Feed For Small receipt Paper Cut Issue-->
     <View
         android:id="@+id/view_extra_line_feed"

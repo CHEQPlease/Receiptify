@@ -109,25 +109,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingTop="1mm"
-                android:paddingBottom="1mm">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="POWERED BY"
-                    android:textSize="2mm"
+                    android:text="@string/powered_by"
+                    android:textSize="2.3mm"
 
                     />
+
+                <View
+                    android:layout_width="0.5mm"
+                    android:layout_height="0mm"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text=" CHEQ"
-                    android:textSize="2mm"
-                    android:textStyle="bold"
-                    tools:ignore="HardcodedText" />
+                    android:text="@string/cantaloupe"
+                    android:textSize="2.3mm"
+                    android:textStyle="normal"
+                    />
 
             </LinearLayout>
 
