@@ -8,5 +8,8 @@ data class Breakdown(
     @SerializedName("key")
     val key: String?,
     @SerializedName("value")
-    val value: String?
+    val value: String?,
+    @SerializedName("gap")
+    val gap: Boolean = false,
+
 )
