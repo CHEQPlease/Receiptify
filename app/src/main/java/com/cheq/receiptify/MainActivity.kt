@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
           "orderType": "Counter",
           "totalItems": "Total items: 2",
           "orderNo": "Order# :K10",
-          "receiptType": "customer_total_split",
+          "receiptType": "customer_split",
           "deviceType": "handheld",
           "timeOfOrder": "May 23, 07:23PM",
           "footerQR": "123456wvweq2512123tqdsasdgasdgasdg",
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
               {
                 "key": "SPLIT -1",
                 "value": "Card",
-                "title": true
+                "gap": true
               },
               {
                 "key": "Payment type",
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
               {
                 "key": "SPLIT -2",
                 "value": "Card",
-                "title": true
+                "gap": true
               },
               {
                 "key": "Payment type",
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
               {
                 "key": "SPLIT -1",
                 "value": "Card",
-                "title": true
+                "gap": true
               },
               {
                 "key": "Payment type",
