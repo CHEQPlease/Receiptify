@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_customer_total_split_receipt_pos"
+    android:id="@+id/layout_customer_split_receipt_pos"
     android:layout_width="75mm"
     android:padding="3mm"
     android:background="@android:color/white"
@@ -9,7 +9,6 @@
     android:layout_height="wrap_content"
     android:theme="@style/ReceiptifyThemePOS"
     tools:ignore="InOrMmUsage">
-
 
     <!-- Brand Name -->
     <LinearLayout
@@ -94,33 +93,18 @@
         tools:ignore="InOrMmUsage,Suspicious0dp" />
 
 
-    <!-- Item table header -->
-    <include layout="@layout/layout_p_item_table_header" />
-
-    <!-- Item List View -->
+    <!-- Split break down list -->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_dishes"
+        android:id="@+id/rv_split_breakdown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1mm"
         tools:itemCount="3"
-        tools:listitem="@layout/layout_p_purchased_items"
-        />
+        tools:listitem="@layout/layout_p_meta_info" />
 
-    <TextView
-        android:id="@+id/tv_split_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Split count - 4"
-        android:layout_marginTop="1mm"
-        android:layout_marginBottom="1mm"
-        android:layout_gravity="start"
-        android:textSize="3.5mm"
-        />
 
-    <!-- Payment Breakdown View -->
-
+    <!-- Payment break down list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_breakdown"
         android:layout_width="match_parent"
@@ -138,9 +122,6 @@
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
         />
-
-    <!-- Support Information -->
-
     <View
         android:layout_width="match_parent"
         android:layout_height="3mm"

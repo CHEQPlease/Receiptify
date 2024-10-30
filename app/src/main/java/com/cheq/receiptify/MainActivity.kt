@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
           "orderType": "Counter",
           "totalItems": "Total items: 2",
           "orderNo": "Order# :K10",
-          "receiptType": "customer_total_split",
+          "receiptType": "customer_split",
           "deviceType": "pos",
           "timeOfOrder": "May 23, 07:23PM",
           "footerQR": "123456wvweq2512123tqdsasdgasdgasdg",

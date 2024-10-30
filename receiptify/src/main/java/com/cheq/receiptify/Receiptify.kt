@@ -17,6 +17,7 @@ import com.cheq.receiptify.adapter.handheld.HDishListAdapterCustomer
 import com.cheq.receiptify.adapter.handheld.HKitchenDishListAdapter
 import com.cheq.receiptify.adapter.handheld.HTipsInfoBreakdownListAdapter
 import com.cheq.receiptify.adapter.handheld.HTipsPerRevenueCenterListAdapter
+import com.cheq.receiptify.adapter.handheld.PSplitListAdapter
 import com.cheq.receiptify.adapter.pos.PBreakdownListAdapter
 import com.cheq.receiptify.adapter.pos.PDeviceSalesReportBreakdownAdapter
 import com.cheq.receiptify.adapter.pos.PDeviceSalesReportMetaAdapter
@@ -37,6 +38,7 @@ import com.cheq.receiptify.databinding.LayoutHMerchantSplitReceiptBinding
 import com.cheq.receiptify.databinding.LayoutHTipsReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPCustomerKioskReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPCustomerPosReceiptBinding
+import com.cheq.receiptify.databinding.LayoutPCustomerSplitRecepitBinding
 import com.cheq.receiptify.databinding.LayoutPCutomerSplitTotalReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPDeviceSalesReportBinding
 import com.cheq.receiptify.databinding.LayoutPKitchenReceiptBinding
@@ -121,6 +123,10 @@ object Receiptify {
 
                     ReceiptType.CUSTOMER_TOTAL_SPLIT.name -> {
                         return buildCustomerTotalSplitReceiptPOS(receiptDTO)
+                    }
+
+                    ReceiptType.CUSTOMER_SPLIT.name -> {
+                        return buildCustomerSplitReceiptPOS(receiptDTO)
                     }
 
                     ReceiptType.KIOSK.name -> {
@@ -246,6 +252,43 @@ object Receiptify {
 
         return Utils.generateBitmap(customerReceipt, highQuality = true)
     }
+
+    private fun buildCustomerSplitReceiptPOS(receiptDTO: ReceiptDTO): Bitmap {
+
+        val binding = LayoutPCustomerSplitRecepitBinding.inflate(LayoutInflater.from(context.get()))
+        val customerReceipt = binding.layoutCustomerSplitReceiptPos
+        val context = context.get()!!
+
+        /* TODO : Move to string resource to support localization in future*/
+
+        binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvOrderNo.text = "${receiptDTO.orderNo}"
+        binding.tvOrderType.text = "${receiptDTO.orderType}"
+
+        binding.tvTotalItems.text =
+            receiptDTO.totalItems /* TODO : Move to plural type string resource*/
+        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        binding.rvSplitBreakdown.adapter = PSplitListAdapter(receiptDTO.splits)
+        binding.rvSplitBreakdown.layoutManager =
+            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+
+        binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
+        binding.rvBreakdown.layoutManager =
+            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+
+
+        customerReceipt.measure(
+            View.MeasureSpec.makeMeasureSpec(
+                posPaperWidth,
+                View.MeasureSpec.EXACTLY
+            ), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        )
+        customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
+
+        return Utils.generateBitmap(customerReceipt, highQuality = true)
+    }
+
 
     private fun buildCustomerReceiptHandheld(receiptDTO: ReceiptDTO) : Bitmap {
 

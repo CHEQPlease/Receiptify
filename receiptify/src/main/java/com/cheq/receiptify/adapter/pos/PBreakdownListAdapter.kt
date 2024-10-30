@@ -28,6 +28,14 @@ class PBreakdownListAdapter(private val breakdowns: List<Breakdown>) : RecyclerV
             holder.binding.tvBreakdownKeyName.setTextSize(TypedValue.COMPLEX_UNIT_MM,4f)
             holder.binding.tvBreakdownKeyValue.setTextSize(TypedValue.COMPLEX_UNIT_MM,4f)
         }
+
+        if(breakdown.gap){
+            val params = holder.binding.tvBreakdownKeyName.layoutParams as ViewGroup.MarginLayoutParams
+            params.topMargin = 16// Set top margin in pixels
+            params.bottomMargin = 16 // Set bottom margin in pixels
+            holder.binding.tvBreakdownKeyName.layoutParams = params
+        }
+
     }
 
     override fun getItemCount(): Int {
