@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_merchant_split_receipt_pos"
+    android:layout_width="75mm"
+    android:padding="3mm"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content"
+    android:theme="@style/ReceiptifyThemePOS"
+    tools:ignore="InOrMmUsage">
+
+    <!-- Brand Name -->
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_brand_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Nation wide arena"
+            android:gravity="center"
+            android:layout_marginTop="2mm"
+            android:layout_marginBottom="1mm"
+            android:textSize="4mm"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+    <!-- Header -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Left-aligned TextView -->
+        <TextView
+            android:id="@+id/tv_order_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="3.5mm"
+            android:gravity="start"
+            tools:text="Counter" />
+
+        <!-- Right-aligned TextView -->
+        <TextView
+            android:id="@+id/tv_order_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:gravity="end"
+            tools:text="ORDER #: 7"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <!-- Total Items -->
+
+    <TextView
+        android:id="@+id/tv_total_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TOTAL ITEMS - 7"
+        android:layout_gravity="start"
+        android:textSize="3.5mm"
+        />
+
+    <!-- Placed At -->
+    <TextView
+        android:id="@+id/tv_placed_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="2.8mm"
+        android:layout_marginTop="1mm"
+        android:layout_gravity="start"
+        tools:text="01/11/2023 1:00 AM PST"
+        />
+
+    <!-- Divider -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5mm"
+        android:src="@drawable/divider_dotted_line"
+        android:layout_marginTop="1mm"
+        android:layout_marginBottom="1mm"
+        tools:ignore="InOrMmUsage,Suspicious0dp" />
+
+
+    <!-- Split break down list -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_split_breakdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1mm"
+        tools:itemCount="3"
+        tools:listitem="@layout/layout_p_meta_info" />
+
+
+    <!-- Payment break down list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_breakdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1mm"
+        tools:itemCount="3"
+        tools:listitem="@layout/layout_p_meta_info"
+        />
+
+    <!-- Divider -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5mm"
+        android:src="@drawable/divider_dotted_line"
+        android:layout_marginTop="1mm"
+        android:layout_marginBottom="1mm"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3mm"
+        android:layout_marginTop="8mm"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="MERCHANT COPY"
+        android:textSize="4mm"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/powered_by"
+            android:textSize="4mm"
+            android:layout_marginRight="0.6mm"
+            android:layout_marginEnd="0.6mm" />
+
+        <TextView
+            android:id="@+id/tvCompanyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/cantaloupe"
+            android:textSize="4mm"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+    <!-- Whitespace for line feed-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6mm"/>
+
+</LinearLayout>

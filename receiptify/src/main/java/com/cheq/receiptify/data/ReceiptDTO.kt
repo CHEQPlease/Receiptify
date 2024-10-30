@@ -55,4 +55,8 @@ data class ReceiptDTO(
     val offlineHeaderMsg: String?,
     @SerializedName("supportInfo")
     val supportInfo: String?,
+    @SerializedName("splitCount")
+    val splitCount: String?,
+    @SerializedName("splits")
+    val splits: List<List<Breakdown>> = listOf(),
 )
