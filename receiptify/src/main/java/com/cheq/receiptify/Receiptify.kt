@@ -43,6 +43,7 @@ import com.cheq.receiptify.databinding.LayoutPCutomerSplitTotalReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPDeviceSalesReportBinding
 import com.cheq.receiptify.databinding.LayoutPKitchenReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPMerchantReceiptBinding
+import com.cheq.receiptify.databinding.LayoutPMerchantSplitReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPQrPaymentBinding
 import com.cheq.receiptify.databinding.LayoutPTipsReceiptBinding
 import com.cheq.receiptify.enums.DeviceType
@@ -135,6 +136,10 @@ object Receiptify {
 
                     ReceiptType.MERCHANT.name -> {
                         return buildMerchantReceiptPOS(receiptDTO)
+                    }
+
+                    ReceiptType.MERCHANT_SPLIT.name -> {
+                        return buildMerchantSplitReceiptPOS(receiptDTO)
                     }
 
                     ReceiptType.KITCHEN.name -> {
@@ -536,6 +541,43 @@ object Receiptify {
         return Utils.generateBitmap(receipt, highQuality = true)
 
     }
+
+    private fun buildMerchantSplitReceiptPOS(receiptDTO: ReceiptDTO): Bitmap {
+
+        val binding = LayoutPMerchantSplitReceiptBinding.inflate(LayoutInflater.from(context.get()))
+        val customerReceipt = binding.layoutMerchantSplitReceiptPos
+        val context = context.get()!!
+
+        /* TODO : Move to string resource to support localization in future*/
+
+        binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvOrderNo.text = "${receiptDTO.orderNo}"
+        binding.tvOrderType.text = "${receiptDTO.orderType}"
+
+        binding.tvTotalItems.text =
+            receiptDTO.totalItems /* TODO : Move to plural type string resource*/
+        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        binding.rvSplitBreakdown.adapter = PSplitListAdapter(receiptDTO.splits)
+        binding.rvSplitBreakdown.layoutManager =
+            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+
+        binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
+        binding.rvBreakdown.layoutManager =
+            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+
+
+        customerReceipt.measure(
+            View.MeasureSpec.makeMeasureSpec(
+                posPaperWidth,
+                View.MeasureSpec.EXACTLY
+            ), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        )
+        customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
+
+        return Utils.generateBitmap(customerReceipt, highQuality = true)
+    }
+
 
     private fun buildMerchantReceiptHandheld(receiptDTO: ReceiptDTO): Bitmap {
         val binding = LayoutHMerchantReceiptBinding.inflate(LayoutInflater.from(context.get()))
