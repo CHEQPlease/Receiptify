@@ -235,11 +235,13 @@ object Receiptify {
 
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
-        binding.tvOrderType.text = receiptDTO.orderType
+        binding.tvOrderType.text = "${receiptDTO.orderType}"
 
         binding.tvTotalItems.text =
-            "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+            receiptDTO.totalItems /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        binding.tvSplitCount.text = receiptDTO.splitCount
+
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
