@@ -249,6 +249,10 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
+        if (!receiptDTO.isRefunded) {
+            binding.tvRefunded.visibility = View.GONE
+        }
+
         customerReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(
                 posPaperWidth,
@@ -362,6 +366,10 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
+        if(!receiptDTO.isRefunded){
+            binding.tvRefunded.visibility = View.GONE
+        }
+
         customerReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(
                 handheldPaperWidth,
@@ -372,7 +380,6 @@ object Receiptify {
 
 
         return Utils.generateBitmap(customerReceipt, highQuality = true)
-
     }
 
     private fun buildCustomerSplitReceiptHandheld(receiptDTO: ReceiptDTO): Bitmap {
