@@ -288,6 +288,9 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
+        if (!receiptDTO.isRefunded) {
+            binding.tvRefunded.visibility = View.GONE
+        }
 
         customerReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(
@@ -405,6 +408,10 @@ object Receiptify {
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+
+        if(!receiptDTO.isRefunded){
+            binding.tvRefunded.visibility = View.GONE
+        }
 
         customerReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(
