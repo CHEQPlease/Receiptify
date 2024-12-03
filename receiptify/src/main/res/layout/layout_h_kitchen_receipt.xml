@@ -35,10 +35,23 @@
             android:layout_height="wrap_content"
             tools:text="Order # 398"
             android:layout_marginTop="0mm"
-            android:layout_marginBottom="1mm"
+            android:layout_marginBottom="2mm"
             android:textSize="4.3mm"
             android:gravity="center"
             android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/tv_reprinted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reprinted"
+            android:layout_gravity="center"
+            android:textSize="3mm"
+            android:textStyle="bold"
+            android:layout_marginBottom="3mm"
+            android:visibility="gone"
+            tools:visibility="visible"
             />
 
         <TextView
@@ -168,17 +181,6 @@
         android:layout_marginBottom="3mm"
         />
 
-    <TextView
-        android:id="@+id/tv_reprinted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reprinted"
-        android:layout_gravity="center"
-        android:textSize="3mm"
-        android:textStyle="bold"
-        android:visibility="gone"
-        tools:visibility="visible"
-        />
 
     <TextView
         android:id="@+id/k_tv_brand_name"
