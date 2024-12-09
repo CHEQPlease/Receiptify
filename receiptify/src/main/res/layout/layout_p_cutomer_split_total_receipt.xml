@@ -139,6 +139,18 @@
         android:layout_marginBottom="1mm"
         />
 
+    <!-- Refunded -->
+    <TextView
+        android:id="@+id/tv_refunded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refunded"
+        android:layout_marginTop="4mm"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="4mm"
+        />
+
     <!-- Support Information -->
 
     <View
