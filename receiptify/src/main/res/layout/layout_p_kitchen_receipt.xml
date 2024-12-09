@@ -45,6 +45,18 @@
             android:textStyle="bold"
             />
 
+        <TextView
+            android:id="@+id/tv_reprinted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reprinted"
+            android:layout_gravity="center"
+            android:textSize="4mm"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+
         <!-- Table number show if table is available -->
         <TextView
             android:id="@+id/tv_table_no"
@@ -220,17 +232,7 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_reprinted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reprinted"
-        android:layout_gravity="center"
-        android:textSize="4mm"
-        android:textStyle="bold"
-        android:visibility="gone"
-        tools:visibility="visible"
-        />
+
 
     <TextView
         android:id="@+id/k_tv_brand_name"
