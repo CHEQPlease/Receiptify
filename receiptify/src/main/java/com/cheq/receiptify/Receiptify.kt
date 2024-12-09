@@ -705,6 +705,12 @@ object Receiptify {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
+        if (receiptDTO.printStatusText != null) {
+            binding.tvReprinted.text = receiptDTO.printStatusText
+            binding.tvReprinted.typeface = Typeface.DEFAULT_BOLD
+            binding.tvReprinted.visibility = View.VISIBLE
+        }
+
         binding.containerDeviceName.apply {
             visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
             binding.tvDeviceNameValue.text = receiptDTO.deviceName
