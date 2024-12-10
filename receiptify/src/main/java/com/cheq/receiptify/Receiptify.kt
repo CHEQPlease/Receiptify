@@ -582,6 +582,14 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
+        binding.containerDeviceName.apply {
+            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        }
+        binding.tvServerName.apply {
+            visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            text = receiptDTO.serverName
+        }
 
         customerReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(
@@ -646,6 +654,16 @@ object Receiptify {
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
+
+        binding.tvServerName.apply {
+            visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            text = receiptDTO.serverName
+        }
+
+        binding.containerDeviceName.apply {
+            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        }
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
