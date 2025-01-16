@@ -9,6 +9,10 @@ data class Breakdown(
     val key: String?,
     @SerializedName("value")
     val value: String?,
+    @SerializedName("subscriptKey")
+    val subscriptKey: String?,
+    @SerializedName("subscriptValue")
+    val subScriptValue: String?,
     @SerializedName("gap")
     val gap: Boolean = false,
 

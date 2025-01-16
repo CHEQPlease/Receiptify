@@ -2,6 +2,7 @@ package com.cheq.receiptify.adapter.handheld
 
 import android.util.TypedValue
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.data.Breakdown
@@ -18,8 +19,18 @@ class HBreakdownListAdapter(private val breakdowns: List<Breakdown>) : RecyclerV
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val breakdown = breakdowns[position]
-        holder.binding.tvBreakdownKeyName.text = breakdown.key
-        holder.binding.tvBreakdownKeyValue.text = breakdown.value
+
+        holder.binding.containerBreakdownRow.apply {
+            visibility = if (breakdown.key.isNullOrEmpty()) View.GONE else View.VISIBLE
+            holder.binding.tvBreakdownKeyName.text = breakdown.key
+            holder.binding.tvBreakdownKeyValue.text = breakdown.value
+        }
+
+        holder.binding.containerSubscriptRow.apply {
+            visibility = if (breakdown.subscriptKey.isNullOrEmpty()) View.GONE else View.VISIBLE
+            holder.binding.tvBreakdownSubscriptKeyName.text = breakdown.subscriptKey
+            holder.binding.tvBreakdownSubscriptKeyValue.text = breakdown.subScriptValue
+        }
 
         if(breakdown.important){
             holder.binding.tvBreakdownKeyName.setTextSize(TypedValue.COMPLEX_UNIT_MM,3.0f)

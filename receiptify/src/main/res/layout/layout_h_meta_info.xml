@@ -1,43 +1,64 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:theme="@style/ReceiptifyThemeHandheld"
-    >
+    android:orientation="vertical"
+    android:theme="@style/ReceiptifyThemeHandheld">
+
+    <LinearLayout
+        android:id="@+id/container_breakdown_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_breakdown_key_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:maxEms="10"
+            android:textSize="2.5mm"
+            android:textStyle="bold"
+            tools:text="SUBTOTAL" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_breakdown_key_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:gravity="end"
+            android:textSize="2.5mm"
+            android:textStyle="bold"
+            tools:text="$4.00" />
+    </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/tv_breakdown_key_name"
+    <LinearLayout
+        android:id="@+id/container_subscript_row"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="SUBTOTAL"
-        android:maxEms="10"
-        android:textStyle="bold"
-        android:layout_weight="3"
-        android:textSize="2.5mm"
-        />
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginBottom="1mm">
 
+        <TextView
+            android:id="@+id/tv_breakdown_subscript_key_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="1.8mm"
+            tools:text="Included Tax: "/>
 
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        />
-
-    <TextView
-        android:id="@+id/tv_breakdown_key_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="$4.00"
-        android:textStyle="bold"
-        android:textSize="2.5mm"
-        android:layout_weight="3"
-        android:gravity="end"
-        android:layout_gravity="center"
-        />
-
+        <TextView
+            android:id="@+id/tv_breakdown_subscript_key_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="1.8mm"
+            tools:text="$0.91"/>
+    </LinearLayout>
 </LinearLayout>
 
