@@ -46,7 +46,7 @@ import com.cheq.receiptify.databinding.LayoutPMerchantReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPMerchantSplitReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPQrPaymentBinding
 import com.cheq.receiptify.databinding.LayoutPTipsReceiptBinding
-import com.cheq.receiptify.enums.DeviceType
+import com.cheq.receiptify.enums.TargetPlatform
 import com.cheq.receiptify.enums.ReceiptType
 import com.cheq.receiptify.utils.Utils
 import java.lang.ref.SoftReference
@@ -61,6 +61,7 @@ object Receiptify {
 
     fun init(context: Context) {
         this.context = SoftReference(context.applicationContext)
+
         this.handheldPaperWidth = Utils.convertMmToPixel(40f, context)
         this.posPaperWidth = Utils.convertMmToPixel(75f, context)
     }
@@ -77,7 +78,8 @@ object Receiptify {
             val deviceType = receiptDTO.deviceType.uppercase()
             val receiptType = receiptDTO.receiptType.uppercase()
 
-            if (deviceType.uppercase() == DeviceType.HANDHELD.name) {
+            if (deviceType.uppercase() == TargetPlatform.HANDHELD.name) {
+
                 when (receiptType) {
                     ReceiptType.CUSTOMER_TOTAL_SPLIT.name -> {
                         return buildCustomerTotalSplitReceiptHandheld(receiptDTO)
@@ -116,7 +118,8 @@ object Receiptify {
                     }
                 }
 
-            } else if (deviceType.uppercase() == DeviceType.POS.name) {
+            } else if (deviceType.uppercase() == TargetPlatform.POS.name) {
+
                 when (receiptType) {
                     ReceiptType.CUSTOMER.name -> {
                         return buildCustomerReceiptPOS(receiptDTO)
@@ -224,7 +227,7 @@ object Receiptify {
         )
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
-        return Utils.generateBitmap(customerReceipt, highQuality = true)
+        return Utils.generateBitmap(customerReceipt, targetPlatform = TargetPlatform.POS, highQuality = true)
     }
 
     private fun buildCustomerTotalSplitReceiptPOS(receiptDTO: ReceiptDTO): Bitmap {
@@ -261,7 +264,7 @@ object Receiptify {
         )
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
-        return Utils.generateBitmap(customerReceipt, highQuality = true)
+        return Utils.generateBitmap(customerReceipt, TargetPlatform.POS, highQuality = true)
     }
 
     private fun buildCustomerSplitReceiptPOS(receiptDTO: ReceiptDTO): Bitmap {
@@ -300,7 +303,7 @@ object Receiptify {
         )
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
-        return Utils.generateBitmap(customerReceipt, highQuality = true)
+        return Utils.generateBitmap(customerReceipt, TargetPlatform.POS, highQuality = true)
     }
 
 
@@ -342,7 +345,7 @@ object Receiptify {
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
 
-        return Utils.generateBitmap(customerReceipt,highQuality = true)
+        return Utils.generateBitmap(customerReceipt, TargetPlatform.HANDHELD, highQuality = true)
 
     }
 
@@ -382,7 +385,7 @@ object Receiptify {
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
 
-        return Utils.generateBitmap(customerReceipt, highQuality = true)
+        return Utils.generateBitmap(customerReceipt, targetPlatform = TargetPlatform.POS, highQuality = true)
     }
 
     private fun buildCustomerSplitReceiptHandheld(receiptDTO: ReceiptDTO): Bitmap {
@@ -422,7 +425,7 @@ object Receiptify {
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
 
-        return Utils.generateBitmap(customerReceipt, highQuality = true)
+        return Utils.generateBitmap(customerReceipt, targetPlatform = TargetPlatform.POS, highQuality = true)
 
     }
 
@@ -463,7 +466,7 @@ object Receiptify {
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, TargetPlatform.HANDHELD)
     }
 
 
@@ -501,7 +504,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt, highQuality = true)
+        return Utils.generateBitmap(receipt, TargetPlatform.POS, highQuality = true)
     }
 
 
@@ -554,7 +557,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt, highQuality = true)
+        return Utils.generateBitmap(receipt, TargetPlatform.POS, highQuality = true)
 
     }
 
@@ -599,7 +602,7 @@ object Receiptify {
         )
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
-        return Utils.generateBitmap(customerReceipt, highQuality = true)
+        return Utils.generateBitmap(customerReceipt, targetPlatform = TargetPlatform.POS, highQuality = true)
     }
 
 
@@ -640,7 +643,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, TargetPlatform.HANDHELD)
     }
 
     private fun buildMerchantSplitReceiptHandheld(receiptDTO: ReceiptDTO): Bitmap {
@@ -686,7 +689,7 @@ object Receiptify {
         customerReceipt.layout(0, 0, customerReceipt.measuredWidth, customerReceipt.measuredHeight)
 
 
-        return Utils.generateBitmap(customerReceipt, highQuality = true)
+        return Utils.generateBitmap(customerReceipt, targetPlatform = TargetPlatform.POS, highQuality = true)
 
     }
 
@@ -749,7 +752,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt, highQuality = false)
+        return Utils.generateBitmap(receipt, TargetPlatform.POS, highQuality = false)
 
     }
 
@@ -811,7 +814,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, TargetPlatform.HANDHELD)
     }
 
     private fun buildTipsReceiptForServerPOS(receiptDTO: ReceiptDTO): Bitmap {
@@ -886,7 +889,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, TargetPlatform.POS)
     }
 
     private fun buildTipsReceiptForServerHandheld(receiptDTO: ReceiptDTO): Bitmap {
@@ -970,7 +973,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, TargetPlatform.HANDHELD)
     }
 
     private fun buildQRPaymentReceipt(receiptDTO: ReceiptDTO): Bitmap? {
@@ -993,7 +996,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt)
+        return Utils.generateBitmap(receipt, TargetPlatform.POS)
     }
 
     private fun buildDeviceSalesReportHandheld(receiptDTO: ReceiptDTO): Bitmap {
@@ -1024,7 +1027,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt, highQuality = true)
+        return Utils.generateBitmap(receipt, TargetPlatform.HANDHELD, highQuality = true)
     }
 
 
@@ -1055,7 +1058,7 @@ object Receiptify {
         )
         receipt.layout(0, 0, receipt.measuredWidth, receipt.measuredHeight)
 
-        return Utils.generateBitmap(receipt, highQuality = true)
+        return Utils.generateBitmap(receipt, TargetPlatform.POS, highQuality = true)
     }
 
 

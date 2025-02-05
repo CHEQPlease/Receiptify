@@ -1,5 +1,5 @@
 package com.cheq.receiptify.enums
 
-enum class DeviceType {
+enum class TargetPlatform {
     POS, HANDHELD
 }
