@@ -702,6 +702,8 @@ object Receiptify {
         binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvTableNo.text = receiptDTO.tableNo
+        binding.tvAlcoholItemsWarning.text = receiptDTO.alcoholItemWarning
+        binding.tvGuestName.text = receiptDTO.guestName
         binding.tvCustomerName.text = receiptDTO.customerName
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
@@ -716,6 +718,14 @@ object Receiptify {
 
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNo.visibility = View.GONE
+        }
+
+        if (receiptDTO.alcoholItemWarning.isNullOrEmpty()) {
+            binding.tvAlcoholItemsWarning.visibility = View.GONE
+        }
+
+        if (receiptDTO.guestName.isNullOrEmpty()) {
+            binding.tvGuestName.visibility = View.GONE
         }
 
         if (receiptDTO.customerName.isNullOrEmpty()) {

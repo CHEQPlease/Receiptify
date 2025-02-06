@@ -98,6 +98,31 @@
             android:visibility="visible"
             />
 
+        <!-- Show based on alcohol item warning availability -->
+        <TextView
+            android:id="@+id/tv_alcohol_items_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="7mm"
+            android:layout_marginBottom="2mm"
+            android:gravity="center"
+            android:textSize="3mm"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="*The order contains alcoholic beverages.
+Please verify the guest’s ID." />
+
+        <!-- Show based on guest name availability -->
+        <TextView
+            android:id="@+id/tv_guest_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2mm"
+            android:gravity="center"
+            android:textSize="4mm"
+            android:visibility="visible"
+            tools:text="Guest Name: Kimberly Bower" />
+
         <!-- Show based on customer name availability -->
         <TextView
             android:id="@+id/tv_customer_name"

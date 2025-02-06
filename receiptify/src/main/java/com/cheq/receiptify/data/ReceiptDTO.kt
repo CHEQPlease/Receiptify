@@ -23,6 +23,10 @@ data class ReceiptDTO(
     val deviceType: String = "",
     @SerializedName("tableNo")
     val tableNo: String?,
+    @SerializedName("alcoholItemWarning")
+    val alcoholItemWarning: String?,
+    @SerializedName("guestName")
+    val guestName: String?,
     @SerializedName("customerName")
     val customerName: String?,
     @SerializedName("timeOfOrder")
