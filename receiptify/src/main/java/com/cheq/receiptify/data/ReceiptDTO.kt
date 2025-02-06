@@ -7,6 +7,10 @@ data class ReceiptDTO(
     val companyName: String?,
     @SerializedName("brandName")
     val brandName: String?,
+    @SerializedName("vatAddress")
+    val vatAddress: String?,
+    @SerializedName("vatId")
+    val vatId: String?,
     @SerializedName("breakdown")
     val breakdown: List<Breakdown> = listOf(),
     @SerializedName("items")
