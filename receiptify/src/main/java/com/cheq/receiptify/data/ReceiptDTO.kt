@@ -30,9 +30,11 @@ data class ReceiptDTO(
     @SerializedName("alcoholItemWarning")
     val alcoholItemWarning: String?,
     @SerializedName("guestName")
-    val guestName: String?,
+    val guestName: Pair?,
     @SerializedName("customerName")
     val customerName: String?,
+    @SerializedName("placedAt")
+    val placedAt: Pair?,
     @SerializedName("timeOfOrder")
     val timeOfOrder: String?,
     @SerializedName("serverName")
