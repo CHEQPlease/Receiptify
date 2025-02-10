@@ -183,7 +183,7 @@ object Receiptify {
         }
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -480,7 +480,28 @@ object Receiptify {
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        binding.tvVatAddress.text = receiptDTO.vatAddress
+        binding.tvVatId.text = receiptDTO.vatId
+        if (receiptDTO.vatAddress.isNullOrEmpty()) {
+            binding.tvVatAddress.visibility = View.GONE
+        }
+        if (receiptDTO.vatId.isNullOrEmpty()) {
+            binding.tvVatId.visibility = View.GONE
+        }
+
+        binding.containerGuestNameRow.apply {
+            visibility = if (receiptDTO.guestName?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairGuestNameKey.text = receiptDTO.guestName?.key
+            binding.tvPairGuestNameKeyValue.text = receiptDTO.guestName?.value
+        }
+
+        binding.containerPlacedAtRow.apply {
+            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
+            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+        }
+
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -540,6 +561,16 @@ object Receiptify {
         }
 
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        if (receiptDTO.timeOfOrder.isNullOrEmpty()) {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
+
+        binding.containerPlacedAtRow.apply {
+            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
+            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+        }
+
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -702,9 +733,19 @@ object Receiptify {
         binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvTableNo.text = receiptDTO.tableNo
+
         binding.tvCustomerName.text = receiptDTO.customerName
+        if (receiptDTO.customerName.isNullOrEmpty()) {
+            binding.tvCustomerName.visibility = View.GONE
+        }
+
         binding.tvOrderNo.text = receiptDTO.orderNo
+
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        if (receiptDTO.timeOfOrder.isNullOrEmpty()) {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
+
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = PKitchenDishListAdapter(receiptDTO.items)
         binding.rvDishes.layoutManager =
@@ -716,6 +757,23 @@ object Receiptify {
 
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNo.visibility = View.GONE
+        }
+
+        binding.tvAlcoholItemsWarning.text = receiptDTO.alcoholItemWarning
+        if (receiptDTO.alcoholItemWarning.isNullOrEmpty()) {
+            binding.tvAlcoholItemsWarning.visibility = View.GONE
+        }
+
+        binding.containerGuestNameRow.apply {
+            visibility = if (receiptDTO.guestName?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairGuestNameKey.text = receiptDTO.guestName?.key
+            binding.tvPairGuestNameKeyValue.text = receiptDTO.guestName?.value
+        }
+
+        binding.containerPlacedAtRow.apply {
+            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
+            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
         }
 
         if (receiptDTO.customerName.isNullOrEmpty()) {

@@ -98,6 +98,48 @@
             android:visibility="visible"
             />
 
+        <!-- Show based on alcohol item warning availability -->
+        <TextView
+            android:id="@+id/tv_alcohol_items_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="7mm"
+            android:layout_marginBottom="2mm"
+            android:gravity="center"
+            android:textSize="3mm"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="*The order contains alcoholic beverages.
+Please verify the guest’s ID." />
+
+        <!-- Show based on guest name availability -->
+        <LinearLayout
+            android:id="@+id/container_guest_name_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pair_guest_name_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                tools:text="Guest Name:" />
+
+            <!-- This View acts as a Spacer -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" /> <!-- Distribute remaining space -->
+
+            <TextView
+                android:id="@+id/tv_pair_guest_name_key_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                tools:text="Kimberly Bower" />
+        </LinearLayout>
+
         <!-- Show based on customer name availability -->
         <TextView
             android:id="@+id/tv_customer_name"
@@ -109,6 +151,33 @@
             android:gravity="center"
             android:visibility="visible"
             />
+
+        <LinearLayout
+            android:id="@+id/container_placed_at_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pair_placed_at_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                tools:text="Placed at:" />
+
+            <!-- This View acts as a Spacer -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" /> <!-- Distribute remaining space -->
+
+            <TextView
+                android:id="@+id/tv_pair_placed_at_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                tools:text="01/11/2023 1:00 AM PST" />
+        </LinearLayout>
 
         <!-- Placed At -->
         <TextView
