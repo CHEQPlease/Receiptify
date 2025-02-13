@@ -69,4 +69,6 @@ data class ReceiptDTO(
     val splitCount: String?,
     @SerializedName("splits")
     val splits: List<List<Breakdown>> = listOf(),
+    @SerializedName("suiteLocation")
+    val suiteLocation: String?,
 )
