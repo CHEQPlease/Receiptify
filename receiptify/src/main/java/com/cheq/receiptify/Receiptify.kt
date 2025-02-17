@@ -742,10 +742,19 @@ object Receiptify {
 
         binding.tvOrderNo.text = receiptDTO.orderNo
 
+        //This view only visible if suite user enable and suite location available
+        if (receiptDTO.suiteLocation.isNullOrEmpty()) {
+            binding.tvSuiteLocation.visibility = View.GONE
+        } else {
+            binding.tvSuiteLocation.visibility = View.VISIBLE
+            binding.tvSuiteLocation.text = receiptDTO.suiteLocation
+        }
+
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         if (receiptDTO.timeOfOrder.isNullOrEmpty()) {
             binding.tvPlacedAt.visibility = View.GONE
         }
+
 
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = PKitchenDishListAdapter(receiptDTO.items)
@@ -833,6 +842,14 @@ object Receiptify {
 
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNo.visibility = View.GONE
+        }
+
+        //This view only visible if suite user enable and suite location available
+        if (receiptDTO.suiteLocation.isNullOrEmpty()) {
+            binding.tvSuiteLocation.visibility = View.GONE
+        } else {
+            binding.tvSuiteLocation.visibility = View.VISIBLE
+            binding.tvSuiteLocation.text = receiptDTO.suiteLocation
         }
 
         if (receiptDTO.orderSubtitle.isNullOrEmpty()) {
