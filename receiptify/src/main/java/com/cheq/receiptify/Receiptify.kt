@@ -377,6 +377,15 @@ object Receiptify {
             binding.tvRefunded.visibility = View.GONE
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         customerReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(
                 handheldPaperWidth,
@@ -415,6 +424,15 @@ object Receiptify {
 
         if(!receiptDTO.isRefunded){
             binding.tvRefunded.visibility = View.GONE
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         customerReceipt.measure(
