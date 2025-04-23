@@ -71,4 +71,6 @@ data class ReceiptDTO(
     val splits: List<List<Breakdown>> = listOf(),
     @SerializedName("suiteLocation")
     val suiteLocation: String?,
+    @SerializedName("excludeCompanyNameWatermark")
+    val excludeCompanyNameWatermark: Boolean = false,
 )
