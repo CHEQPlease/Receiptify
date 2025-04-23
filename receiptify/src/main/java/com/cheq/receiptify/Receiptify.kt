@@ -185,6 +185,7 @@ object Receiptify {
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
 
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
         if(receiptDTO.excludeCompanyNameWatermark) {
             binding.tvPoweredBy.visibility = View.GONE
             binding.tvCompanyName.visibility = View.GONE
@@ -253,6 +254,15 @@ object Receiptify {
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvSplitCount.text = receiptDTO.splitCount
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
 
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager =
