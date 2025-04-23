@@ -341,6 +341,7 @@ Please verify the guest’s ID." />
             android:layout_height="wrap_content"
             android:text="@string/powered_by"
             android:textSize="3mm"
+            android:id="@+id/tvPoweredBy"
             android:layout_marginEnd="0.6mm"
             android:layout_marginRight="0.6mm" />
 
@@ -349,6 +350,7 @@ Please verify the guest’s ID." />
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/cantaloupe"
+            android:id="@+id/tvCompanyName"
             android:textSize="3mm"
             android:textStyle="bold" />
 
