@@ -185,6 +185,14 @@ object Receiptify {
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
 
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -292,6 +300,15 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         if (!receiptDTO.isRefunded) {
             binding.tvRefunded.visibility = View.GONE
         }
@@ -336,6 +353,15 @@ object Receiptify {
             binding.tvSupportInfo.visibility = View.VISIBLE
         }else{
             binding.tvSupportInfo.visibility = View.GONE
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         if(!receiptDTO.isRefunded){
@@ -476,6 +502,15 @@ object Receiptify {
             binding.tvSupportInfo.visibility = View.GONE
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         receipt.measure(
             View.MeasureSpec.makeMeasureSpec(
                 handheldPaperWidth,
@@ -537,6 +572,15 @@ object Receiptify {
             binding.tvSupportInfo.visibility = View.GONE
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
 
         receipt.measure(
             View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY),
@@ -562,6 +606,15 @@ object Receiptify {
         } else {
             binding.tvTableNo.text = receiptDTO.tableNo
             binding.tvOrderNo.gravity = Gravity.END
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
 
@@ -627,6 +680,15 @@ object Receiptify {
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         binding.rvSplitBreakdown.adapter = PSplitListAdapter(receiptDTO.splits)
         binding.rvSplitBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
@@ -685,6 +747,15 @@ object Receiptify {
             text = receiptDTO.serverName
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         receipt.measure(
             View.MeasureSpec.makeMeasureSpec(
                 handheldPaperWidth,
@@ -716,6 +787,15 @@ object Receiptify {
         binding.containerDeviceName.apply {
             visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
             binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         binding.tvTotalItems.text =
@@ -878,6 +958,15 @@ object Receiptify {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         // 'printStatusText' will be printed to the place of **REPRINTED**
         if (receiptDTO.printStatusText != null) {
             binding.tvReprinted.text = receiptDTO.printStatusText
@@ -952,6 +1041,16 @@ object Receiptify {
                     it
                 )
             }
+
+            if(receiptDTO.excludeCompanyNameWatermark) {
+                binding.tvPoweredBy.visibility = View.GONE
+                binding.tvCompanyName.visibility = View.GONE
+            } else {
+                binding.tvCompanyName.text = receiptDTO.companyName
+                binding.tvPoweredBy.visibility = View.VISIBLE
+                binding.tvCompanyName.visibility = View.VISIBLE
+            }
+
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             visibility =
                 if (receiptDTO.serverTipInfo.tipsInfoBreakdown.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -1030,6 +1129,15 @@ object Receiptify {
             binding.tvOtherPaymentTypes.visibility = visibility
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         binding.rvTipsInfoBreakdown.apply {
             adapter = receiptDTO.serverTipInfo.tipsInfoBreakdown?.let {
                 HTipsInfoBreakdownListAdapter(
@@ -1081,6 +1189,16 @@ object Receiptify {
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         binding.ivPaymentQr.setImageBitmap(context.get()
             ?.let { Utils.generateQRBitmap(it, receiptDTO.paymentQR, 30f, 40f) })
 
@@ -1144,6 +1262,15 @@ object Receiptify {
                 PDeviceSalesReportBreakdownAdapter(receiptDTO.deviceSalesReport.breakdown)
             binding.rvDeviceSalesPaymentBreakdown.layoutManager =
                 LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         receipt.measure(
