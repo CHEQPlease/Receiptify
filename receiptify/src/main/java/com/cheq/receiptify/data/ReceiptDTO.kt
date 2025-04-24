@@ -73,4 +73,6 @@ data class ReceiptDTO(
     val suiteLocation: String?,
     @SerializedName("shouldGroupByItemType")
     val shouldGroupByItemType: Boolean = false,
+    @SerializedName("excludeCompanyNameWatermark")
+    val excludeCompanyNameWatermark: Boolean = false,
 )

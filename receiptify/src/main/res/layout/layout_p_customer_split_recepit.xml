@@ -162,6 +162,7 @@
             android:layout_height="wrap_content"
             android:text="@string/powered_by"
             android:textSize="4mm"
+            android:id="@+id/tvPoweredBy"
             android:layout_marginRight="0.6mm"
             android:layout_marginEnd="0.6mm" />
 

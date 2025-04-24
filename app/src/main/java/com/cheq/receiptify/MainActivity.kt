@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
           "footerQR": "123456wvweq2512123tqdsasdgasdgasdg",
           "isReprinted": true,
           "splitCount": "SPLIT COUNT: 4",
+          "companyName": "CANTALOUPE",
+          "excludeCompanyNameWatermark": true,
           "items": [
             {
               "itemName": "Salmon Fry",
