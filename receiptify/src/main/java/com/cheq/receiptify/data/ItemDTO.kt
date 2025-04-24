@@ -23,5 +23,7 @@ data class Item(
     @SerializedName("strikethrough")
     val strikethrough: Boolean = false,
     @SerializedName("itemType")
-    val itemType: ItemType
+    val itemType: ItemType?,
+    @SerializedName("isGroupHeader")
+    val isGroupHeader: Boolean = false,
 )
