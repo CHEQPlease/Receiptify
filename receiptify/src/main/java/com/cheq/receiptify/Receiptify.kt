@@ -843,15 +843,6 @@ object Receiptify {
         binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvTableNo.text = receiptDTO.tableNo
 
-        if(receiptDTO.excludeCompanyNameWatermark) {
-            binding.tvPoweredBy.visibility = View.GONE
-            binding.tvCompanyName.visibility = View.GONE
-        } else {
-            binding.tvCompanyName.text = receiptDTO.companyName
-            binding.tvPoweredBy.visibility = View.VISIBLE
-            binding.tvCompanyName.visibility = View.VISIBLE
-        }
-
         binding.tvCustomerName.text = receiptDTO.customerName
         if (receiptDTO.customerName.isNullOrEmpty()) {
             binding.tvCustomerName.visibility = View.GONE
@@ -1235,15 +1226,6 @@ object Receiptify {
         val receipt = binding.layoutDeviceSalesReport
 
         binding.tvPartnerName.text = receiptDTO.deviceSalesReport.header
-
-        if(receiptDTO.excludeCompanyNameWatermark) {
-            binding.tvPoweredBy.visibility = View.GONE
-            binding.tvCompanyName.visibility = View.GONE
-        } else {
-            binding.tvCompanyName.text = receiptDTO.companyName
-            binding.tvPoweredBy.visibility = View.VISIBLE
-            binding.tvCompanyName.visibility = View.VISIBLE
-        }
 
         if (receiptDTO.deviceSalesReport.headerMeta?.isNotEmpty() == true) {
             binding.rvDevicesSalesHeaderMeta.adapter =
