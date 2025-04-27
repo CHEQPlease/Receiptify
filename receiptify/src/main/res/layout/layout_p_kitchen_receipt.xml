@@ -208,6 +208,7 @@ Please verify the guest’s ID." />
             android:id="@+id/container_device_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_marginBottom="1.2mm"
             >
 
@@ -228,6 +229,42 @@ Please verify the guest’s ID." />
 
             <TextView
                 android:id="@+id/tv_device_name_value"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                tools:text="H_014_The_CHEQ_Diner"
+                android:textSize="3.5mm"
+                android:gravity="end"
+                android:visibility="visible"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_device_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.2mm"
+            >
+
+            <TextView
+                android:id="@+id/tv_device_label_title"
+                android:layout_width="0mm"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Device ordered from: "
+                android:textSize="3.5mm"
+                android:gravity="start"
+                android:visibility="visible"
+                />
+
+            <View
+                android:layout_width="0mm"
+                android:layout_height="0mm"/>
+
+            <TextView
+                android:id="@+id/tv_device_label_value"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
