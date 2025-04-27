@@ -41,6 +41,8 @@ data class ReceiptDTO(
     val serverName: String?,
     @SerializedName("deviceName")
     val deviceName: String?,
+    @SerializedName("deviceLabel")
+    val deviceLabel: String?,
     @SerializedName("totalItems")
     val totalItems: String?,
     @SerializedName("isRefunded")
