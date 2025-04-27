@@ -226,6 +226,7 @@
             android:layout_height="wrap_content"
             android:text="@string/powered_by"
             android:textSize="2.2mm"
+            android:id="@+id/tvPoweredBy"
             android:layout_marginRight="0.6mm"
             />
 
@@ -234,6 +235,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/cantaloupe"
+            android:id="@+id/tvCompanyName"
             android:textSize="2.2mm"
             android:textStyle="bold"
             />

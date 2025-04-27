@@ -279,16 +279,6 @@ Please verify the guest’s ID." />
 
     </LinearLayout>
 
-    <!-- Divider -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0.5mm"
-        android:src="@drawable/divider_dotted_line"
-        android:layout_marginTop="1mm"
-        android:layout_marginBottom="1mm"
-        />
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dishes"
         android:layout_width="match_parent"
@@ -378,6 +368,7 @@ Please verify the guest’s ID." />
             android:layout_height="wrap_content"
             android:text="@string/powered_by"
             android:textSize="3mm"
+            android:id="@+id/tvPoweredBy"
             android:layout_marginEnd="0.6mm"
             android:layout_marginRight="0.6mm" />
 
@@ -386,6 +377,7 @@ Please verify the guest’s ID." />
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/cantaloupe"
+            android:id="@+id/tvCompanyName"
             android:textSize="3mm"
             android:textStyle="bold" />
 

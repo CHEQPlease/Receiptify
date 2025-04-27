@@ -1,12 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:theme="@style/ReceiptifyThemePOS"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
-
+    android:orientation="horizontal"
+    android:theme="@style/ReceiptifyThemePOS">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -16,40 +14,34 @@
             android:id="@+id/tv_qty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="x1"
-            android:textSize="5mm"
-            android:layout_marginRight="5mm"
-            android:layout_marginLeft="2mm"
-            android:textStyle="bold"
             android:layout_gravity="center"
-            />
+            android:layout_marginRight="3mm"
+            android:textSize="3.5mm"
+            tools:ignore="InOrMmUsage,RtlHardcoded"
+            tools:text="x1" />
     </RelativeLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Soup"
-            android:textSize="5.2mm"
-            />
+            android:textSize="3.5mm"
+            tools:ignore="InOrMmUsage"
+            tools:text="Soup" />
 
         <TextView
             android:id="@+id/tv_item_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="-- Side 1"
-            android:textSize="4.5mm"
-            />
-
-
+            android:textSize="3mm"
+            tools:ignore="InOrMmUsage"
+            tools:text="-- Side 1" />
     </LinearLayout>
 
 </LinearLayout>
-
