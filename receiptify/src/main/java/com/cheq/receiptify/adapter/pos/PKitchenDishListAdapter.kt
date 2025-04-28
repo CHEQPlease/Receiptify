@@ -88,6 +88,8 @@ class PKitchenDishListAdapter(dishes: List<Item>) :
         ItemType.values().forEach { type ->
             val itemsOfType = originalItems.filter { it.itemType == type }
             if (itemsOfType.isNotEmpty()) {
+                val sortedList = itemsOfType.sortedBy { it.itemName }
+
                 groupedList.add(
                     Item(
                         null,
@@ -99,7 +101,7 @@ class PKitchenDishListAdapter(dishes: List<Item>) :
                         isGroupHeader = true
                     )
                 )
-                groupedList.addAll(itemsOfType)
+                groupedList.addAll(sortedList)
             }
         }
 

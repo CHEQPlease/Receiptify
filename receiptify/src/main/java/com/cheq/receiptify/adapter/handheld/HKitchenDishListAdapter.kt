@@ -86,6 +86,8 @@ class HKitchenDishListAdapter(private val dishes: List<Item>) : RecyclerView.Ada
         ItemType.values().forEach { type ->
             val itemsOfType = originalItems.filter { it.itemType == type }
             if (itemsOfType.isNotEmpty()) {
+                val sortedList = itemsOfType.sortedBy { it.itemName }
+
                 groupedList.add(
                     Item(
                         null,
@@ -97,7 +99,7 @@ class HKitchenDishListAdapter(private val dishes: List<Item>) : RecyclerView.Ada
                         isGroupHeader = true
                     )
                 )
-                groupedList.addAll(itemsOfType)
+                groupedList.addAll(sortedList)
             }
         }
 
