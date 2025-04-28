@@ -94,7 +94,7 @@ class HKitchenDishListAdapter(private val dishes: List<Item>) : RecyclerView.Ada
                         null,
                         null,
                         null,
-                        strikethrough = true,
+                        strikethrough = false,
                         type,
                         isGroupHeader = true
                     )

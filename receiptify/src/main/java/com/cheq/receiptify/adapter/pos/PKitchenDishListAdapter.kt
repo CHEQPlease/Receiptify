@@ -96,7 +96,7 @@ class PKitchenDishListAdapter(dishes: List<Item>) :
                         null,
                         null,
                         null,
-                        strikethrough = true,
+                        strikethrough = false,
                         type,
                         isGroupHeader = true
                     )
