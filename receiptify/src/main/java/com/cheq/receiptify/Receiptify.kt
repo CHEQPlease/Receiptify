@@ -656,9 +656,9 @@ object Receiptify {
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -707,9 +707,9 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -748,9 +748,9 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -794,9 +794,9 @@ object Receiptify {
             text = receiptDTO.serverName
         }
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
@@ -917,10 +917,11 @@ object Receiptify {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
+
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
             text = receiptDTO.serverName
@@ -993,10 +994,11 @@ object Receiptify {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
+
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
             text = receiptDTO.serverName
