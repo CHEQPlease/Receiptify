@@ -235,6 +235,8 @@ Please verify the guest’s ID." />
                 tools:text="H_014_The_CHEQ_Diner"
                 android:textSize="2.9mm"
                 android:gravity="end"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:visibility="visible"
                 />
 
