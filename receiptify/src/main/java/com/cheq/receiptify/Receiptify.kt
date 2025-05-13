@@ -591,6 +591,9 @@ object Receiptify {
             binding.tvCompanyName.visibility = View.VISIBLE
         }
 
+        if (!receiptDTO.isRefunded) {
+            binding.tvRefunded.visibility = View.GONE
+        }
 
         receipt.measure(
             View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY),
