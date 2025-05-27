@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:theme="@style/ReceiptifyThemePOS"
+    android:paddingTop="2mm"
+    android:paddingBottom="2mm">
+
+    <!-- Transaction Type (Sale) -->
+    <TextView
+        android:id="@+id/tv_transaction_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="5mm"
+        android:textStyle="bold"
+        tools:text="Sale" />
+
+    <!-- Card Brand and Last Four -->
+    <LinearLayout
+        android:id="@+id/container_card_brand_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2mm">
+
+        <TextView
+            android:id="@+id/tv_card_brand_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Visa Credit:"
+            android:textSize="3.5mm" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_card_last_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:gravity="end"
+            tools:text="************0043" />
+    </LinearLayout>
+
+    <!-- Entry Mode -->
+    <LinearLayout
+        android:id="@+id/container_entry_mode_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Entry Mode:"
+            android:textSize="3.5mm" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_entry_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:gravity="end"
+            tools:text="Chip" />
+    </LinearLayout>
+
+    <!-- Trace Number -->
+    <LinearLayout
+        android:id="@+id/container_trace_number_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trace #:"
+            android:textSize="3.5mm" />
+
+        <View
+            android:layout_width="5mm"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:id="@+id/tv_trace_number"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:gravity="end"
+            tools:text="ff4bc72c-e7ff-b2ee-686-8866544333221113456677" />
+
+    </LinearLayout>
+
+    <!-- STAN -->
+    <LinearLayout
+        android:id="@+id/container_stan_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STAN:"
+            android:textSize="3.5mm" />
+
+        <View
+            android:layout_width="5mm"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:id="@+id/tv_stan"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:gravity="end"
+            tools:text="425074" />
+    </LinearLayout>
+
+    <!-- Response Code -->
+    <LinearLayout
+        android:id="@+id/container_response_code_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Response Code:"
+            android:textSize="3.5mm" />
+
+        <View
+            android:layout_width="5mm"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:id="@+id/tv_response_code"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:gravity="end"
+            tools:text="00" />
+    </LinearLayout>
+
+    <!-- Auth Code -->
+    <LinearLayout
+        android:id="@+id/container_auth_code_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auth Code:"
+            android:textSize="3.5mm" />
+
+        <View
+            android:layout_width="5mm"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:id="@+id/tv_auth_code"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:gravity="end"
+            tools:text="208961" />
+    </LinearLayout>
+
+    <!-- Auth Mode -->
+    <LinearLayout
+        android:id="@+id/container_auth_mode_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auth Mode:"
+            android:textSize="3.5mm" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_auth_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:gravity="end"
+            tools:text="Issuer" />
+    </LinearLayout>
+
+    <!-- APPROVED Text -->
+    <TextView
+        android:id="@+id/tv_approved_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:text="APPROVED"
+        android:textSize="4.5mm"
+        android:textStyle="bold"
+        android:layout_marginTop="2mm"
+        android:layout_marginBottom="2mm" />
+
+    <!-- Verification Status -->
+    <TextView
+        android:id="@+id/tv_verification_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="4mm"
+        android:textStyle="bold"
+        tools:text="Verified by PIN" />
+
+    <!-- EMV Details Section -->
+    <LinearLayout
+        android:id="@+id/container_pin_verified_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="2mm">
+
+        <!-- MID and IAD Row -->
+        <LinearLayout
+            android:id="@+id/container_mid_iad_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/container_mid_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_mid_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="MID: "
+                    android:textSize="3.5mm" />
+
+                <TextView
+                    android:id="@+id/tv_mid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3.5mm"
+                    android:gravity="start"
+                    tools:text="99901114" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_iad_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_iad_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="IAD: "
+                    android:textSize="3.5mm" />
+
+                <TextView
+                    android:id="@+id/tv_iad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3.5mm"
+                    android:gravity="end"
+                    tools:text="06010A03640002" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- TID and TSI Row -->
+        <LinearLayout
+            android:id="@+id/container_tid_tsi_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/container_tid_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_tid_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="TID: "
+                    android:textSize="3.5mm" />
+
+                <TextView
+                    android:id="@+id/tv_tid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3.5mm"
+                    android:gravity="start"
+                    tools:text="01249102" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_tsi_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_tsi_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="TSI: "
+                    android:textSize="3.5mm" />
+
+                <TextView
+                    android:id="@+id/tv_tsi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3.5mm"
+                    android:gravity="end"
+                    tools:text="F800" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- AID and ARC Row -->
+        <LinearLayout
+            android:id="@+id/container_aid_arc_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/container_aid_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.11"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_aid_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="AID: "
+                    android:textSize="3.5mm" />
+
+                <TextView
+                    android:id="@+id/tv_aid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3.5mm"
+                    android:gravity="start"
+                    tools:text="A0000000031010" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_arc_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.99"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_arc_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="ARC: "
+                    android:textSize="3.5mm" />
+
+                <TextView
+                    android:id="@+id/tv_arc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="3.5mm"
+                    android:gravity="end"
+                    tools:text="00" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- TVR Row -->
+        <LinearLayout
+            android:id="@+id/container_tvr_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="TVR: "
+                android:textSize="3.5mm" />
+
+            <TextView
+                android:id="@+id/tv_tvr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                tools:text="0080008000" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

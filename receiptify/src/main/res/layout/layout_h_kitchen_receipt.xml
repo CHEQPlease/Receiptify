@@ -64,6 +64,17 @@
             android:gravity="center"
             android:textStyle="bold"
             />
+        <TextView
+            android:id="@+id/tv_suite_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Location : West"
+            android:textSize="2.8mm"
+            android:layout_marginBottom="1mm"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/tv_server_name"
@@ -103,8 +114,9 @@
         tools:text="Placed at 01/11/2023 12:00 AM PST"
         />
 
+
     <LinearLayout
-        android:id="@+id/container_device_name"
+        android:id="@+id/container_device_label"
         android:layout_width="match_parent"
         android:layout_marginTop="1mm"
         android:layout_marginBottom="1mm"
@@ -113,38 +125,30 @@
         >
 
         <TextView
-            android:id="@+id/tv_device_name_title"
+            android:id="@+id/tv_device_label_title"
             android:layout_weight="2"
             android:layout_width="0mm"
             android:layout_height="wrap_content"
             android:textSize="2.2mm"
             android:textStyle="bold"
             android:gravity="start"
-            android:text="Device Name:"
+            android:text="Device ordered from:"
             />
 
         <TextView
-            android:id="@+id/tv_device_name_value"
+            android:id="@+id/tv_device_label_value"
             android:layout_weight="3"
             android:layout_width="0mm"
             android:layout_height="wrap_content"
             android:textSize="2.2mm"
             android:textStyle="bold"
             android:gravity="end"
+            android:ellipsize="end"
+            android:maxLines="2"
             tools:text="H_014_The_CHEQ_Diner"
             />
 
     </LinearLayout>
-
-    <!-- Divider -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0.5mm"
-        android:src="@drawable/divider_dotted_line"
-        android:layout_marginTop="2mm"
-        android:layout_marginBottom="1mm"
-        />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dishes"
@@ -207,6 +211,7 @@
             android:layout_height="wrap_content"
             android:text="@string/powered_by"
             android:textSize="2.3mm"
+            android:id="@+id/tvPoweredBy"
             android:textStyle="bold"
             />
 
@@ -220,6 +225,7 @@
             android:layout_gravity="center"
             android:text="@string/cantaloupe"
             android:textSize="2.3mm"
+            android:id="@+id/tvCompanyName"
             android:textStyle="bold"
             />
 

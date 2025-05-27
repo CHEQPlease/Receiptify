@@ -20,12 +20,14 @@ class MainActivity : AppCompatActivity() {
           "orderType": "Counter",
           "totalItems": "Total items: 2",
           "orderNo": "Order# :K10",
-          "receiptType": "customer_total_split",
+          "receiptType": "KIOSK",
           "deviceType": "pos",
           "timeOfOrder": "May 23, 07:23PM",
           "footerQR": "123456wvweq2512123tqdsasdgasdgasdg",
           "isReprinted": true,
           "splitCount": "SPLIT COUNT: 4",
+          "companyName": "CANTALOUPE",
+          "excludeCompanyNameWatermark": true,
           "items": [
             {
               "itemName": "Salmon Fry",
@@ -132,7 +134,29 @@ class MainActivity : AppCompatActivity() {
               "important": true,
               "gap" : true
             }
-          ]
+          ],
+          "emvInfo": {
+            "cardBrand": "Visa Debit",
+            "cardLastFour": "************0043",
+            "entryMode": "Chip",
+            "traceNumber": "ff4bc72c-e7ff-b2ee-686-de5dff6ec45b-sfdjgsdlkfgjsdf-hjhjkjkh",
+            "stan": "425074",
+            "responseCode": "00",
+            "authCode": "208961",
+            "authMode": "Issuer",
+            "transactionStatus": "APPROVED",
+            "verificationMethod": "Verified by PIN",
+            "iad": "06010A03640002",
+            "tsi": "F800",
+            "aid": "A0000000031010",
+            "arc": "00",
+            "tvr": "0080008000",
+            "mid": "99901114",
+            "tid": "01249102",
+            "transactionType": "Sale",
+            "isPinVerified": false,
+            "isApproved": true
+          }
         }                      
         
     """.trimIndent()

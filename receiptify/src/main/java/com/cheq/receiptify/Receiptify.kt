@@ -27,6 +27,7 @@ import com.cheq.receiptify.adapter.pos.PKitchenDishListAdapter
 import com.cheq.receiptify.adapter.pos.PTipsInfoBreakdownListAdapter
 import com.cheq.receiptify.adapter.pos.PTipsPerRevenueCenterListAdapter
 import com.cheq.receiptify.data.ReceiptDTO
+import com.cheq.receiptify.data.EMVInfoDTO
 import com.cheq.receiptify.databinding.LayoutHCustomerKioskReceiptBinding
 import com.cheq.receiptify.databinding.LayoutHCustomerPosReceiptBinding
 import com.cheq.receiptify.databinding.LayoutHCustomerSplitReceiptBinding
@@ -41,6 +42,7 @@ import com.cheq.receiptify.databinding.LayoutPCustomerPosReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPCustomerSplitRecepitBinding
 import com.cheq.receiptify.databinding.LayoutPCutomerSplitTotalReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPDeviceSalesReportBinding
+import com.cheq.receiptify.databinding.LayoutPEmvInfoBinding
 import com.cheq.receiptify.databinding.LayoutPKitchenReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPMerchantReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPMerchantSplitReceiptBinding
@@ -183,7 +185,17 @@ object Receiptify {
         }
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -219,6 +231,14 @@ object Receiptify {
             binding.tvSupportInfo.visibility = View.GONE
         }
 
+        // Add EMV Info if available
+        if (receiptDTO.emvInfo != null) {
+            addEMVInfo(receiptDTO.emvInfo, binding.includeEmvInfo)
+        } else {
+            // Hide EMV section when no data is available
+            binding.includeEmvInfo.root.visibility = View.GONE
+        }
+
         customerReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(
                 posPaperWidth,
@@ -244,6 +264,15 @@ object Receiptify {
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
         binding.tvSplitCount.text = receiptDTO.splitCount
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
 
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager =
@@ -291,6 +320,15 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         if (!receiptDTO.isRefunded) {
             binding.tvRefunded.visibility = View.GONE
         }
@@ -337,6 +375,15 @@ object Receiptify {
             binding.tvSupportInfo.visibility = View.GONE
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         if(!receiptDTO.isRefunded){
             binding.tvRefunded.visibility = View.GONE
         }
@@ -374,6 +421,15 @@ object Receiptify {
 
         if(!receiptDTO.isRefunded){
             binding.tvRefunded.visibility = View.GONE
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         customerReceipt.measure(
@@ -414,6 +470,15 @@ object Receiptify {
 
         if(!receiptDTO.isRefunded){
             binding.tvRefunded.visibility = View.GONE
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         customerReceipt.measure(
@@ -457,6 +522,15 @@ object Receiptify {
             binding.tvSupportInfo.visibility = View.GONE
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         receipt.measure(
             View.MeasureSpec.makeMeasureSpec(
                 handheldPaperWidth,
@@ -480,7 +554,28 @@ object Receiptify {
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        binding.tvVatAddress.text = receiptDTO.vatAddress
+        binding.tvVatId.text = receiptDTO.vatId
+        if (receiptDTO.vatAddress.isNullOrEmpty()) {
+            binding.tvVatAddress.visibility = View.GONE
+        }
+        if (receiptDTO.vatId.isNullOrEmpty()) {
+            binding.tvVatId.visibility = View.GONE
+        }
+
+        binding.containerGuestNameRow.apply {
+            visibility = if (receiptDTO.guestName?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairGuestNameKey.text = receiptDTO.guestName?.key
+            binding.tvPairGuestNameKeyValue.text = receiptDTO.guestName?.value
+        }
+
+        binding.containerPlacedAtRow.apply {
+            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
+            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+        }
+
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -497,6 +592,22 @@ object Receiptify {
             binding.tvSupportInfo.visibility = View.GONE
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
+        // Add EMV Info if available
+        if (receiptDTO.emvInfo != null) {
+            addEMVInfo(receiptDTO.emvInfo, binding.includeEmvInfo)
+        } else {
+            // Hide EMV section when no data is available
+            binding.includeEmvInfo.root.visibility = View.GONE
+        }
 
         receipt.measure(
             View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY),
@@ -524,6 +635,15 @@ object Receiptify {
             binding.tvOrderNo.gravity = Gravity.END
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
 
         if (receiptDTO.gratuityInfo != null) {
             binding.includeGratuitySection.tvSuggestedGratuity.text = "Suggested Gratuity"
@@ -540,17 +660,36 @@ object Receiptify {
         }
 
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        if (receiptDTO.timeOfOrder.isNullOrEmpty()) {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
+
+        binding.containerPlacedAtRow.apply {
+            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
+            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+        }
+
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
             text = receiptDTO.serverName
         }
+
+        // Add EMV Info if available
+        if (receiptDTO.emvInfo != null) {
+            addEMVInfo(receiptDTO.emvInfo, binding.includeEmvInfo)
+        } else {
+            // Hide EMV section when no data is available
+            binding.includeEmvInfo.root.visibility = View.GONE
+        }
+
         receipt.measure(
             View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY),
             View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
@@ -577,6 +716,15 @@ object Receiptify {
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         binding.rvSplitBreakdown.adapter = PSplitListAdapter(receiptDTO.splits)
         binding.rvSplitBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
@@ -585,9 +733,9 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -626,13 +774,22 @@ object Receiptify {
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
             text = receiptDTO.serverName
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         receipt.measure(
@@ -663,9 +820,18 @@ object Receiptify {
             text = receiptDTO.serverName
         }
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         binding.tvTotalItems.text =
@@ -702,9 +868,37 @@ object Receiptify {
         binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvTableNo.text = receiptDTO.tableNo
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         binding.tvCustomerName.text = receiptDTO.customerName
+        if (receiptDTO.customerName.isNullOrEmpty()) {
+            binding.tvCustomerName.visibility = View.GONE
+        }
+
         binding.tvOrderNo.text = receiptDTO.orderNo
+
+        //This view only visible if suite user enable and suite location available
+        if (receiptDTO.suiteLocation.isNullOrEmpty()) {
+            binding.tvSuiteLocation.visibility = View.GONE
+        } else {
+            binding.tvSuiteLocation.visibility = View.VISIBLE
+            binding.tvSuiteLocation.text = receiptDTO.suiteLocation
+        }
+
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        if (receiptDTO.timeOfOrder.isNullOrEmpty()) {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
+
+
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = PKitchenDishListAdapter(receiptDTO.items)
         binding.rvDishes.layoutManager =
@@ -716,6 +910,23 @@ object Receiptify {
 
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNo.visibility = View.GONE
+        }
+
+        binding.tvAlcoholItemsWarning.text = receiptDTO.alcoholItemWarning
+        if (receiptDTO.alcoholItemWarning.isNullOrEmpty()) {
+            binding.tvAlcoholItemsWarning.visibility = View.GONE
+        }
+
+        binding.containerGuestNameRow.apply {
+            visibility = if (receiptDTO.guestName?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairGuestNameKey.text = receiptDTO.guestName?.key
+            binding.tvPairGuestNameKeyValue.text = receiptDTO.guestName?.value
+        }
+
+        binding.containerPlacedAtRow.apply {
+            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
+            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
         }
 
         if (receiptDTO.customerName.isNullOrEmpty()) {
@@ -732,10 +943,11 @@ object Receiptify {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
+
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
             text = receiptDTO.serverName
@@ -776,12 +988,29 @@ object Receiptify {
             binding.tvTableNo.visibility = View.GONE
         }
 
+        //This view only visible if suite user enable and suite location available
+        if (receiptDTO.suiteLocation.isNullOrEmpty()) {
+            binding.tvSuiteLocation.visibility = View.GONE
+        } else {
+            binding.tvSuiteLocation.visibility = View.VISIBLE
+            binding.tvSuiteLocation.text = receiptDTO.suiteLocation
+        }
+
         if (receiptDTO.orderSubtitle.isNullOrEmpty()) {
             binding.tvOrderSubtitle.visibility = View.GONE
         }
 
         if (receiptDTO.isReprinted) {
             binding.tvReprinted.visibility = View.VISIBLE
+        }
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
         }
 
         // 'printStatusText' will be printed to the place of **REPRINTED**
@@ -791,10 +1020,11 @@ object Receiptify {
             binding.tvReprinted.visibility = View.VISIBLE
         }
 
-        binding.containerDeviceName.apply {
-            visibility = if (receiptDTO.deviceName.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvDeviceNameValue.text = receiptDTO.deviceName
+        binding.containerDeviceLabel.apply {
+            visibility = if (receiptDTO.deviceLabel.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvDeviceLabelValue.text = receiptDTO.deviceLabel
         }
+
         binding.tvServerName.apply {
             visibility = if (receiptDTO.serverName.isNullOrEmpty()) View.GONE else View.VISIBLE
             text = receiptDTO.serverName
@@ -858,6 +1088,16 @@ object Receiptify {
                     it
                 )
             }
+
+            if(receiptDTO.excludeCompanyNameWatermark) {
+                binding.tvPoweredBy.visibility = View.GONE
+                binding.tvCompanyName.visibility = View.GONE
+            } else {
+                binding.tvCompanyName.text = receiptDTO.companyName
+                binding.tvPoweredBy.visibility = View.VISIBLE
+                binding.tvCompanyName.visibility = View.VISIBLE
+            }
+
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             visibility =
                 if (receiptDTO.serverTipInfo.tipsInfoBreakdown.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -936,6 +1176,15 @@ object Receiptify {
             binding.tvOtherPaymentTypes.visibility = visibility
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         binding.rvTipsInfoBreakdown.apply {
             adapter = receiptDTO.serverTipInfo.tipsInfoBreakdown?.let {
                 HTipsInfoBreakdownListAdapter(
@@ -987,6 +1236,16 @@ object Receiptify {
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
         binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         binding.ivPaymentQr.setImageBitmap(context.get()
             ?.let { Utils.generateQRBitmap(it, receiptDTO.paymentQR, 30f, 40f) })
 
@@ -1004,6 +1263,15 @@ object Receiptify {
         val receipt = binding.layoutDeviceSalesReport
 
         binding.tvPartnerName.text = receiptDTO.deviceSalesReport.header
+
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
 
         if (receiptDTO.deviceSalesReport.headerMeta?.isNotEmpty() == true) {
             binding.rvDevicesSalesHeaderMeta.adapter =
@@ -1052,6 +1320,15 @@ object Receiptify {
                 LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
         }
 
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.tvPoweredBy.visibility = View.GONE
+            binding.tvCompanyName.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.tvPoweredBy.visibility = View.VISIBLE
+            binding.tvCompanyName.visibility = View.VISIBLE
+        }
+
         receipt.measure(
             View.MeasureSpec.makeMeasureSpec(posPaperWidth, View.MeasureSpec.EXACTLY),
             View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
@@ -1061,5 +1338,214 @@ object Receiptify {
         return Utils.generateBitmap(receipt, TargetPlatform.POS, highQuality = true)
     }
 
+    private fun addEMVInfo(emvInfo: EMVInfoDTO?, emvBinding: LayoutPEmvInfoBinding) {
+        if (emvInfo == null) {
+            emvBinding.root.visibility = View.GONE
+            return
+        }
+
+        emvBinding.root.visibility = View.VISIBLE
+
+        /* TODO : Move to string resource to support localization in future*/
+
+        // Set transaction type - hide if null
+        if (emvInfo.transactionType.isNullOrEmpty()) {
+            emvBinding.tvTransactionType.visibility = View.GONE
+        } else {
+            emvBinding.tvTransactionType.visibility = View.VISIBLE
+            emvBinding.tvTransactionType.text = emvInfo.transactionType
+        }
+
+        // Set card brand and last four - hide entire row if cardLastFour is null
+        if (emvInfo.cardLastFour.isNullOrEmpty()) {
+            emvBinding.containerCardBrandRow.visibility = View.GONE
+        } else {
+            emvBinding.containerCardBrandRow.visibility = View.VISIBLE
+            emvBinding.tvCardBrandLabel.text = "${emvInfo.cardBrand ?: "Card"}:"
+            emvBinding.tvCardLastFour.text = emvInfo.cardLastFour
+        }
+
+        // Set entry mode - hide entire row if null
+        if (emvInfo.entryMode.isNullOrEmpty()) {
+            emvBinding.containerEntryModeRow.visibility = View.GONE
+        } else {
+            emvBinding.containerEntryModeRow.visibility = View.VISIBLE
+            emvBinding.tvEntryMode.text = emvInfo.entryMode
+        }
+
+        // Set trace number - hide entire row if null
+        if (emvInfo.traceNumber.isNullOrEmpty()) {
+            emvBinding.containerTraceNumberRow.visibility = View.GONE
+        } else {
+            emvBinding.containerTraceNumberRow.visibility = View.VISIBLE
+            emvBinding.tvTraceNumber.text = emvInfo.traceNumber
+        }
+
+        // Set STAN - hide entire row if null
+        if (emvInfo.stan.isNullOrEmpty()) {
+            emvBinding.containerStanRow.visibility = View.GONE
+        } else {
+            emvBinding.containerStanRow.visibility = View.VISIBLE
+            emvBinding.tvStan.text = emvInfo.stan
+        }
+
+        // Set response code - hide entire row if null
+        if (emvInfo.responseCode.isNullOrEmpty()) {
+            emvBinding.containerResponseCodeRow.visibility = View.GONE
+        } else {
+            emvBinding.containerResponseCodeRow.visibility = View.VISIBLE
+            emvBinding.tvResponseCode.text = emvInfo.responseCode
+        }
+
+        // Set auth code - hide entire row if null
+        if (emvInfo.authCode.isNullOrEmpty()) {
+            emvBinding.containerAuthCodeRow.visibility = View.GONE
+        } else {
+            emvBinding.containerAuthCodeRow.visibility = View.VISIBLE
+            emvBinding.tvAuthCode.text = emvInfo.authCode
+        }
+
+        // Set auth mode - hide entire row if null
+        if (emvInfo.authMode.isNullOrEmpty()) {
+            emvBinding.containerAuthModeRow.visibility = View.GONE
+        } else {
+            emvBinding.containerAuthModeRow.visibility = View.VISIBLE
+            emvBinding.tvAuthMode.text = emvInfo.authMode
+        }
+
+        // Set APPROVED status - show only if isApproved is true
+        if (emvInfo.isApproved == true) {
+            emvBinding.tvApprovedStatus.visibility = View.VISIBLE
+        } else {
+            emvBinding.tvApprovedStatus.visibility = View.GONE
+        }
+
+        // Set verification status based on isPinVerified
+        when (emvInfo.isPinVerified) {
+            true -> {
+                emvBinding.tvVerificationStatus.visibility = View.VISIBLE
+                emvBinding.tvVerificationStatus.text = "Verified by PIN"
+            }
+            false -> {
+                emvBinding.tvVerificationStatus.visibility = View.VISIBLE
+                emvBinding.tvVerificationStatus.text = "No Verification"
+            }
+            null -> {
+                emvBinding.tvVerificationStatus.visibility = View.GONE
+            }
+        }
+
+        // Show all EMV detail fields based on individual field values, not isPinVerified
+        
+        // Check if we have any detailed EMV data to show
+        val hasDetailedData = !emvInfo.mid.isNullOrEmpty() || !emvInfo.iad.isNullOrEmpty() || 
+                             !emvInfo.tid.isNullOrEmpty() || !emvInfo.tsi.isNullOrEmpty() || 
+                             !emvInfo.aid.isNullOrEmpty() || !emvInfo.arc.isNullOrEmpty() || 
+                             !emvInfo.tvr.isNullOrEmpty()
+        
+        if (hasDetailedData) {
+            emvBinding.containerPinVerifiedDetails.visibility = View.VISIBLE
+            
+            // MID and IAD Row - show row if at least one field has value
+            if (!emvInfo.mid.isNullOrEmpty() || !emvInfo.iad.isNullOrEmpty()) {
+                emvBinding.containerMidIadRow.visibility = View.VISIBLE
+                
+                val hasMid = !emvInfo.mid.isNullOrEmpty()
+                val hasIad = !emvInfo.iad.isNullOrEmpty()
+                
+                if (hasMid && hasIad) {
+                    // Both fields present - show side by side with proper alignment
+                    emvBinding.containerMidField.visibility = View.VISIBLE
+                    emvBinding.containerIadField.visibility = View.VISIBLE
+                    emvBinding.tvMid.text = emvInfo.mid
+                    emvBinding.tvIad.text = emvInfo.iad
+                    // MID stays left-aligned, IAD stays right-aligned (as per XML)
+                } else if (hasMid) {
+                    // Only MID present - show left-aligned
+                    emvBinding.containerMidField.visibility = View.VISIBLE
+                    emvBinding.containerIadField.visibility = View.GONE
+                    emvBinding.tvMid.text = emvInfo.mid
+                } else {
+                    // Only IAD present - move to left side and left-align
+                    emvBinding.containerMidField.visibility = View.VISIBLE
+                    emvBinding.containerIadField.visibility = View.GONE
+                    emvBinding.tvMidLabel.text = "IAD: "
+                    emvBinding.tvMid.text = emvInfo.iad
+                }
+            } else {
+                emvBinding.containerMidIadRow.visibility = View.GONE
+            }
+            
+            // TID and TSI Row - show row if at least one field has value
+            if (!emvInfo.tid.isNullOrEmpty() || !emvInfo.tsi.isNullOrEmpty()) {
+                emvBinding.containerTidTsiRow.visibility = View.VISIBLE
+                
+                val hasTid = !emvInfo.tid.isNullOrEmpty()
+                val hasTsi = !emvInfo.tsi.isNullOrEmpty()
+                
+                if (hasTid && hasTsi) {
+                    // Both fields present - show side by side with proper alignment
+                    emvBinding.containerTidField.visibility = View.VISIBLE
+                    emvBinding.containerTsiField.visibility = View.VISIBLE
+                    emvBinding.tvTid.text = emvInfo.tid
+                    emvBinding.tvTsi.text = emvInfo.tsi
+                    // TID stays left-aligned, TSI stays right-aligned (as per XML)
+                } else if (hasTid) {
+                    // Only TID present - show left-aligned
+                    emvBinding.containerTidField.visibility = View.VISIBLE
+                    emvBinding.containerTsiField.visibility = View.GONE
+                    emvBinding.tvTid.text = emvInfo.tid
+                } else {
+                    // Only TSI present - move to left side and left-align
+                    emvBinding.containerTidField.visibility = View.VISIBLE
+                    emvBinding.containerTsiField.visibility = View.GONE
+                    emvBinding.tvTidLabel.text = "TSI: "
+                    emvBinding.tvTid.text = emvInfo.tsi
+                }
+            } else {
+                emvBinding.containerTidTsiRow.visibility = View.GONE
+            }
+            
+            // AID and ARC Row - show row if at least one field has value
+            if (!emvInfo.aid.isNullOrEmpty() || !emvInfo.arc.isNullOrEmpty()) {
+                emvBinding.containerAidArcRow.visibility = View.VISIBLE
+                
+                val hasAid = !emvInfo.aid.isNullOrEmpty()
+                val hasArc = !emvInfo.arc.isNullOrEmpty()
+                
+                if (hasAid && hasArc) {
+                    // Both fields present - show side by side with proper alignment
+                    emvBinding.containerAidField.visibility = View.VISIBLE
+                    emvBinding.containerArcField.visibility = View.VISIBLE
+                    emvBinding.tvAid.text = emvInfo.aid
+                    emvBinding.tvArc.text = emvInfo.arc
+                    // AID stays left-aligned, ARC stays right-aligned (as per XML)
+                } else if (hasAid) {
+                    // Only AID present - show left-aligned
+                    emvBinding.containerAidField.visibility = View.VISIBLE
+                    emvBinding.containerArcField.visibility = View.GONE
+                    emvBinding.tvAid.text = emvInfo.aid
+                } else {
+                    // Only ARC present - move to left side and left-align
+                    emvBinding.containerAidField.visibility = View.VISIBLE
+                    emvBinding.containerArcField.visibility = View.GONE
+                    emvBinding.tvAidLabel.text = "ARC: "
+                    emvBinding.tvAid.text = emvInfo.arc
+                }
+            } else {
+                emvBinding.containerAidArcRow.visibility = View.GONE
+            }
+            
+            // TVR Row - show only if it has a value
+            if (!emvInfo.tvr.isNullOrEmpty()) {
+                emvBinding.containerTvrRow.visibility = View.VISIBLE
+                emvBinding.tvTvr.text = emvInfo.tvr
+            } else {
+                emvBinding.containerTvrRow.visibility = View.GONE
+            }
+        } else {
+            emvBinding.containerPinVerifiedDetails.visibility = View.GONE
+        }
+    }
 
 }

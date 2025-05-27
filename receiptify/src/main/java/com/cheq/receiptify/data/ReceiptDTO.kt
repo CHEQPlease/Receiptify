@@ -7,6 +7,10 @@ data class ReceiptDTO(
     val companyName: String?,
     @SerializedName("brandName")
     val brandName: String?,
+    @SerializedName("vatAddress")
+    val vatAddress: String?,
+    @SerializedName("vatId")
+    val vatId: String?,
     @SerializedName("breakdown")
     val breakdown: List<Breakdown> = listOf(),
     @SerializedName("items")
@@ -23,14 +27,22 @@ data class ReceiptDTO(
     val deviceType: String = "",
     @SerializedName("tableNo")
     val tableNo: String?,
+    @SerializedName("alcoholItemWarning")
+    val alcoholItemWarning: String?,
+    @SerializedName("guestName")
+    val guestName: Pair?,
     @SerializedName("customerName")
     val customerName: String?,
+    @SerializedName("placedAt")
+    val placedAt: Pair?,
     @SerializedName("timeOfOrder")
     val timeOfOrder: String?,
     @SerializedName("serverName")
     val serverName: String?,
     @SerializedName("deviceName")
     val deviceName: String?,
+    @SerializedName("deviceLabel")
+    val deviceLabel: String?,
     @SerializedName("totalItems")
     val totalItems: String?,
     @SerializedName("isRefunded")
@@ -59,4 +71,10 @@ data class ReceiptDTO(
     val splitCount: String?,
     @SerializedName("splits")
     val splits: List<List<Breakdown>> = listOf(),
+    @SerializedName("suiteLocation")
+    val suiteLocation: String?,
+    @SerializedName("excludeCompanyNameWatermark")
+    val excludeCompanyNameWatermark: Boolean = false,
+    @SerializedName("emvInfo")
+    val emvInfo: EMVInfoDTO?,
 )

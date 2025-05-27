@@ -94,16 +94,81 @@
 
     </LinearLayout>
 
-    <!-- Placed At -->
+    <!-- VAT Address -->
     <TextView
-        android:id="@+id/tv_placed_at"
+        android:id="@+id/tv_vat_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1mm"
+        android:gravity="center"
+        android:textSize="3.5mm"
+        tools:text="Freeport, Grand Bahama" />
+
+    <!-- VAT ID -->
+    <TextView
+        android:id="@+id/tv_vat_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1mm"
+        android:gravity="center"
+        android:textSize="3mm"
+        tools:text="100-945-168" />
+
+    <!-- Show based on guest name availability -->
+    <LinearLayout
+        android:id="@+id/container_guest_name_row"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="3mm"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        tools:text="Placed at 01/11/2023 1:00 AM PST"
-        />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_pair_guest_name_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            tools:text="Guest Name:" />
+
+        <!-- This View acts as a Spacer -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" /> <!-- Distribute remaining space -->
+
+        <TextView
+            android:id="@+id/tv_pair_guest_name_key_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            tools:text="Kimberly Bower" />
+    </LinearLayout>
+
+    <!-- Placed at -->
+    <LinearLayout
+        android:id="@+id/container_placed_at_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_pair_placed_at_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            tools:text="Placed at:" />
+
+        <!-- This View acts as a Spacer -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" /> <!-- Distribute remaining space -->
+
+        <TextView
+            android:id="@+id/tv_pair_placed_at_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            tools:text="01/11/2023 1:00 AM PST" />
+    </LinearLayout>
 
 
     <!-- Divider -->
@@ -158,7 +223,11 @@
         android:layout_marginBottom="1mm"
         />
 
-
+    <!-- Emv Info -->
+    <include 
+        android:id="@+id/include_emv_info"
+        layout="@layout/layout_p_emv_info" />
+    
     <!-- Support Information -->
 
     <TextView
@@ -197,6 +266,7 @@
             android:layout_height="wrap_content"
             android:text="@string/powered_by"
             android:textSize="3mm"
+            android:id="@+id/tvPoweredBy"
             android:layout_marginRight="0.5mm"
             />
 
@@ -205,6 +275,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/cantaloupe"
+            android:id="@+id/tvCompanyName"
             android:textSize="3mm"
             android:textStyle="bold"
             />

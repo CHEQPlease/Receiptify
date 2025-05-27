@@ -79,6 +79,34 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/container_placed_at_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2mm"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_pair_placed_at_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3mm"
+            tools:text="Placed at:" />
+
+        <!-- This View acts as a Spacer -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" /> <!-- Distribute remaining space -->
+
+        <TextView
+            android:id="@+id/tv_pair_placed_at_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3mm"
+            tools:text="01/11/2023 1:00 AM PST" />
+    </LinearLayout>
+
     <!-- Placed At -->
     <TextView
         android:id="@+id/tv_placed_at"
@@ -92,20 +120,21 @@
         tools:text="Placed at 01/11/2023 1:00 AM PST"
         />
 
-    <!-- Device Name -->
+
+    <!-- Device Label -->
     <LinearLayout
-        android:id="@+id/container_device_name"
+        android:id="@+id/container_device_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1.2mm"
         >
 
         <TextView
-            android:id="@+id/tv_device_name_title"
+            android:id="@+id/tv_device_label_title"
             android:layout_width="0mm"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="Device Name: "
+            android:text="Device Label: "
             android:textSize="3mm"
             android:gravity="start"
             android:minEms="11"
@@ -117,18 +146,21 @@
             android:layout_height="0mm"/>
 
         <TextView
-            android:id="@+id/tv_device_name_value"
+            android:id="@+id/tv_device_label_value"
             android:layout_width="0dp"
             android:layout_weight="4"
             android:layout_height="wrap_content"
             tools:text="H_014_The_CHEQ_Diner"
             android:textSize="3mm"
             android:gravity="end"
+            android:maxLines="2"
+            android:ellipsize="end"
             android:visibility="visible"
             />
 
 
     </LinearLayout>
+
 
     <!-- Divider -->
     <ImageView
@@ -168,6 +200,14 @@
         android:layout_width="match_parent"
         android:layout_height="2mm"/>
 
+    <!-- Emv Info -->
+    <include
+        android:id="@+id/include_emv_info"
+        layout="@layout/layout_p_emv_info" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2mm"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -187,6 +227,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/powered_by"
+            android:id="@+id/tvPoweredBy"
             android:textSize="4mm"
             />
 
@@ -196,6 +237,7 @@
             android:layout_gravity="center"
             android:text="@string/cantaloupe"
             android:textSize="4mm"
+            android:id="@+id/tvCompanyName"
             android:layout_marginLeft="1mm"
             android:textStyle="bold"
             />
