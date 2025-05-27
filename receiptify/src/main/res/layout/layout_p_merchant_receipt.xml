@@ -200,6 +200,14 @@
         android:layout_width="match_parent"
         android:layout_height="2mm"/>
 
+    <!-- Emv Info -->
+    <include
+        android:id="@+id/include_emv_info"
+        layout="@layout/layout_p_emv_info" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2mm"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
