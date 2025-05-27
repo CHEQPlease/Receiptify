@@ -30,9 +30,9 @@
         <TextView
             android:id="@+id/tv_card_brand_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Visa Credit:"
-            android:textSize="3.5mm" />
+            android:layout_height="match_parent"
+            android:textSize="3.5mm"
+            tools:text="Visa Credit:" />
 
         <View
             android:layout_width="0dp"
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Entry Mode:"
+            android:text="Entry Mode:"
             android:textSize="3.5mm" />
 
         <View
@@ -217,7 +217,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        tools:text="APPROVED"
+        android:text="APPROVED"
         android:textSize="4.5mm"
         android:textStyle="bold"
         android:layout_marginTop="2mm"
@@ -259,7 +259,7 @@
                     android:id="@+id/tv_mid_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="MID: "
+                    android:text="MID: "
                     android:textSize="3.5mm" />
 
                 <TextView
@@ -283,7 +283,7 @@
                     android:id="@+id/tv_iad_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="IAD: "
+                    android:text="IAD: "
                     android:textSize="3.5mm" />
 
                 <TextView
@@ -314,7 +314,7 @@
                     android:id="@+id/tv_tid_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="TID: "
+                    android:text="TID: "
                     android:textSize="3.5mm" />
 
                 <TextView
@@ -338,7 +338,7 @@
                     android:id="@+id/tv_tsi_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="TSI: "
+                    android:text="TSI: "
                     android:textSize="3.5mm" />
 
                 <TextView
@@ -369,7 +369,7 @@
                     android:id="@+id/tv_aid_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="AID: "
+                    android:text="AID: "
                     android:textSize="3.5mm" />
 
                 <TextView
@@ -393,7 +393,7 @@
                     android:id="@+id/tv_arc_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="ARC: "
+                    android:text="ARC: "
                     android:textSize="3.5mm" />
 
                 <TextView
@@ -416,7 +416,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="TVR: "
+                android:text="TVR: "
                 android:textSize="3.5mm" />
 
             <TextView

@@ -154,7 +154,7 @@ class MainActivity : AppCompatActivity() {
             "mid": "99901114",
             "tid": "01249102",
             "transactionType": "Sale",
-            "isPinVerified": false,
+            "isPinVerified": true,
             "isApproved": true
           }
         }                      
