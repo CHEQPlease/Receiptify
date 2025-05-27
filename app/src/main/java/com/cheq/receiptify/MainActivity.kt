@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
             }
           ],
           "emvInfo": {
-            "cardBrand": "Visa Credit",
+            "cardBrand": "Visa Debit",
             "cardLastFour": "************0043",
             "entryMode": "Chip",
             "traceNumber": "ff4bc72c-e7ff-b2ee-686-de5dff6ec45b-sfdjgsdlkfgjsdf-hjhjkjkh",
