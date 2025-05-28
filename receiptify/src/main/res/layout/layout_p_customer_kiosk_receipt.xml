@@ -233,7 +233,11 @@
         android:layout_marginBottom="1mm"
         />
 
-
+    <!-- Emv Info -->
+    <include 
+        android:id="@+id/include_emv_info"
+        layout="@layout/layout_p_emv_info" />
+    
     <!-- Support Information -->
 
     <TextView
