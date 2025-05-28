@@ -33,6 +33,8 @@ data class ReceiptDTO(
     val guestName: Pair?,
     @SerializedName("customerName")
     val customerName: String?,
+    @SerializedName("phoneNumber")
+    val phoneNumber: String?,
     @SerializedName("placedAt")
     val placedAt: Pair?,
     @SerializedName("timeOfOrder")

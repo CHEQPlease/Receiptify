@@ -557,11 +557,15 @@ object Receiptify {
 
         binding.tvVatAddress.text = receiptDTO.vatAddress
         binding.tvVatId.text = receiptDTO.vatId
+        binding.tvPhoneNumber.text = receiptDTO.phoneNumber;
         if (receiptDTO.vatAddress.isNullOrEmpty()) {
             binding.tvVatAddress.visibility = View.GONE
         }
         if (receiptDTO.vatId.isNullOrEmpty()) {
             binding.tvVatId.visibility = View.GONE
+        }
+        if (receiptDTO.phoneNumber.isNullOrEmpty()) {
+            binding.tvPhoneNumber.visibility = View.GONE
         }
 
         binding.containerGuestNameRow.apply {
@@ -630,6 +634,20 @@ object Receiptify {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
+
+        binding.tvVatAddress.text = receiptDTO.vatAddress
+        binding.tvVatId.text = receiptDTO.vatId
+        binding.tvPhoneNumber.text = receiptDTO.phoneNumber;
+        if (receiptDTO.vatAddress.isNullOrEmpty()) {
+            binding.tvVatAddress.visibility = View.GONE
+        }
+        if (receiptDTO.vatId.isNullOrEmpty()) {
+            binding.tvVatId.visibility = View.GONE
+        }
+        if (receiptDTO.phoneNumber.isNullOrEmpty()) {
+            binding.tvPhoneNumber.visibility = View.GONE
+        }
+
         binding.tvOrderNo.text = receiptDTO.orderNo
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNo.visibility = View.GONE
@@ -1417,9 +1435,10 @@ object Receiptify {
             emvBinding.tvAuthMode.text = emvInfo.authMode
         }
 
-        // Set APPROVED status - show only if isApproved is true
-        if (emvInfo.isApproved == true) {
+        // Set transaction status - show if transactionStatus has a value
+        if (!emvInfo.transactionStatus.isNullOrEmpty()) {
             emvBinding.tvApprovedStatus.visibility = View.VISIBLE
+            emvBinding.tvApprovedStatus.text = emvInfo.transactionStatus
         } else {
             emvBinding.tvApprovedStatus.visibility = View.GONE
         }
