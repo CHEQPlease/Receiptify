@@ -601,6 +601,10 @@ object Receiptify {
             binding.tvCompanyName.visibility = View.VISIBLE
         }
 
+        if (!receiptDTO.isRefunded) {
+            binding.tvRefunded.visibility = View.GONE
+        }
+        
         // Add EMV Info if available
         if (receiptDTO.emvInfo != null) {
             addEMVInfo(receiptDTO.emvInfo, binding.includeEmvInfo)
