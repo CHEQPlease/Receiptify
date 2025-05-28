@@ -20,8 +20,11 @@ class MainActivity : AppCompatActivity() {
           "orderType": "Counter",
           "totalItems": "Total items: 2",
           "orderNo": "Order# :K10",
-          "receiptType": "KIOSK",
+          "receiptType": "MERCHANT",
           "deviceType": "pos",
+          "vatAddress": "1234 Street, City, Country",
+          "vatId": "VAT123456789",
+          "phoneNumber": "(123) 4567890",
           "timeOfOrder": "May 23, 07:23PM",
           "footerQR": "123456wvweq2512123tqdsasdgasdgasdg",
           "isReprinted": true,
@@ -145,7 +148,6 @@ class MainActivity : AppCompatActivity() {
             "authCode": "208961",
             "authMode": "Issuer",
             "transactionStatus": "APPROVED",
-            "verificationMethod": "Verified by PIN",
             "iad": "06010A03640002",
             "tsi": "F800",
             "aid": "A0000000031010",
@@ -154,8 +156,7 @@ class MainActivity : AppCompatActivity() {
             "mid": "99901114",
             "tid": "01249102",
             "transactionType": "Sale",
-            "isPinVerified": true,
-            "isApproved": true
+            "isPinVerified": true
           }
         }                      
         

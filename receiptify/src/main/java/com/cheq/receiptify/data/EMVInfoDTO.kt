@@ -25,8 +25,6 @@ data class EMVInfoDTO(
     val authMode: String?,
     @SerializedName("transactionStatus")
     val transactionStatus: String?,
-    @SerializedName("verificationMethod")
-    val verificationMethod: String?,
     @SerializedName("iad")
     val iad: String?,
     @SerializedName("tsi")
@@ -40,7 +38,5 @@ data class EMVInfoDTO(
     @SerializedName("transactionType")
     val transactionType: String?,
     @SerializedName("isPinVerified")
-    val isPinVerified: Boolean?,
-    @SerializedName("isApproved")
-    val isApproved: Boolean?
+    val isPinVerified: Boolean?
 ) 
