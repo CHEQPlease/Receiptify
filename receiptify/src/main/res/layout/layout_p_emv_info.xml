@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="5mm"
+        android:textSize="4mm"
         android:textStyle="bold"
         tools:text="Sale" />
 
@@ -31,7 +31,7 @@
             android:id="@+id/tv_card_brand_label"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             tools:text="Visa Credit:" />
 
         <View
@@ -43,7 +43,7 @@
             android:id="@+id/tv_card_last_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:gravity="end"
             tools:text="************0043" />
     </LinearLayout>
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Entry Mode:"
-            android:textSize="3.5mm" />
+            android:textSize="3mm" />
 
         <View
             android:layout_width="0dp"
@@ -70,7 +70,7 @@
             android:id="@+id/tv_entry_mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:gravity="end"
             tools:text="Chip" />
     </LinearLayout>
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Trace #:"
-            android:textSize="3.5mm" />
+            android:textSize="3mm" />
 
         <View
             android:layout_width="5mm"
@@ -97,7 +97,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:gravity="end"
             tools:text="ff4bc72c-e7ff-b2ee-686-8866544333221113456677" />
 
@@ -114,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="STAN:"
-            android:textSize="3.5mm" />
+            android:textSize="3mm" />
 
         <View
             android:layout_width="5mm"
@@ -125,7 +125,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:gravity="end"
             tools:text="425074" />
     </LinearLayout>
@@ -141,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Response Code:"
-            android:textSize="3.5mm" />
+            android:textSize="3mm" />
 
         <View
             android:layout_width="5mm"
@@ -152,7 +152,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:gravity="end"
             tools:text="00" />
     </LinearLayout>
@@ -168,7 +168,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Auth Code:"
-            android:textSize="3.5mm" />
+            android:textSize="3mm" />
 
         <View
             android:layout_width="5mm"
@@ -179,7 +179,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:gravity="end"
             tools:text="208961" />
     </LinearLayout>
@@ -195,7 +195,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Auth Mode:"
-            android:textSize="3.5mm" />
+            android:textSize="3mm" />
 
         <View
             android:layout_width="0dp"
@@ -206,7 +206,7 @@
             android:id="@+id/tv_auth_mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="3.5mm"
+            android:textSize="3mm"
             android:gravity="end"
             tools:text="Issuer" />
     </LinearLayout>
@@ -218,10 +218,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="APPROVED"
-        android:textSize="4.5mm"
+        android:textSize="3.5mm"
         android:textStyle="bold"
         android:layout_marginTop="2mm"
-        android:layout_marginBottom="2mm" />
+        android:layout_marginBottom="1.5mm" />
 
     <!-- Verification Status -->
     <TextView
@@ -229,7 +229,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="4mm"
+        android:textSize="3.5mm"
         android:textStyle="bold"
         tools:text="Verified by PIN" />
 
@@ -260,13 +260,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="MID: "
-                    android:textSize="3.5mm" />
+                    android:textSize="3mm" />
 
                 <TextView
                     android:id="@+id/tv_mid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="3.5mm"
+                    android:textSize="3mm"
                     android:gravity="start"
                     tools:text="99901114" />
             </LinearLayout>
@@ -284,13 +284,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="IAD: "
-                    android:textSize="3.5mm" />
+                    android:textSize="3mm" />
 
                 <TextView
                     android:id="@+id/tv_iad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="3.5mm"
+                    android:textSize="3mm"
                     android:gravity="end"
                     tools:text="06010A03640002" />
             </LinearLayout>
@@ -315,13 +315,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TID: "
-                    android:textSize="3.5mm" />
+                    android:textSize="3mm" />
 
                 <TextView
                     android:id="@+id/tv_tid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="3.5mm"
+                    android:textSize="3mm"
                     android:gravity="start"
                     tools:text="01249102" />
             </LinearLayout>
@@ -339,13 +339,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TSI: "
-                    android:textSize="3.5mm" />
+                    android:textSize="3mm" />
 
                 <TextView
                     android:id="@+id/tv_tsi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="3.5mm"
+                    android:textSize="3mm"
                     android:gravity="end"
                     tools:text="F800" />
             </LinearLayout>
@@ -362,7 +362,7 @@
                 android:id="@+id/container_aid_field"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.11"
+                android:layout_weight="1.2"
                 android:orientation="horizontal">
 
                 <TextView
@@ -370,13 +370,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="AID: "
-                    android:textSize="3.5mm" />
+                    android:textSize="3mm" />
 
                 <TextView
                     android:id="@+id/tv_aid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="3.5mm"
+                    android:textSize="3mm"
                     android:gravity="start"
                     tools:text="A0000000031010" />
             </LinearLayout>
@@ -385,7 +385,7 @@
                 android:id="@+id/container_arc_field"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.99"
+                android:layout_weight="0.8"
                 android:orientation="horizontal"
                 android:gravity="end">
 
@@ -394,13 +394,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ARC: "
-                    android:textSize="3.5mm" />
+                    android:textSize="3mm" />
 
                 <TextView
                     android:id="@+id/tv_arc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="3.5mm"
+                    android:textSize="3mm"
                     android:gravity="end"
                     tools:text="00" />
             </LinearLayout>
@@ -417,13 +417,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TVR: "
-                android:textSize="3.5mm" />
+                android:textSize="3mm" />
 
             <TextView
                 android:id="@+id/tv_tvr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="3.5mm"
+                android:textSize="3mm"
                 tools:text="0080008000" />
         </LinearLayout>
 
