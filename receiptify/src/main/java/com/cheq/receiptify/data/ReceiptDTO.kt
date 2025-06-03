@@ -79,4 +79,6 @@ data class ReceiptDTO(
     val excludeCompanyNameWatermark: Boolean = false,
     @SerializedName("emvInfo")
     val emvInfo: EMVInfoDTO?,
+    @SerializedName("receiptTopline")
+    val receiptTopline: String?,
 )
