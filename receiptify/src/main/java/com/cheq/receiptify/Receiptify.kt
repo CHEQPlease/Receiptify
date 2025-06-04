@@ -5,9 +5,11 @@ import com.cheq.receiptify.adapter.handheld.HSplitListAdapter
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Typeface
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.adapter.handheld.HBreakdownListAdapter
@@ -175,6 +177,24 @@ object Receiptify {
 
         /* TODO : Move to string resource to support localization in future*/
 
+        if (receiptDTO.custMerchantReceiptTopline != null) {
+            binding.tvReceiptTopline.text = receiptDTO.custMerchantReceiptTopline
+        } else {
+            binding.tvReceiptTopline.visibility = View.GONE
+
+            val mm = 2f
+            val px = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_MM,
+                mm,
+                binding.tvBrandName.context.resources.displayMetrics
+            ).toInt()
+
+            (binding.tvBrandName.layoutParams as ViewGroup.MarginLayoutParams).apply {
+                topMargin = px
+                binding.tvBrandName.layoutParams = this
+            }
+        }
+
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         if (receiptDTO.tableNo.isNullOrEmpty()) {
@@ -256,6 +276,24 @@ object Receiptify {
 
         /* TODO : Move to string resource to support localization in future*/
 
+        if (receiptDTO.custMerchantReceiptTopline != null) {
+            binding.tvReceiptTopline.text = receiptDTO.custMerchantReceiptTopline
+        } else {
+            binding.tvReceiptTopline.visibility = View.GONE
+
+            val mm = 2f
+            val px = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_MM,
+                mm,
+                binding.tvBrandName.context.resources.displayMetrics
+            ).toInt()
+
+            (binding.tvBrandName.layoutParams as ViewGroup.MarginLayoutParams).apply {
+                topMargin = px
+                binding.tvBrandName.layoutParams = this
+            }
+        }
+
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
@@ -303,6 +341,24 @@ object Receiptify {
         val context = context.get()!!
 
         /* TODO : Move to string resource to support localization in future*/
+
+        if (receiptDTO.custMerchantReceiptTopline != null) {
+            binding.tvReceiptTopline.text = receiptDTO.custMerchantReceiptTopline
+        } else {
+            binding.tvReceiptTopline.visibility = View.GONE
+
+            val mm = 2f
+            val px = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_MM,
+                mm,
+                binding.tvBrandName.context.resources.displayMetrics
+            ).toInt()
+
+            (binding.tvBrandName.layoutParams as ViewGroup.MarginLayoutParams).apply {
+                topMargin = px
+                binding.tvBrandName.layoutParams = this
+            }
+        }
 
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
@@ -549,6 +605,12 @@ object Receiptify {
         val receipt = binding.layoutCustomerReceiptKiosk
 
         /* TODO : Move to string resource to support localization in future */
+
+        if (receiptDTO.custMerchantReceiptTopline != null) {
+            binding.tvReceiptTopline.text = receiptDTO.custMerchantReceiptTopline
+        } else {
+            binding.tvReceiptTopline.visibility = View.GONE
+        }
 
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
