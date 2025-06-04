@@ -17,7 +17,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="2mm"
         android:layout_marginBottom="1mm"
         android:textSize="3mm"
         android:textStyle="normal"
