@@ -10,6 +10,18 @@
     android:theme="@style/ReceiptifyThemePOS"
     tools:ignore="InOrMmUsage">
 
+    <!-- Receipt TopLine -->
+    <TextView
+        android:id="@+id/tv_receipt_topline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="2mm"
+        android:layout_marginBottom="1mm"
+        android:textSize="3mm"
+        android:textStyle="normal"
+        tools:text="VAT Sales Receipt" />
+
     <!-- Brand Name -->
     <LinearLayout
         android:gravity="center"
@@ -23,7 +35,6 @@
             android:layout_height="wrap_content"
             tools:text="Nation wide arena"
             android:gravity="center"
-            android:layout_marginTop="2mm"
             android:layout_marginBottom="1mm"
             android:textSize="4mm"
             android:textStyle="bold"
