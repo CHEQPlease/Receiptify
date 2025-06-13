@@ -821,8 +821,6 @@ object Receiptify {
             binding.includeGratuitySection.root.visibility = View.GONE
         }
 
-        var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.text = if (placedAt?.value != null) "${placedAt.key}: ${placedAt.value}" else ""
 
         binding.containerPlacedAtRow.apply {
             visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
