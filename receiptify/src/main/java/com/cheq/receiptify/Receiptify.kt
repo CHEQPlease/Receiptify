@@ -426,7 +426,6 @@ object Receiptify {
                 binding.tvBrandName.layoutParams = this
             }
         }
-
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         if (receiptDTO.tableNo.isNullOrEmpty()) {
@@ -436,7 +435,8 @@ object Receiptify {
             binding.tvTableNoHhCustomer.text = receiptDTO.tableNo
         }
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        var placedAt = receiptDTO.placedAt
+        binding.tvPlacedAt.text = if (placedAt?.value != null) "${placedAt.key}: ${placedAt.value}" else ""
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
@@ -821,10 +821,8 @@ object Receiptify {
             binding.includeGratuitySection.root.visibility = View.GONE
         }
 
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
-        if (receiptDTO.timeOfOrder.isNullOrEmpty()) {
-            binding.tvPlacedAt.visibility = View.GONE
-        }
+        var placedAt = receiptDTO.placedAt
+        binding.tvPlacedAt.text = if (placedAt?.value != null) "${placedAt.key}: ${placedAt.value}" else ""
 
         binding.containerPlacedAtRow.apply {
             visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
