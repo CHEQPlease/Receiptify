@@ -1189,12 +1189,13 @@ object Receiptify {
         val receipt = binding.layoutKitchenReceipt
 
         /* TODO : Move to string resource to support localization in future */
+        var placedAt = receiptDTO.placedAt
 
         binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        binding.tvPlacedAt.text = if (placedAt?.value != null) "${placedAt.key}: ${placedAt.value}" else ""
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = HKitchenDishListAdapter(receiptDTO.items)
         binding.rvDishes.layoutManager =
