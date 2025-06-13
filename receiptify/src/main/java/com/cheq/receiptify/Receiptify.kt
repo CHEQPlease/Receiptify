@@ -965,7 +965,8 @@ object Receiptify {
             binding.tvTableNo.text = receiptDTO.tableNo
             binding.tvOrderNo.gravity = Gravity.END
         }
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        var placedAt = receiptDTO.placedAt
+        binding.tvPlacedAt.text = if (placedAt?.value != null) "${placedAt.key}: ${placedAt.value}" else ""
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
