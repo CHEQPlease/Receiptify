@@ -24,6 +24,9 @@
         android:layout_marginBottom="1.6mm"
         android:textSize="2.5mm"
         android:textStyle="normal"
+        android:textAlignment="center"
+        android:maxLines="2"
+        android:ellipsize="end"
         tools:text="VAT Sales Receipt" />
 
     <!--  Top Section -->
