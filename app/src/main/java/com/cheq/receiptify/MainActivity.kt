@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val jsonString = """
         {
           "brandName": "CHEQ Diner",
-          "orderType": "Counter",
+          "orderType": "counter",
           "totalItems": "Total items: 2",
           "orderNo": "Order# :K10",
           "receiptType": "MERCHANT",
@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
           "splitCount": "SPLIT COUNT: 4",
           "companyName": "CANTALOUPE",
           "excludeCompanyNameWatermark": true,
+          "placedAt": {
+          "key": "Placed at",
+          "value": "16 Main Street, City, Country"
+          },
+          "deviceLabel": "Device: POS Terminal",
           "items": [
             {
               "itemName": "Salmon Fry",
