@@ -435,8 +435,17 @@ object Receiptify {
             binding.tvTableNoHhCustomer.text = receiptDTO.tableNo
         }
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+        // hiding the placed at text if it is null or empty
         var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.text = if (placedAt?.value != null) "${placedAt.key}: ${placedAt.value}" else ""
+        binding.tvPlacedAt.apply {
+            if (placedAt?.value.isNullOrEmpty()) {
+                text = ""
+                visibility = View.GONE
+            } else {
+                text = "${placedAt.key}: ${placedAt.value}"
+                visibility = View.VISIBLE
+            }
+        }
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
@@ -890,7 +899,18 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        // hiding the placed at text if it is null or empty
+        var placedAt = receiptDTO.placedAt
+        binding.tvPlacedAt.apply {
+            if (placedAt?.value.isNullOrEmpty()) {
+                text = ""
+                visibility = View.GONE
+            } else {
+                text = "${placedAt.key}: ${placedAt.value}"
+                visibility = View.VISIBLE
+            }
+        }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
             binding.tvPoweredBy.visibility = View.GONE
@@ -964,7 +984,15 @@ object Receiptify {
             binding.tvOrderNo.gravity = Gravity.END
         }
         var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.text = if (placedAt?.value != null) "${placedAt.key}: ${placedAt.value}" else ""
+        binding.tvPlacedAt.apply {
+            if (placedAt?.value.isNullOrEmpty()) {
+                text = ""
+                visibility = View.GONE
+            } else {
+                text = "${placedAt.key}: ${placedAt.value}"
+                visibility = View.VISIBLE
+            }
+        }
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -1049,7 +1077,16 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        var placedAt = receiptDTO.placedAt
+        binding.tvPlacedAt.apply {
+            if (placedAt?.value.isNullOrEmpty()) {
+                text = ""
+                visibility = View.GONE
+            } else {
+                text = "${placedAt.key}: ${placedAt.value}"
+                visibility = View.VISIBLE
+            }
+        }
 
         binding.rvSplitBreakdown.adapter = HSplitListAdapter(receiptDTO.splits)
         binding.rvSplitBreakdown.layoutManager =
@@ -1187,12 +1224,19 @@ object Receiptify {
 
         /* TODO : Move to string resource to support localization in future */
         var placedAt = receiptDTO.placedAt
-
+        binding.tvPlacedAt.apply {
+            if (placedAt?.value.isNullOrEmpty()) {
+                text = ""
+                visibility = View.GONE
+            } else {
+                text = "${placedAt.key}: ${placedAt.value}"
+                visibility = View.VISIBLE
+            }
+        }
         binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
-        binding.tvPlacedAt.text = if (placedAt?.value != null) "${placedAt.key}: ${placedAt.value}" else ""
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = HKitchenDishListAdapter(receiptDTO.items)
         binding.rvDishes.layoutManager =
