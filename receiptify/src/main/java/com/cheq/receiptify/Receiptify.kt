@@ -1088,12 +1088,12 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        var placedAt = receiptDTO.placedAt
 
-        binding.tvPlacedAt.apply {
-            val show = !placedAt?.key.isNullOrEmpty() && !placedAt?.value.isNullOrEmpty()
-            text = if (show) "${placedAt?.key}: ${placedAt?.value}" else ""
-            visibility = if (show) View.VISIBLE else View.GONE
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
 
         binding.rvSplitBreakdown.adapter = HSplitListAdapter(receiptDTO.splits)
