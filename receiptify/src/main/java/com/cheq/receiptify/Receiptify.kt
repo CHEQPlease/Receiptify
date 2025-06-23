@@ -1231,13 +1231,14 @@ object Receiptify {
         val receipt = binding.layoutKitchenReceipt
 
         /* TODO : Move to string resource to support localization in future */
-        var placedAt = receiptDTO.placedAt
 
-        binding.tvPlacedAt.apply {
-            val show = !placedAt?.key.isNullOrEmpty() && !placedAt?.value.isNullOrEmpty()
-            text = if (show) "${placedAt?.key}: ${placedAt?.value}" else ""
-            visibility = if (show) View.VISIBLE else View.GONE
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
+
         binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = receiptDTO.orderNo
