@@ -871,10 +871,14 @@ object Receiptify {
         }
 
 
-        binding.containerPlacedAtRow.apply {
-            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
-            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+        var placedAt = receiptDTO.placedAt ?: ""
+
+        if(placedAt.isNotEmpty()) {
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
+        } else {
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
