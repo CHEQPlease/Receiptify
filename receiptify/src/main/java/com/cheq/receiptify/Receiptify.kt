@@ -378,7 +378,13 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = placedAt
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
 
         binding.rvSplitBreakdown.adapter = PSplitListAdapter(receiptDTO.splits)
         binding.rvSplitBreakdown.layoutManager =
