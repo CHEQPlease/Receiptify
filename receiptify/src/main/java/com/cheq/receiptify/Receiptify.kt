@@ -306,10 +306,10 @@ object Receiptify {
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
 
-        // Todo: need to recheck
+
         var placedAt = receiptDTO.placedAt ?: ""
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = placedAt
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
         } else {
             binding.tvPlacedAt.visibility = View.GONE
         }
@@ -950,7 +950,7 @@ object Receiptify {
         // Todo: Need to recheck
         var placedAt = receiptDTO.placedAt ?: ""
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = placedAt
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
         } else {
             binding.tvPlacedAt.visibility = View.GONE
         }
