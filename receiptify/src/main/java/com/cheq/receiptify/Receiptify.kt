@@ -996,12 +996,14 @@ object Receiptify {
             binding.tvTableNo.text = receiptDTO.tableNo
             binding.tvOrderNo.gravity = Gravity.END
         }
-        var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.apply {
-            val show = !placedAt?.key.isNullOrEmpty() && !placedAt?.value.isNullOrEmpty()
-            text = if (show) "${placedAt?.key}: ${placedAt?.value}" else ""
-            visibility = if (show) View.VISIBLE else View.GONE
+
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
+
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
