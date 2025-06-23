@@ -454,6 +454,7 @@ object Receiptify {
             binding.tvTableNoHhCustomer.text = receiptDTO.tableNo
         }
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+
         // hiding the placed at text if it is null or empty
         var placedAt = receiptDTO.placedAt ?: ""
         if(placedAt.isNotEmpty()) {
@@ -1527,7 +1528,13 @@ object Receiptify {
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        // hiding the placed at text if it is null or empty
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
             binding.tvPoweredBy.visibility = View.GONE
