@@ -206,7 +206,12 @@ object Receiptify {
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
 
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
             binding.tvPoweredBy.visibility = View.GONE
