@@ -436,16 +436,13 @@ object Receiptify {
         }
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
         // hiding the placed at text if it is null or empty
-        var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.apply {
-            if (placedAt?.value.isNullOrEmpty() || placedAt?.key.isNullOrEmpty()) {
-                text = ""
-                visibility = View.GONE
-            } else {
-                text = "${placedAt?.key ?: ""}: ${placedAt?.value ?: ""}"
-                visibility = View.VISIBLE
-            }
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
+
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
