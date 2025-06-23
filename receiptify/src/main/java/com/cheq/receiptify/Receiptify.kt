@@ -306,6 +306,7 @@ object Receiptify {
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
 
+        // Todo: need to recheck
         var placedAt = receiptDTO.placedAt ?: ""
         if(placedAt.isNotEmpty()) {
             binding.tvPlacedAt.text = placedAt
@@ -747,6 +748,7 @@ object Receiptify {
             binding.tvPairPlacedAtKey.text = "Placed at:"
             binding.tvPairPlacedAtValue.text = placedAt
         } else {
+            binding.containerPlacedAtRow.visibility = View.GONE
             binding.tvPairPlacedAtKey.visibility = View.GONE
             binding.tvPairPlacedAtValue.visibility = View.GONE
         }
@@ -944,12 +946,12 @@ object Receiptify {
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
 
-        // hiding the placed at text if it is null or empty
-        var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.apply {
-            val show = !placedAt?.key.isNullOrEmpty() && !placedAt?.value.isNullOrEmpty()
-            text = if (show) "${placedAt?.key}: ${placedAt?.value}" else ""
-            visibility = if (show) View.VISIBLE else View.GONE
+        // Todo: Need to recheck
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = placedAt
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
@@ -1178,12 +1180,6 @@ object Receiptify {
             binding.tvSuiteLocation.text = receiptDTO.suiteLocation
         }
 
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
-        if (receiptDTO.timeOfOrder.isNullOrEmpty()) {
-            binding.tvPlacedAt.visibility = View.GONE
-        }
-
-
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = PKitchenDishListAdapter(receiptDTO.items)
         binding.rvDishes.layoutManager =
@@ -1208,10 +1204,15 @@ object Receiptify {
             binding.tvPairGuestNameKeyValue.text = receiptDTO.guestName?.value
         }
 
-        binding.containerPlacedAtRow.apply {
-            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
-            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+        var placedAt = receiptDTO.placedAt ?: ""
+
+        if(placedAt.isNotEmpty()) {
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
+        } else {
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         if (receiptDTO.customerName.isNullOrEmpty()) {
