@@ -382,7 +382,7 @@ object Receiptify {
 
         var placedAt = receiptDTO.placedAt ?: ""
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = placedAt
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
         } else {
             binding.tvPlacedAt.visibility = View.GONE
         }
