@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
           "vatAddress": "1234 Street, City, Country",
           "vatId": "VAT123456789",
           "phoneNumber": "(123) 4567890",
-          "timeOfOrder": "May 23, 07:23PM",
+          "placedAt": "May 23, 07:23PM",
           "footerQR": "123456wvweq2512123tqdsasdgasdgasdg",
           "isReprinted": true,
           "splitCount": "SPLIT COUNT: 4",

@@ -206,7 +206,12 @@ object Receiptify {
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
 
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
             binding.tvPoweredBy.visibility = View.GONE
@@ -300,7 +305,15 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
+
         binding.tvSplitCount.text = receiptDTO.splitCount
 
         if(receiptDTO.excludeCompanyNameWatermark) {
@@ -366,7 +379,13 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = placedAt
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
 
         binding.rvSplitBreakdown.adapter = PSplitListAdapter(receiptDTO.splits)
         binding.rvSplitBreakdown.layoutManager =
@@ -435,17 +454,15 @@ object Receiptify {
             binding.tvTableNoHhCustomer.text = receiptDTO.tableNo
         }
         binding.tvTotalItems.text = "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
+
         // hiding the placed at text if it is null or empty
-        var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.apply {
-            if (placedAt?.value.isNullOrEmpty() || placedAt?.key.isNullOrEmpty()) {
-                text = ""
-                visibility = View.GONE
-            } else {
-                text = "${placedAt?.key ?: ""}: ${placedAt?.value ?: ""}"
-                visibility = View.VISIBLE
-            }
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
+
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
@@ -512,7 +529,14 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        // hiding the placed at text if it is null or empty
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
+
         binding.tvSplitCount.text = receiptDTO.splitCount
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
@@ -577,7 +601,13 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
 
         binding.rvSplitBreakdown.adapter = HSplitListAdapter(receiptDTO.splits)
         binding.rvSplitBreakdown.layoutManager =
@@ -632,7 +662,14 @@ object Receiptify {
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
+
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
@@ -705,10 +742,16 @@ object Receiptify {
             binding.tvPairGuestNameKeyValue.text = receiptDTO.guestName?.value
         }
 
-        binding.containerPlacedAtRow.apply {
-            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
-            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+
+        var placedAt = receiptDTO.placedAt ?: ""
+
+        if(placedAt.isNotEmpty()) {
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
+        } else {
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         binding.rvDishes.adapter = PDishListAdapterCustomer(receiptDTO.items)
@@ -831,10 +874,14 @@ object Receiptify {
         }
 
 
-        binding.containerPlacedAtRow.apply {
-            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
-            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+        var placedAt = receiptDTO.placedAt ?: ""
+
+        if(placedAt.isNotEmpty()) {
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
+        } else {
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
@@ -900,12 +947,12 @@ object Receiptify {
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
 
-        // hiding the placed at text if it is null or empty
-        var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.apply {
-            val show = !placedAt?.key.isNullOrEmpty() && !placedAt?.value.isNullOrEmpty()
-            text = if (show) "${placedAt?.key}: ${placedAt?.value}" else ""
-            visibility = if (show) View.VISIBLE else View.GONE
+        // Todo: Need to recheck
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
@@ -979,12 +1026,14 @@ object Receiptify {
             binding.tvTableNo.text = receiptDTO.tableNo
             binding.tvOrderNo.gravity = Gravity.END
         }
-        var placedAt = receiptDTO.placedAt
-        binding.tvPlacedAt.apply {
-            val show = !placedAt?.key.isNullOrEmpty() && !placedAt?.value.isNullOrEmpty()
-            text = if (show) "${placedAt?.key}: ${placedAt?.value}" else ""
-            visibility = if (show) View.VISIBLE else View.GONE
+
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
+
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
@@ -1069,12 +1118,12 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        var placedAt = receiptDTO.placedAt
 
-        binding.tvPlacedAt.apply {
-            val show = !placedAt?.key.isNullOrEmpty() && !placedAt?.value.isNullOrEmpty()
-            text = if (show) "${placedAt?.key}: ${placedAt?.value}" else ""
-            visibility = if (show) View.VISIBLE else View.GONE
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
 
         binding.rvSplitBreakdown.adapter = HSplitListAdapter(receiptDTO.splits)
@@ -1132,12 +1181,6 @@ object Receiptify {
             binding.tvSuiteLocation.text = receiptDTO.suiteLocation
         }
 
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
-        if (receiptDTO.timeOfOrder.isNullOrEmpty()) {
-            binding.tvPlacedAt.visibility = View.GONE
-        }
-
-
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
         binding.rvDishes.adapter = PKitchenDishListAdapter(receiptDTO.items)
         binding.rvDishes.layoutManager =
@@ -1162,10 +1205,15 @@ object Receiptify {
             binding.tvPairGuestNameKeyValue.text = receiptDTO.guestName?.value
         }
 
-        binding.containerPlacedAtRow.apply {
-            visibility = if (receiptDTO.placedAt?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
-            binding.tvPairPlacedAtKey.text = receiptDTO.placedAt?.key
-            binding.tvPairPlacedAtValue.text = receiptDTO.placedAt?.value
+        var placedAt = receiptDTO.placedAt ?: ""
+
+        if(placedAt.isNotEmpty()) {
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
+        } else {
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         if (receiptDTO.customerName.isNullOrEmpty()) {
@@ -1212,13 +1260,14 @@ object Receiptify {
         val receipt = binding.layoutKitchenReceipt
 
         /* TODO : Move to string resource to support localization in future */
-        var placedAt = receiptDTO.placedAt
 
-        binding.tvPlacedAt.apply {
-            val show = !placedAt?.key.isNullOrEmpty() && !placedAt?.value.isNullOrEmpty()
-            text = if (show) "${placedAt?.key}: ${placedAt?.value}" else ""
-            visibility = if (show) View.VISIBLE else View.GONE
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
         }
+
         binding.tvOfflineHeaderMsg.text = receiptDTO.offlineHeaderMsg
         binding.kTvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = receiptDTO.orderNo
@@ -1479,7 +1528,13 @@ object Receiptify {
         binding.tvBrandName.text = receiptDTO.brandName
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        // hiding the placed at text if it is null or empty
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
             binding.tvPoweredBy.visibility = View.GONE

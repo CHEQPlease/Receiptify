@@ -36,7 +36,7 @@ data class ReceiptDTO(
     @SerializedName("phoneNumber")
     val phoneNumber: String?,
     @SerializedName("placedAt")
-    val placedAt: Pair?,
+    val placedAt: String?,
     @SerializedName("timeOfOrder")
     val timeOfOrder: String?,
     @SerializedName("serverName")
