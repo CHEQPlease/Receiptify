@@ -512,7 +512,14 @@ object Receiptify {
 
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
-        binding.tvPlacedAt.text = receiptDTO.timeOfOrder
+        // hiding the placed at text if it is null or empty
+        var placedAt = receiptDTO.placedAt ?: ""
+        if(placedAt.isNotEmpty()) {
+            binding.tvPlacedAt.text = "Placed at: $placedAt"
+        } else {
+            binding.tvPlacedAt.visibility = View.GONE
+        }
+
         binding.tvSplitCount.text = receiptDTO.splitCount
         binding.rvDishes.adapter = HDishListAdapterCustomer(receiptDTO.items)
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
