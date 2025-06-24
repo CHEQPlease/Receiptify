@@ -207,10 +207,14 @@ object Receiptify {
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
 
         var placedAt = receiptDTO.placedAt ?: ""
+
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = "Placed at: $placedAt"
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
         } else {
-            binding.tvPlacedAt.visibility = View.GONE
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
@@ -308,10 +312,14 @@ object Receiptify {
 
 
         var placedAt = receiptDTO.placedAt ?: ""
+
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = "Placed at: $placedAt"
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
         } else {
-            binding.tvPlacedAt.visibility = View.GONE
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         binding.tvSplitCount.text = receiptDTO.splitCount
@@ -381,10 +389,14 @@ object Receiptify {
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
 
         var placedAt = receiptDTO.placedAt ?: ""
+
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = "Placed at: $placedAt"
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
         } else {
-            binding.tvPlacedAt.visibility = View.GONE
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         binding.rvSplitBreakdown.adapter = PSplitListAdapter(receiptDTO.splits)
@@ -880,6 +892,7 @@ object Receiptify {
             binding.tvPairPlacedAtKey.text = "Placed at:"
             binding.tvPairPlacedAtValue.text = placedAt
         } else {
+            binding.containerPlacedAtRow.visibility = View.GONE
             binding.tvPairPlacedAtKey.visibility = View.GONE
             binding.tvPairPlacedAtValue.visibility = View.GONE
         }
@@ -947,12 +960,15 @@ object Receiptify {
         binding.tvTotalItems.text =
             receiptDTO.totalItems /* TODO : Move to plural type string resource*/
 
-        // Todo: Need to recheck
         var placedAt = receiptDTO.placedAt ?: ""
+
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = "Placed at: $placedAt"
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
         } else {
-            binding.tvPlacedAt.visibility = View.GONE
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
@@ -1530,10 +1546,14 @@ object Receiptify {
         binding.tvTableNo.text = receiptDTO.tableNo
         // hiding the placed at text if it is null or empty
         var placedAt = receiptDTO.placedAt ?: ""
+
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = "Placed at: $placedAt"
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
         } else {
-            binding.tvPlacedAt.visibility = View.GONE
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
