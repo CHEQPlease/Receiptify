@@ -39,14 +39,32 @@
         android:textStyle="bold"
         />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_placed_at"
+    <LinearLayout
+        android:id="@+id/container_placed_at_row"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="3.5mm"
-        tools:text="PLACED AT : MAY 03 @ 9:34 PDT"
-        />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_pair_placed_at_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            tools:text="Placed at:" />
+
+        <!-- This View acts as a Spacer -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" /> <!-- Distribute remaining space -->
+
+        <TextView
+            android:id="@+id/tv_pair_placed_at_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            tools:text="01/11/2023 1:00 AM PST" />
+    </LinearLayout>
 
     <!-- Divider -->
     <ImageView
