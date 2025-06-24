@@ -892,6 +892,7 @@ object Receiptify {
             binding.tvPairPlacedAtKey.text = "Placed at:"
             binding.tvPairPlacedAtValue.text = placedAt
         } else {
+            binding.containerPlacedAtRow.visibility = View.GONE
             binding.tvPairPlacedAtKey.visibility = View.GONE
             binding.tvPairPlacedAtValue.visibility = View.GONE
         }
@@ -1545,10 +1546,14 @@ object Receiptify {
         binding.tvTableNo.text = receiptDTO.tableNo
         // hiding the placed at text if it is null or empty
         var placedAt = receiptDTO.placedAt ?: ""
+
         if(placedAt.isNotEmpty()) {
-            binding.tvPlacedAt.text = "Placed at: $placedAt"
+            binding.tvPairPlacedAtKey.text = "Placed at:"
+            binding.tvPairPlacedAtValue.text = placedAt
         } else {
-            binding.tvPlacedAt.visibility = View.GONE
+            binding.containerPlacedAtRow.visibility = View.GONE
+            binding.tvPairPlacedAtKey.visibility = View.GONE
+            binding.tvPairPlacedAtValue.visibility = View.GONE
         }
 
         if(receiptDTO.excludeCompanyNameWatermark) {
