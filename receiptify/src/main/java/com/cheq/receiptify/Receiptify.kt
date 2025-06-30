@@ -10,6 +10,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cheq.receiptify.adapter.handheld.HBreakdownListAdapter
@@ -231,6 +232,8 @@ object Receiptify {
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+
+        binding.breakdownDivider.isVisible = receiptDTO.breakdown.isNotEmpty()
 
         if (receiptDTO.gratuityInfo != null) {
             binding.includeGratuitySection.tvSuggestedGratuity.text = "Suggested Gratuity"
@@ -479,6 +482,7 @@ object Receiptify {
         binding.rvDishes.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        binding.breakdownDivider.isVisible = receiptDTO.breakdown.isNotEmpty()
 
         if(receiptDTO.supportInfo?.isNotEmpty() == true){
             binding.tvSupportInfo.text = receiptDTO.supportInfo
@@ -687,6 +691,7 @@ object Receiptify {
         binding.rvBreakdown.adapter = HBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        binding.breakdownDivider.isVisible = receiptDTO.breakdown.isNotEmpty()
         binding.tvOrderType.text = receiptDTO.orderType
 
         if (receiptDTO.supportInfo?.isNotEmpty() == true) {
@@ -772,6 +777,7 @@ object Receiptify {
         binding.rvBreakdown.adapter = PBreakdownListAdapter(receiptDTO.breakdown)
         binding.rvBreakdown.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
+        binding.breakdownDivider.isVisible = receiptDTO.breakdown.isNotEmpty()
         binding.tvOrderType.text = receiptDTO.orderType
 
         if (receiptDTO.supportInfo?.isNotEmpty() == true) {
