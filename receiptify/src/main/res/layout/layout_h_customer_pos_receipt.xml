@@ -140,6 +140,7 @@
 
     <!-- Divider -->
     <ImageView
+        android:id="@+id/breakdown_divider"
         android:layout_width="match_parent"
         android:layout_height="0.5mm"
         android:src="@drawable/divider_dotted_line"
