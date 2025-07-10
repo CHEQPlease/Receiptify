@@ -1699,6 +1699,16 @@ object Receiptify {
 
         binding.tvPartnerName.text = receiptDTO.deviceSalesReport.header
 
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+
         if(receiptDTO.excludeCompanyNameWatermark) {
             binding.tvPoweredBy.visibility = View.GONE
             binding.tvCompanyName.visibility = View.GONE
@@ -1707,6 +1717,7 @@ object Receiptify {
             binding.tvPoweredBy.visibility = View.VISIBLE
             binding.tvCompanyName.visibility = View.VISIBLE
         }
+
 
         if (receiptDTO.deviceSalesReport.headerMeta?.isNotEmpty() == true) {
             binding.rvDevicesSalesHeaderMeta.adapter =
