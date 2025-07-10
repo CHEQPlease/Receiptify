@@ -19,6 +19,27 @@
         android:textSize="6.5mm"
         />
 
+    <!-- VAT Address -->
+    <TextView
+        android:id="@+id/tv_vat_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1mm"
+        android:gravity="center"
+        android:textSize="3.5mm"
+        tools:text="Freeport, Grand Bahama" />
+
+
+    <!-- VAT ID -->
+    <TextView
+        android:id="@+id/tv_vat_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1mm"
+        android:gravity="center"
+        android:textSize="3mm"
+        tools:text="100-945-168" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_order_no"
         android:layout_width="wrap_content"
@@ -80,15 +101,14 @@
         android:layout_width="match_parent"
         android:layout_height="4mm"/>
 
+    <!-- Whitespace for linefeed -->
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_payment_qr"
         android:layout_width="match_parent"
-        android:adjustViewBounds="true"
         android:layout_height="80mm"
-        tools:src="@drawable/qr_cheq_app_apple_qr"
-        />
+        android:adjustViewBounds="true"
+        tools:src="@drawable/qr_cheq_app_apple_qr" />
 
-    <!-- Whitespace for linefeed -->
     <View
         android:layout_width="match_parent"
         android:layout_height="4mm"/>
