@@ -740,8 +740,15 @@ object Receiptify {
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
 
-        binding.tvVatAddress.text = receiptDTO.vatAddress
-        binding.tvVatId.text = receiptDTO.vatId
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
         binding.tvPhoneNumber.text = receiptDTO.phoneNumber;
         if (receiptDTO.vatAddress.isNullOrEmpty()) {
             binding.tvVatAddress.visibility = View.GONE
