@@ -395,6 +395,16 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
 
