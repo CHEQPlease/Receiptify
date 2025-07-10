@@ -197,6 +197,16 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNoPosCustomer.visibility = View.GONE
@@ -750,12 +760,6 @@ object Receiptify {
         }
 
         binding.tvPhoneNumber.text = receiptDTO.phoneNumber;
-        if (receiptDTO.vatAddress.isNullOrEmpty()) {
-            binding.tvVatAddress.visibility = View.GONE
-        }
-        if (receiptDTO.vatId.isNullOrEmpty()) {
-            binding.tvVatId.visibility = View.GONE
-        }
         if (receiptDTO.phoneNumber.isNullOrEmpty()) {
             binding.tvPhoneNumber.visibility = View.GONE
         }
