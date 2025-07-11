@@ -197,6 +197,16 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNoPosCustomer.visibility = View.GONE
@@ -307,6 +317,14 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
 
@@ -385,6 +403,16 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
 
@@ -461,6 +489,14 @@ object Receiptify {
             }
         }
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNoHhCustomer.visibility = View.GONE
@@ -540,6 +576,14 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
 
@@ -612,6 +656,14 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
 
@@ -675,6 +727,14 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
@@ -740,15 +800,16 @@ object Receiptify {
         binding.tvTotalItems.text =
             "${receiptDTO.totalItems}" /* TODO : Move to plural type string resource*/
 
-        binding.tvVatAddress.text = receiptDTO.vatAddress
-        binding.tvVatId.text = receiptDTO.vatId
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
         binding.tvPhoneNumber.text = receiptDTO.phoneNumber;
-        if (receiptDTO.vatAddress.isNullOrEmpty()) {
-            binding.tvVatAddress.visibility = View.GONE
-        }
-        if (receiptDTO.vatId.isNullOrEmpty()) {
-            binding.tvVatId.visibility = View.GONE
-        }
         if (receiptDTO.phoneNumber.isNullOrEmpty()) {
             binding.tvPhoneNumber.visibility = View.GONE
         }
@@ -960,6 +1021,14 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
 
@@ -1040,6 +1109,14 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvOrderNo.text = receiptDTO.orderNo
         if (receiptDTO.tableNo.isNullOrEmpty()) {
             binding.tvTableNo.visibility = View.GONE
@@ -1116,6 +1193,14 @@ object Receiptify {
         }
 
         binding.tvBrandName.text = receiptDTO.brandName
+        binding.tvVatAddress.apply {
+            text = receiptDTO.vatAddress
+            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvVatId.apply {
+            text = receiptDTO.vatId
+            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvOrderNo.text = "${receiptDTO.orderNo}"
         binding.tvOrderType.text = "${receiptDTO.orderType}"
 
@@ -1369,6 +1454,7 @@ object Receiptify {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
+
         binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
         if (receiptDTO.serverTipInfo.serverId.isNullOrEmpty()) {
             binding.tvServerId.visibility = View.GONE
@@ -1471,6 +1557,7 @@ object Receiptify {
             binding.tvTotalTips.visibility = visibility
         }
 
+
         binding.tvTotalNetSalesValue.apply {
             text = receiptDTO.serverTipInfo.totalNetSales
             visibility =
@@ -1548,6 +1635,7 @@ object Receiptify {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvBrandName.text = receiptDTO.brandName
+
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
         // hiding the placed at text if it is null or empty
@@ -1589,6 +1677,7 @@ object Receiptify {
 
         binding.tvPartnerName.text = receiptDTO.deviceSalesReport.header
 
+
         if(receiptDTO.excludeCompanyNameWatermark) {
             binding.tvPoweredBy.visibility = View.GONE
             binding.tvCompanyName.visibility = View.GONE
@@ -1597,6 +1686,7 @@ object Receiptify {
             binding.tvPoweredBy.visibility = View.VISIBLE
             binding.tvCompanyName.visibility = View.VISIBLE
         }
+
 
         if (receiptDTO.deviceSalesReport.headerMeta?.isNotEmpty() == true) {
             binding.rvDevicesSalesHeaderMeta.adapter =

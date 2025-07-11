@@ -36,6 +36,7 @@
                 android:textStyle="bold"
                 tools:text="Server Name" />
 
+
             <TextView
                 android:id="@+id/tv_server_id"
                 android:layout_width="match_parent"
