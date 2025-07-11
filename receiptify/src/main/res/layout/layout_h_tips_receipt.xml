@@ -58,27 +58,6 @@
                 android:textStyle="bold"
                 android:text="@string/total_transaction_statement" />
 
-            <!-- VAT Address -->
-            <TextView
-                android:id="@+id/tv_vat_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1mm"
-                android:gravity="center"
-                android:textSize="2.5mm"
-                tools:text="Freeport, Grand Bahama" />
-
-
-            <!-- VAT ID -->
-            <TextView
-                android:id="@+id/tv_vat_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1mm"
-                android:gravity="center"
-                android:textSize="2mm"
-                tools:text="100-945-168" />
-
             <!-- Divider -->
             <ImageView
                 android:layout_width="match_parent"

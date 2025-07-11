@@ -1557,14 +1557,6 @@ object Receiptify {
             binding.tvTotalTips.visibility = visibility
         }
 
-        binding.tvVatAddress.apply {
-            text = receiptDTO.vatAddress
-            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
-        }
-        binding.tvVatId.apply {
-            text = receiptDTO.vatId
-            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
-        }
 
         binding.tvTotalNetSalesValue.apply {
             text = receiptDTO.serverTipInfo.totalNetSales
