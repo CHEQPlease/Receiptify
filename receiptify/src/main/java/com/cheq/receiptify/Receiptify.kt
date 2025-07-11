@@ -1454,14 +1454,7 @@ object Receiptify {
         /* TODO : Move to string resource to support localization in future */
 
         binding.tvServerName.text = receiptDTO.serverTipInfo.serverName
-        binding.tvVatAddress.apply {
-            text = receiptDTO.vatAddress
-            visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
-        }
-        binding.tvVatId.apply {
-            text = receiptDTO.vatId
-            visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
-        }
+
         binding.tvServerId.text = receiptDTO.serverTipInfo.serverId
         if (receiptDTO.serverTipInfo.serverId.isNullOrEmpty()) {
             binding.tvServerId.visibility = View.GONE
