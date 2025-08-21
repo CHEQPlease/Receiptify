@@ -68,6 +68,15 @@
         android:textSize="3.5mm"
         tools:text="Freeport, Grand Bahama" />
 
+    <!--Phone Number-->
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1mm"
+        android:gravity="center"
+        android:textSize="3mm"
+        tools:text="(242) 828-7460"  />
 
     <!-- VAT ID -->
     <TextView
