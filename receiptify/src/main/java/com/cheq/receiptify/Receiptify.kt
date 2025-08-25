@@ -202,6 +202,10 @@ object Receiptify {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
             visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -321,6 +325,10 @@ object Receiptify {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
             visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -408,6 +416,10 @@ object Receiptify {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
             visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -492,6 +504,10 @@ object Receiptify {
         binding.tvVatAddress.apply {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
@@ -580,6 +596,10 @@ object Receiptify {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
             visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -660,6 +680,10 @@ object Receiptify {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
             visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -730,6 +754,10 @@ object Receiptify {
         binding.tvVatAddress.apply {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
@@ -1025,6 +1053,10 @@ object Receiptify {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
             visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -1113,6 +1145,10 @@ object Receiptify {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
             visibility = if (receiptDTO.vatId.isNullOrEmpty()) View.GONE else View.VISIBLE
@@ -1196,6 +1232,10 @@ object Receiptify {
         binding.tvVatAddress.apply {
             text = receiptDTO.vatAddress
             visibility = if (receiptDTO.vatAddress.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+        binding.tvPhoneNumber.apply {
+            text = receiptDTO.phoneNumber
+            visibility = if (receiptDTO.phoneNumber.isNullOrEmpty()) View.GONE else View.VISIBLE
         }
         binding.tvVatId.apply {
             text = receiptDTO.vatId
