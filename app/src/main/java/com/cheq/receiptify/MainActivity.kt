@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
           "orderType": "Counter",
           "totalItems": "Total items: 2",
           "orderNo": "Order# :K10",
-          "receiptType": "MERCHANT",
+          "receiptType": "TIME_SHEET",
           "deviceType": "pos",
           "vatAddress": "1234 Street, City, Country",
           "vatId": "VAT123456789",
@@ -30,6 +30,13 @@ class MainActivity : AppCompatActivity() {
           "isReprinted": true,
           "splitCount": "SPLIT COUNT: 4",
           "companyName": "CANTALOUPE",
+          "timeSheetInfo": {
+            "employeeName": "John Smith",
+            "date": "Tuesday, August 26, 2025",
+            "totalWorkTime": "08:15",
+            "breakTime": "00:45",
+            "totalTips": "${'$'}75.00"
+          },
           "excludeCompanyNameWatermark": true,
           "items": [
             {
