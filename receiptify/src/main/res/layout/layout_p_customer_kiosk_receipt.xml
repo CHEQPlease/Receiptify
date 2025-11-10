@@ -226,6 +226,51 @@
         android:layout_marginBottom="1mm"
         />
 
+    <!-- Show tip separately -->
+    <!-- Tip section container -->
+    <LinearLayout
+        android:id="@+id/container_tip_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Tip row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pair_tip_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                tools:text="TIP" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_pair_tip_key_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                tools:text="$11.56" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1mm"
+            android:src="@drawable/divider_dotted_line"
+            android:layout_marginTop="1mm"
+            android:layout_marginBottom="1mm"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
     <!-- Payment Breakdown View -->
 
     <androidx.recyclerview.widget.RecyclerView

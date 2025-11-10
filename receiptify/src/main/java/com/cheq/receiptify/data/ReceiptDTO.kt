@@ -94,4 +94,6 @@ data class ReceiptDTO(
     val breakTime: String? = null,
     @SerializedName("totalTips")
     val totalTips: String? = null,
+    @SerializedName("tipsOnSeparateLine")
+    val tipsOnSeparateLine: Pair?,
 )
