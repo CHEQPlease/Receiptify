@@ -81,6 +81,19 @@ data class ReceiptDTO(
     val emvInfo: EMVInfoDTO?,
     @SerializedName("custMerchantReceiptTopline")
     val custMerchantReceiptTopline: String?,
+    @SerializedName("timeSheetInfo")
+    val timeSheetInfo: TimeSheetInfo? = null,
+    // Backward compatibility for legacy flat fields
+    @SerializedName("employeeName")
+    val employeeName: String? = null,
+    @SerializedName("timeSheetDate")
+    val timeSheetDate: String? = null,
+    @SerializedName("totalWorkTime")
+    val totalWorkTime: String? = null,
+    @SerializedName("breakTime")
+    val breakTime: String? = null,
+    @SerializedName("totalTips")
+    val totalTips: String? = null,
     @SerializedName("tipsOnSeparateLine")
     val tipsOnSeparateLine: Pair?,
 )

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_time_sheet_receipt"
+    android:layout_width="75mm"
+    android:padding="3mm"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content"
+    android:theme="@style/ReceiptifyThemePOS"
+    tools:ignore="InOrMmUsage">
+
+    <!-- Employee Name -->
+    <TextView
+        android:id="@+id/tv_employee_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="2mm"
+        android:layout_marginBottom="3mm"
+        android:textSize="5mm"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        tools:text="John Smith" />
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/tv_time_sheet_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginBottom="3mm"
+        android:textSize="3.5mm"
+        android:textStyle="normal"
+        tools:text="Tuesday, August 26, 2025" />
+
+    <!-- Work Time Details -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="3mm">
+
+        <!-- Total Work Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="1.5mm">
+
+            <TextView
+                android:id="@+id/tv_total_work_time_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Work Time"
+                android:textSize="3.5mm" />
+
+            <TextView
+                android:id="@+id/tv_total_work_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                android:textStyle="bold"
+                tools:text="08:15" />
+        </LinearLayout>
+
+        <!-- Break Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_break_time_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Break Time"
+                android:textSize="3.5mm" />
+
+            <TextView
+                android:id="@+id/tv_break_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="3.5mm"
+                android:textStyle="bold"
+                tools:text="00:45" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Divider -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1mm"
+        android:src="@drawable/divider_dotted_line"
+        android:layout_marginTop="1mm"
+        android:layout_marginBottom="1mm" />
+
+    <!-- Total Tips -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2mm"
+        android:layout_marginBottom="2mm">
+
+        <TextView
+            android:id="@+id/tv_total_tips_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Tips"
+            android:textSize="3.5mm" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_total_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="3.5mm"
+            android:textStyle="bold"
+            tools:text="$75.00" />
+    </LinearLayout>
+
+    <!-- Divider -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1mm"
+        android:src="@drawable/divider_dotted_line"
+        android:layout_marginTop="1mm"
+        android:layout_marginBottom="1mm" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3mm"/>
+
+    <!-- Powered By Footer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="POWERED BY CANTALOUPE"
+        android:textSize="4mm"
+        android:textStyle="bold"
+        android:layout_marginTop="3mm" />
+
+    <!-- Whitespace for line feed-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6mm"/>
+
+</LinearLayout>

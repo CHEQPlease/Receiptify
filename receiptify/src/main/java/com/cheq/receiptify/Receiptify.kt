@@ -51,6 +51,7 @@ import com.cheq.receiptify.databinding.LayoutPMerchantReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPMerchantSplitReceiptBinding
 import com.cheq.receiptify.databinding.LayoutPQrPaymentBinding
 import com.cheq.receiptify.databinding.LayoutPTipsReceiptBinding
+import com.cheq.receiptify.databinding.LayoutPTimeSheetReceiptBinding
 import com.cheq.receiptify.enums.TargetPlatform
 import com.cheq.receiptify.enums.ReceiptType
 import com.cheq.receiptify.utils.Utils
@@ -164,6 +165,10 @@ object Receiptify {
 
                     ReceiptType.DEVICE_SALES_REPORT.name -> {
                         return buildDeviceSalesReportPOS(receiptDTO)
+                    }
+                    
+                    ReceiptType.TIME_SHEET.name -> {
+                        return buildTimeSheetReceiptPOS(receiptDTO)
                     }
                 }
             }
@@ -2008,6 +2013,58 @@ object Receiptify {
         } else {
             emvBinding.containerPinVerifiedDetails.visibility = View.GONE
         }
+    }
+    
+    private fun buildTimeSheetReceiptPOS(receiptDTO: ReceiptDTO): Bitmap {
+        val binding = LayoutPTimeSheetReceiptBinding.inflate(LayoutInflater.from(context.get()))
+        val timeSheetReceipt = binding.layoutTimeSheetReceipt
+
+        val ts = receiptDTO.timeSheetInfo
+
+        // Set employee name (prefer grouped, fallback to legacy flat field)
+        binding.tvEmployeeName.apply {
+            val value = ts?.employeeName ?: receiptDTO.employeeName
+            text = value
+            visibility = if (value.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        // Set time sheet date
+        binding.tvTimeSheetDate.apply {
+            val value = ts?.date ?: receiptDTO.timeSheetDate
+            text = value
+            visibility = if (value.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        // Set total work time
+        binding.tvTotalWorkTime.apply {
+            val value = ts?.totalWorkTime ?: receiptDTO.totalWorkTime
+            text = value
+            visibility = if (value.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        // Set break time
+        binding.tvBreakTime.apply {
+            val value = ts?.breakTime ?: receiptDTO.breakTime
+            text = value
+            visibility = if (value.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        // Set total tips
+        binding.tvTotalTips.apply {
+            val value = ts?.totalTips ?: receiptDTO.totalTips
+            text = value
+            visibility = if (value.isNullOrEmpty()) View.GONE else View.VISIBLE
+        }
+
+        timeSheetReceipt.measure(
+            View.MeasureSpec.makeMeasureSpec(
+                posPaperWidth,
+                View.MeasureSpec.EXACTLY
+            ), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        )
+        timeSheetReceipt.layout(0, 0, timeSheetReceipt.measuredWidth, timeSheetReceipt.measuredHeight)
+
+        return Utils.generateBitmap(timeSheetReceipt, targetPlatform = TargetPlatform.POS, highQuality = true)
     }
 
 }
