@@ -81,4 +81,6 @@ data class ReceiptDTO(
     val emvInfo: EMVInfoDTO?,
     @SerializedName("custMerchantReceiptTopline")
     val custMerchantReceiptTopline: String?,
+    @SerializedName("tipsOnSeparateLine")
+    val tipsOnSeparateLine: Pair?,
 )

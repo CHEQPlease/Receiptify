@@ -848,6 +848,12 @@ object Receiptify {
             binding.tvPairGuestNameKeyValue.text = receiptDTO.guestName?.value
         }
 
+        binding.containerTipRow.apply {
+            visibility =
+                if (receiptDTO.tipsOnSeparateLine?.value.isNullOrEmpty()) View.GONE else View.VISIBLE
+            binding.tvPairTipKey.text = receiptDTO.tipsOnSeparateLine?.key
+            binding.tvPairTipKeyValue.text = receiptDTO.tipsOnSeparateLine?.value
+        }
 
         var placedAt = receiptDTO.placedAt ?: ""
 
