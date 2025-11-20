@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity() {
           "companyName": "CANTALOUPE",
           "timeSheetInfo": {
             "employeeName": "John Smith",
-            "date": "Tuesday, August 26, 2025",
+            "date": "Tuesday, August 28, 2025",
             "totalWorkTime": "08:15",
             "breakTime": "00:45",
-            "totalTips": "${'$'}75.00"
+            "totalTips": "${'$'}85.00"
           },
           "excludeCompanyNameWatermark": true,
           "items": [

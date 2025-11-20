@@ -2050,11 +2050,12 @@ object Receiptify {
         }
 
         // Set total tips
-        binding.tvTotalTips.apply {
-            val value = ts?.totalTips ?: receiptDTO.totalTips
-            text = value
-            visibility = if (value.isNullOrEmpty()) View.GONE else View.VISIBLE
-        }
+        val totalTipsValue = ts?.totalTips ?: receiptDTO.totalTips
+        val hasTotalTips = !totalTipsValue.isNullOrEmpty()
+        
+        binding.tvTotalTips.text = totalTipsValue
+        binding.layoutTotalTips.visibility = if (hasTotalTips) View.VISIBLE else View.GONE
+        binding.dividerTotalTips.visibility = if (hasTotalTips) View.VISIBLE else View.GONE
 
         timeSheetReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(

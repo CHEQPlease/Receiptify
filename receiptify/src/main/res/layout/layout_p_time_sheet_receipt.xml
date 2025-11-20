@@ -100,6 +100,7 @@
 
     <!-- Total Tips -->
     <LinearLayout
+        android:id="@+id/layout_total_tips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -129,6 +130,7 @@
 
     <!-- Divider -->
     <ImageView
+        android:id="@+id/divider_total_tips"
         android:layout_width="match_parent"
         android:layout_height="1mm"
         android:src="@drawable/divider_dotted_line"
