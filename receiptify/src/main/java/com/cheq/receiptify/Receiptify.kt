@@ -2057,6 +2057,14 @@ object Receiptify {
         binding.layoutTotalTips.visibility = if (hasTotalTips) View.VISIBLE else View.GONE
         binding.dividerTotalTips.visibility = if (hasTotalTips) View.VISIBLE else View.GONE
 
+        // Handle branding exclusion
+        if(receiptDTO.excludeCompanyNameWatermark) {
+            binding.layoutBranding.visibility = View.GONE
+        } else {
+            binding.tvCompanyName.text = receiptDTO.companyName
+            binding.layoutBranding.visibility = View.VISIBLE
+        }
+
         timeSheetReceipt.measure(
             View.MeasureSpec.makeMeasureSpec(
                 posPaperWidth,
