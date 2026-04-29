@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="1mm"
         android:gravity="center"
-        android:textSize="2.5mm"
+        android:textSize="4mm"
         android:textStyle="bold"
         tools:text="Table No : #442" />
 
