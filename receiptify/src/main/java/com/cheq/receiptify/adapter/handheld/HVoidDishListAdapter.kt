@@ -13,16 +13,10 @@ import com.cheq.receiptify.databinding.LayoutHKitchenItemInfoBinding
 import com.cheq.receiptify.showStrikeThrough
 import com.cheq.receiptify.utils.Utils
 
-/**
- * Handheld counterpart of [com.cheq.receiptify.adapter.pos.PVoidDishListAdapter].
- *
- * Renders every supplied item under a single "Voided items" header without
- * regrouping by [ItemType].
- */
 class HVoidDishListAdapter(dishes: List<Item>) :
     RecyclerView.Adapter<HVoidDishListAdapter.ViewHolder>() {
 
-    private val rows = prepareRows(dishes)
+    private val rows = dishes
 
     override fun getItemViewType(position: Int): Int {
         return if (rows[position].isGroupHeader) 0 else 1
@@ -80,23 +74,6 @@ class HVoidDishListAdapter(dishes: List<Item>) :
         ViewHolder(binding.root)
 
     class ViewHolderItem(val binding: LayoutHKitchenItemInfoBinding) : ViewHolder(binding.root)
-
-    private fun prepareRows(items: List<Item>): List<Item> {
-        val rows = mutableListOf<Item>()
-        rows.add(
-            Item(
-                null,
-                VOID_SECTION_HEADER,
-                null,
-                null,
-                strikethrough = false,
-                null,
-                isGroupHeader = true
-            )
-        )
-        rows.addAll(items)
-        return rows
-    }
 
     companion object {
         private const val VOID_SECTION_HEADER = "Voided items"

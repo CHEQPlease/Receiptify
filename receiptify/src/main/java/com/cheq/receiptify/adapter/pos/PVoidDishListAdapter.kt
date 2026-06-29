@@ -13,17 +13,10 @@ import com.cheq.receiptify.databinding.LayoutPKitchenItemInfoBinding
 import com.cheq.receiptify.showStrikeThrough
 import com.cheq.receiptify.utils.Utils
 
-/**
- * Adapter for the dedicated void receipt.
- *
- * Unlike [PKitchenDishListAdapter] it does NOT regroup items by [ItemType].
- * Every item is treated as a voided item and rendered under a single
- * "Voided items" section header, preserving the order it was supplied in.
- */
 class PVoidDishListAdapter(dishes: List<Item>) :
     RecyclerView.Adapter<PVoidDishListAdapter.ViewHolder>() {
 
-    private val rows = prepareRows(dishes)
+    private val rows = dishes
 
     override fun getItemViewType(position: Int): Int {
         return if (rows[position].isGroupHeader) 0 else 1
@@ -81,23 +74,6 @@ class PVoidDishListAdapter(dishes: List<Item>) :
         ViewHolder(binding.root)
 
     class ViewHolderItem(val binding: LayoutPKitchenItemInfoBinding) : ViewHolder(binding.root)
-
-    private fun prepareRows(items: List<Item>): List<Item> {
-        val rows = mutableListOf<Item>()
-        rows.add(
-            Item(
-                null,
-                VOID_SECTION_HEADER,
-                null,
-                null,
-                strikethrough = false,
-                null,
-                isGroupHeader = true
-            )
-        )
-        rows.addAll(items)
-        return rows
-    }
 
     companion object {
         private const val VOID_SECTION_HEADER = "Voided items"
