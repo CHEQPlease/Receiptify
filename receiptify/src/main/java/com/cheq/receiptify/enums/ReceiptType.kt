@@ -4,6 +4,7 @@ enum class ReceiptType {
     CUSTOMER,
     MERCHANT,
     KITCHEN,
+    KITCHEN_VOID,
     KIOSK,
     SERVER_TIPS,
     QR_PAYMENT,
