@@ -18,6 +18,7 @@ import com.cheq.receiptify.adapter.handheld.HDeviceSalesReportBreakdownAdapter
 import com.cheq.receiptify.adapter.handheld.HDeviceSalesReportMetaAdapter
 import com.cheq.receiptify.adapter.handheld.HDishListAdapterCustomer
 import com.cheq.receiptify.adapter.handheld.HKitchenDishListAdapter
+import com.cheq.receiptify.adapter.handheld.HVoidDishListAdapter
 import com.cheq.receiptify.adapter.handheld.HTipsInfoBreakdownListAdapter
 import com.cheq.receiptify.adapter.handheld.HTipsPerRevenueCenterListAdapter
 import com.cheq.receiptify.adapter.handheld.PSplitListAdapter
@@ -27,6 +28,7 @@ import com.cheq.receiptify.adapter.pos.PDeviceSalesReportMetaAdapter
 import com.cheq.receiptify.adapter.pos.PDishListAdapterCustomer
 import com.cheq.receiptify.adapter.pos.PGratuityListAdapter
 import com.cheq.receiptify.adapter.pos.PKitchenDishListAdapter
+import com.cheq.receiptify.adapter.pos.PVoidDishListAdapter
 import com.cheq.receiptify.adapter.pos.PTipsInfoBreakdownListAdapter
 import com.cheq.receiptify.adapter.pos.PTipsPerRevenueCenterListAdapter
 import com.cheq.receiptify.data.ReceiptDTO
@@ -115,6 +117,10 @@ object Receiptify {
                         return buildKitchenReceiptHandHeld(receiptDTO)
                     }
 
+                    ReceiptType.KITCHEN_VOID.name -> {
+                        return buildKitchenReceiptHandHeld(receiptDTO, isVoid = true)
+                    }
+
                     ReceiptType.SERVER_TIPS.name -> {
                         return buildTipsReceiptForServerHandheld(receiptDTO)
                     }
@@ -153,6 +159,10 @@ object Receiptify {
 
                     ReceiptType.KITCHEN.name -> {
                         return buildKitchenReceiptPOS(receiptDTO)
+                    }
+
+                    ReceiptType.KITCHEN_VOID.name -> {
+                        return buildKitchenReceiptPOS(receiptDTO, isVoid = true)
                     }
 
                     ReceiptType.SERVER_TIPS.name -> {
@@ -1305,7 +1315,7 @@ object Receiptify {
 
     }
 
-    private fun buildKitchenReceiptPOS(receiptDTO: ReceiptDTO): Bitmap? {
+    private fun buildKitchenReceiptPOS(receiptDTO: ReceiptDTO, isVoid: Boolean = false): Bitmap? {
         val binding = LayoutPKitchenReceiptBinding.inflate(LayoutInflater.from(context.get()))
         val receipt = binding.layoutKitchenReceipt
 
@@ -1340,7 +1350,11 @@ object Receiptify {
         }
 
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
-        binding.rvDishes.adapter = PKitchenDishListAdapter(receiptDTO.items)
+        binding.rvDishes.adapter = if (isVoid) {
+            PVoidDishListAdapter(receiptDTO.items)
+        } else {
+            PKitchenDishListAdapter(receiptDTO.items)
+        }
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
@@ -1413,7 +1427,7 @@ object Receiptify {
 
     }
 
-    private fun buildKitchenReceiptHandHeld(receiptDTO: ReceiptDTO): Bitmap? {
+    private fun buildKitchenReceiptHandHeld(receiptDTO: ReceiptDTO, isVoid: Boolean = false): Bitmap? {
         val binding = LayoutHKitchenReceiptBinding.inflate(LayoutInflater.from(context.get()))
         val receipt = binding.layoutKitchenReceipt
 
@@ -1431,7 +1445,11 @@ object Receiptify {
         binding.tvOrderNo.text = receiptDTO.orderNo
         binding.tvTableNo.text = receiptDTO.tableNo
         binding.tvOrderSubtitle.text = receiptDTO.orderSubtitle
-        binding.rvDishes.adapter = HKitchenDishListAdapter(receiptDTO.items)
+        binding.rvDishes.adapter = if (isVoid) {
+            HVoidDishListAdapter(receiptDTO.items)
+        } else {
+            HKitchenDishListAdapter(receiptDTO.items)
+        }
         binding.rvDishes.layoutManager =
             LinearLayoutManager(context.get(), RecyclerView.VERTICAL, false)
 
