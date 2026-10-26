@@ -15,5 +15,8 @@ data class Breakdown(
     val subScriptValue: String?,
     @SerializedName("gap")
     val gap: Boolean = false,
+    /** Bold at normal size, unlike [important] which also enlarges the row. */
+    @SerializedName("isBold")
+    val isBold: Boolean = false,
 
 )
