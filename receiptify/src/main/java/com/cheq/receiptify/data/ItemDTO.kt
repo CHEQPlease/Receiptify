@@ -42,24 +42,4 @@ data class Item(
      */
     @SerializedName("isReasonNote")
     val isReasonNote: Boolean = false,
-    /**
-     * Item-level savings (e.g. a drinks package) rendered by the customer dish
-     * adapters as smaller lines between the item row and its description.
-     * Nullable because Gson leaves it null when the key is absent.
-     */
-    @SerializedName("savings")
-    val savings: List<ItemSaving>? = null,
-)
-
-/**
- * One item-level saving line: discount name, the quantity it applied to and
- * the negative amount it took off the item (e.g. "CHEERS!", "1", "-$20.00").
- */
-data class ItemSaving(
-    @SerializedName("name")
-    val name: String?,
-    @SerializedName("quantity")
-    val quantity: String?,
-    @SerializedName("price")
-    val price: String?,
 )
